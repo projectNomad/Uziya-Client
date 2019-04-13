@@ -1,0 +1,80 @@
+<div class="row" id="bloc-login">
+  <div class="col-sm-3" id="bloc-login_form">
+    <h2>Connectez-vous</h2>
+    <hr>
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+<!--        <label for="email">Adresse mail</label>-->
+        <input type="email"
+               required
+               id="email"
+               placeholder="Email"
+               class="form-control form-control-sm help-text"
+               formControlName="email">
+      </div>
+      <div class="form-group">
+<!--        <label for="password">Mot de passe</label>-->
+        <input type="password"
+               required
+               id="password"
+               placeholder="Password"
+               class="form-control form-control-sm help-text"
+               formControlName="password">
+      </div>
+      <div>
+        <button class="btn btn-primary" id="btn-submit-save-user"
+                type="submit">Connectez-vous</button>
+      </div>
+      <div id="group-link">
+        <ul class="list-inline">
+          <li class="float-left mr-3"><a routerLink="/forgot-password">Mot de passe oublié?</a></li>
+          <li><a routerLink="/signup">Créer un compte</a></li>
+        </ul>
+      </div>
+    </form>
+    <p class="text-danger">{{ errorMessage }}</p>
+
+    <div class="footer-menu pt-lg-5">
+
+      <ul class="list-inline">
+        <li class="float-left mr-3"><a href="#">Contactez-nous</a></li>
+        <li><a href="#">A propos</a></li>
+      </ul>
+
+      <p class="small text-center">© Uziya, 2019 - Tous droits réservés</p>
+    </div>
+  </div>
+
+  <div class="col-sm-9 sm" id="bloc-login_infos">
+    <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide>
+        <img [src]="images[0]" alt="Random first slide" width="80%">
+        <div class="carousel-caption">
+          <h3>Partager vos projets vidéo</h3>
+          <p><b>Uziya</b> est une plateforme de partage de films indépendants, amateurs ou encore web serie.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img [src]="images[1]" alt="Random second slide" width="80%">
+        <div class="carousel-caption">
+          <h3>Notre Objectif</h3>
+          <p>
+            Est d'aider les amateurs et/ou professionnels du secteur de l'audio-visuel
+            de présenter à notre communauté leurs projets.
+          </p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img [src]="images[2]" alt="Random third slide" width="80%">
+        <div class="carousel-caption">
+          <h3>Objectif secondaire</h3>
+          <p>
+            Permettre aux artistes d'avoir une meilleure visibilité et un meilleur retour de
+            la communauté sur leur travaille.
+          </p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>
+

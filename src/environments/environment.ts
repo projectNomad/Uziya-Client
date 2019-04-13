@@ -3,7 +3,25 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  default_language: 'fr',
+  url_base_api: 'http://localhost:8000',
+  paths_api: {
+    users: '/users',
+    profile: '/profile',
+    activation: '/users/activate',
+    authentication: '/authentication',
+    reset_password: '/reset_password',
+    change_password: '/change_password',
+    video: {
+      create_list: '/videos/?param=user',
+      update: '/videos/',
+    },
+    genre: {
+      list: '/videos/genres',
+      delete: '/videos/genres/delete'
+    }
+  },
 };
 
 /*

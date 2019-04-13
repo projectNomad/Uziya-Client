@@ -1,0 +1,32 @@
+body {
+  font-size: $text_size_global;
+  color: $text_color_global;
+  background-color: $body_bg;
+}
+
+//global css input
+input[type="email"], input[type="password"], input[type="email"]:focus, input[type="password"]:focus {
+  background-color: $input_bg;
+  border: 2px solid black;
+  color: $text_color_global;
+  border-radius: 0;
+}
+input[type="email"], input[type="password"]{
+  border-bottom: 2px solid $input_border_color;
+}
+input[type="email"]:focus, input[type="password"]:focus{
+  box-shadow: none;
+  border-bottom: 2px solid $input_active_border_color;
+}
+input:placeholder-shown + label {
+  opacity: 0;
+  transform: translateY(1rem);
+}
+input:required + .help-text::before {
+  content: '* Required';
+}
+
+//global css link
+a{ color: $link_color_global; }
+a:active{ color: $link_active_color_global; }
+a:hover{ color: $link_hover_color_global; text-decoration: none; }
