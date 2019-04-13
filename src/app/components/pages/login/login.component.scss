@@ -1,4 +1,10 @@
+//@import "~bootstrap/scss/functions";
+//@import "~bootstrap/scss/variables";
+//@import "~bootstrap/scss/mixins";
+
 #bloc-login{
+  h2{ color: white; }
+
   #bloc-login_infos{ padding-top: 5%; }
   #bloc-login_form{ padding-top: 15%; }
 
@@ -9,11 +15,9 @@
   .carousel{
     text-align: center;
 
-    .carousel-caption{
+    &-caption{
       background-color: rgba(0, 0, 0, .5);
     }
   }
-
-  .carousel-inner:focus{box-shadow: none;}
 }
 

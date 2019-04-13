@@ -4,26 +4,30 @@ body {
   background-color: $body_bg;
 }
 
+//global css title
+h1, h2, h3{ color: white; }
+
 //global css input
-input[type="email"], input[type="password"], input[type="email"]:focus, input[type="password"]:focus {
+input[type="text"], input[type="email"], input[type="password"], input[type="text"]:focus,
+input[type="email"]:focus, input[type="password"]:focus {
   background-color: $input_bg;
   border: 2px solid black;
   color: $text_color_global;
   border-radius: 0;
 }
-input[type="email"], input[type="password"]{
+input[type="email"], input[type="password"], input[type="text"]{
   border-bottom: 2px solid $input_border_color;
 }
-input[type="email"]:focus, input[type="password"]:focus{
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus{
   box-shadow: none;
   border-bottom: 2px solid $input_active_border_color;
 }
-input:placeholder-shown + label {
-  opacity: 0;
-  transform: translateY(1rem);
-}
 input:required + .help-text::before {
   content: '* Required';
+}
+input.is-invalid, input.is-invalid:focus{
+  border: none;
+  border-bottom: 2px solid $error_color;
 }
 
 //global css link

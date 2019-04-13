@@ -1,13 +1,14 @@
 import {Component, NgModule, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+import {environment} from '../../../../environments/environment';
 
-// import {NotificationsService} from 'angular2-notifications';
+import {NotificationsService} from 'angular2-notifications';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 import { AuthService } from '../../../services/auth.service';
 import { UserService } from '../../../services/user.service';
-
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,8 @@ import { UserService } from '../../../services/user.service';
 export class LoginComponent implements OnInit {
   signinForm: FormGroup;
   errorMessage: string;
+  submitted = false;
+  minLengthPassword = environment.min_length_password;
   images = [
     'assets/images/static/login/1.jpg',
     'assets/images/static/login/2.JPG',
@@ -28,7 +31,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private userService: UserService,
-    // private notificationService: NotificationsService,
+    private notificationService: NotificationsService,
     private router: Router,
     config: NgbCarouselConfig
   ) {
@@ -39,7 +42,6 @@ export class LoginComponent implements OnInit {
     config.pauseOnHover = true;
   }
 
-
   ngOnInit() {
     this.initForm();
   }
@@ -47,30 +49,45 @@ export class LoginComponent implements OnInit {
   initForm() {
     this.signinForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{8,}/)]]
+      password: ['', [ Validators.required ]]
     });
   }
 
+  // convenience getter for easy access to form fields
+  get f() { return this.signinForm.controls; }
+
   onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.signinForm.invalid) {
+      return;
+    }
+
     const email = this.signinForm.get('email').value;
     const password = this.signinForm.get('password').value;
 
-    this.authService.authenticate(email, password).subscribe(
+    this.authService.authenticate(email, password)
+      .subscribe(
       (value) => {
         localStorage.setItem('token', value.token);
+
         // get user profile
-        this.userService.getProfile().subscribe(
-          data => {
-            localStorage.setItem('userProfile', JSON.stringify(data));
-            // this.notificationService.success(null, 'Vous êtes connecté');
-            this.router.navigate(['/index']);
-          }
-        );
+        this.userService.getProfile()
+          .pipe(map(result => result))
+          .subscribe(
+            data => {
+              localStorage.setItem('userProfile', JSON.stringify(data));
+              this.notificationService.success(
+                null,
+                'Bonjour ' + data.last_name
+              );
+              // this.router.navigate(['/']);
+            }
+          );
       },
       (error) => {
         this.errorMessage = 'L\'email et/ou le mot de passe sont incorrect';
-      },
-      () => {
       }
     );
   }
