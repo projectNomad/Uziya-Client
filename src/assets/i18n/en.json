@@ -1,26 +1,33 @@
 {
-  "login": {
-    "createaccount": "Create account",
-    "forgotpassword": "Forgot password?",
-    "form": {
-      "email": {
-        "errors": {
-          "invalid": "Email invalid",
-          "required": "Email is required"
-        },
-        "placeholder": "Email"
-      },
-      "password": {
-        "errors": {
-          "required": "Password is required"
-        },
-        "placeholder": "Password"
-      },
-      "submit": "Submit"
-    },
-    "infos": {
-      "title": "Share your videos projects"
-    },
-    "title": "Login"
-  }
+	"footer": {
+		"menu1": {
+			"about": "About",
+			"contactus": "Contact us"
+		},
+		"reserved": "© Uziya, 2019 - All rights reserved"
+	},
+	"login": {
+		"createaccount": "Create account",
+		"forgotpassword": "Forgot password?",
+		"form": {
+			"email": {
+				"errors": {
+					"invalid": "Email invalid",
+					"required": "Email is required"
+				},
+				"placeholder": "Email"
+			},
+			"password": {
+				"errors": {
+					"required": "Password is required"
+				},
+				"placeholder": "Password"
+			},
+			"submit": "Submit"
+		},
+		"infos": {
+			"title": "Share your videos projects"
+		},
+		"title": "Login"
+	}
 }
