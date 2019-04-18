@@ -1,0 +1,26 @@
+{
+  "login": {
+    "createaccount": "Create account",
+    "forgotpassword": "Forgot password?",
+    "form": {
+      "email": {
+        "errors": {
+          "invalid": "Email invalid",
+          "required": "Email is required"
+        },
+        "placeholder": "Email"
+      },
+      "password": {
+        "errors": {
+          "required": "Password is required"
+        },
+        "placeholder": "Password"
+      },
+      "submit": "Submit"
+    },
+    "infos": {
+      "title": "Share your videos projects"
+    },
+    "title": "Login"
+  }
+}
