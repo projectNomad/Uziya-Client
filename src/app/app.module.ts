@@ -16,6 +16,7 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { LoginLayoutComponent} from './layouts/login-layout/login-layout.component';
 import { SignupComponent } from './components/pages/signup/signup.component';
 import { FooterComponent } from './components/share/footer/footer.component';
+import { RegisterActivationComponent } from './components/pages/register-activation/register-activation.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { FooterComponent } from './components/share/footer/footer.component';
     LoginComponent,
     SignupComponent,
     FooterComponent,
+    RegisterActivationComponent,
   ],
   imports: [
     BrowserModule,
