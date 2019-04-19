@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import {NotificationsService} from 'angular2-notifications';
+import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 import { UserService } from '../../../services/user.service';
 import {environment} from '../../../../environments/environment';
@@ -37,16 +38,16 @@ export class SignupComponent implements OnInit {
 
   initForm() {
     this.signupForm = this.formBuilder.group({
-        firstname: [null, [ Validators.minLength(this.minLengthFirstName) ]],
+        firstname: [null, [ Validators.required, Validators.minLength(this.minLengthFirstName) ]],
         lastname: [null],
         email: [null, [Validators.required, Validators.email]],
         group: ['t', [Validators.required]],
         password: [null, [
           Validators.required,
-          Validators.pattern(/[0-9a-zA-Z]{8,}/),
+          Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/),
           Validators.minLength(environment.min_length_password)
         ]],
-        confirmation: [null, [ Validators.required ]]
+        confirmation: [null,]
       },
       {
         validator: MustMatch('password', 'confirmation')

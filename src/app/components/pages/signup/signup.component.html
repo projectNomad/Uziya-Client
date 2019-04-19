@@ -1,33 +1,34 @@
 <div class="row" id="bloc-signup">
   <div class="col-lg-4 col-sm-9" id="bloc-signup_form">
-    <h2>Créer un compte</h2>
+    <h2>{{ 'register.user.title' | translate }}</h2>
     <hr>
 
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
 
       <div class="form-group">
-        <label>Qui êtes-vous?</label><br>
+        <label>{{ 'register.user.form.group.choicetitle' | translate }}</label><br>
         <div class="radio-inline">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" formControlName="group" id="inlineRadio1" value="t">
-            <label class="form-check-label" for="inlineRadio1">Je veux voir des films</label>
+            <label class="form-check-label" for="inlineRadio1">{{ 'register.user.form.group.choicemovie' | translate }}</label>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" formControlName="group" id="inlineRadio2" value="g">
-            <label class="form-check-label" for="inlineRadio2">Je veux proposer des projets</label>
+            <label class="form-check-label" for="inlineRadio2">{{ 'register.user.form.group.choiceproject' | translate }}</label>
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="firstname">Prénom</label>
-        <input type="text" id="firstname"
+        <input type="text" placeholder="{{ 'register.user.form.firstname.label' | translate }}"
                [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }"
                class="form-control" formControlName="firstname">
         <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
-          <div *ngIf="f.firstname.errors.required">FirstName is required</div>
-          <div *ngIf="f.firstname.errors.minLength">the minimum word count for the firstName is {{minLengthFirstName}}</div>
-          <div *ngIf="f.firstname.getError('apiError').length > 0">
+          <div *ngIf="f.firstname.errors.required">{{ 'register.user.form.firstname.errors.required' | translate }}</div>
+          <div *ngIf="f.firstname.errors.minLength">
+            {{ 'register.user.form.firstname.errors.minword' | translate }} {{minLengthFirstName}}
+          </div>
+          <div *ngIf="f.firstname.getError('apiError')">
             <ul class="list-inline">
               <li *ngFor="let errorMessage of f.firstname.getError('apiError')">
                 {{ errorMessage}}
@@ -38,23 +39,20 @@
       </div>
 
       <div class="form-group">
-        <label for="lastname">Nom</label>
-        <input type="text" id="lastname"
+        <input type="text" placeholder="{{ 'register.user.form.lastname.label' | translate }}"
                [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"
                class="form-control" formControlName="lastname">
       </div>
 
       <div class="form-group">
-        <label for="email">Adresse mail</label>
-        <input type="email"
-               id="email"
+        <input type="email" placeholder="{{ 'register.user.form.email.label' | translate }}"
                [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
                class="form-control"
                formControlName="email">
         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-          <div *ngIf="f.email.errors.required">Email is required</div>
-          <div *ngIf="f.email.errors.email">Email invalid</div>
-          <div *ngIf="f.email.getError('apiError').length > 0">
+          <div *ngIf="f.email.errors.required">{{ 'register.user.form.email.errors.required' | translate }}</div>
+          <div *ngIf="f.email.errors.email">{{ 'register.user.form.email.errors.invalid' | translate }}</div>
+          <div *ngIf="f.email.getError('apiError')">
             <ul class="list-inline">
               <li *ngFor="let errorMessage of f.email.getError('apiError')">
                 {{ errorMessage}}
@@ -65,17 +63,25 @@
       </div>
 
       <div class="form-group">
-        <label for="password">Mot de passe</label>
-        <input type="password"
-               id="password"
+        <input type="password" placeholder="{{ 'register.user.form.password.label' | translate }}"
                class="form-control"
                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
                formControlName="password">
         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-          <div *ngIf="f.password.errors.required">Password is required</div>
-          <div *ngIf="f.password.errors.minLength">the minimum word count for the password is {{minLengthPassword}}</div>
-          <div *ngIf="f.password.errors.pattern">Password Pattern invalid</div>
-          <div *ngIf="f.password.getError('apiError').length > 0">
+          <div *ngIf="f.password.errors.required">{{ 'register.user.form.password.errors.required' | translate }}</div>
+          <div *ngIf="f.password.errors.minLength">
+            {{ 'register.user.form.password.errors.minword' | translate }} {{minLengthPassword}}
+          </div>
+          <div *ngIf="f.password.errors.pattern">
+            <ul>
+              <li>{{ 'register.user.form.password.errors.pattern.message1' | translate }}</li>
+              <li>{{ 'register.user.form.password.errors.pattern.message2' | translate }}</li>
+              <li>{{ 'register.user.form.password.errors.pattern.message3' | translate }}</li>
+              <li>{{ 'register.user.form.password.errors.pattern.message4' | translate }}</li>
+              <li>{{ 'register.user.form.password.errors.pattern.message5' | translate }}</li>
+            </ul>
+          </div>
+          <div *ngIf="f.password.getError('apiError')">
             <ul class="list-inline">
               <li *ngFor="let errorMessage of f.password.getError('apiError')">
                 {{ errorMessage}}
@@ -86,23 +92,20 @@
       </div>
 
       <div class="form-group">
-        <label for="form_password_confirmation">
-          Confirmation du mot de passe
-        </label>
-        <input formControlName="confirmation"
-               id="form_password_confirmation"
-               class="form-control"
-               [ngClass]="{ 'is-invalid': submitted && f.confirmation.errors }"
-               type="password">
+        <input formControlName="confirmation" placeholder="{{ 'register.user.form.confirmation.label' | translate }}"
+               class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmation.errors }" type="password">
         <div *ngIf="submitted && f.confirmation.errors" class="invalid-feedback">
-          <div *ngIf="f.confirmation.errors.required">Password is required</div>
-          <div *ngIf="f.confirmation.errors.mustMatch">Passwords must match</div>
+          <div *ngIf="f.confirmation.errors.mustMatch">
+            {{ 'register.user.form.confirmation.errors.mustmatch' | translate }}
+          </div>
         </div>
       </div>
       <button class="btn btn-primary" id="btn-submit-save-user"
-              type="submit">Créer mon compte</button>
-      <div>Vous avez un compte? <a routerLink="/auth/login">Connectez-vous.</a></div>
-
+              type="submit">{{ 'register.user.form.submit' | translate }}</button>
+      <div>
+        {{ 'register.user.message.login' | translate }}
+        <a routerLink="/auth/login">{{ 'register.user.message.linklogin' | translate }}</a>
+      </div>
     </form>
   </div>
   <div class="col-lg-8 col-sm-12" id="bloc-signup_infos">
