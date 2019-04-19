@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import {NotificationsService} from 'angular2-notifications';
-import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 import { UserService } from '../../../services/user.service';
 import {environment} from '../../../../environments/environment';
@@ -16,8 +15,6 @@ import { MustMatch } from '../../../../_helpers/must-match.validator';
 })
 export class SignupComponent implements OnInit {
   signupForm: FormGroup;
-  minLengthPassword = environment.min_length_password;
-  minLengthFirstName = 2
   submitted = false;
   images = [
     'assets/images/static/login/1.jpg',
@@ -38,16 +35,16 @@ export class SignupComponent implements OnInit {
 
   initForm() {
     this.signupForm = this.formBuilder.group({
-        firstname: [null, [ Validators.required, Validators.minLength(this.minLengthFirstName) ]],
+        firstname: [null, [ Validators.required, Validators.minLength(2) ]],
         lastname: [null],
         email: [null, [Validators.required, Validators.email]],
-        group: ['t', [Validators.required]],
+        group: [environment.groups.viewer, [Validators.required]],
         password: [null, [
           Validators.required,
           Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/),
-          Validators.minLength(environment.min_length_password)
+          Validators.minLength(8)
         ]],
-        confirmation: [null,]
+        confirmation: [null]
       },
       {
         validator: MustMatch('password', 'confirmation')

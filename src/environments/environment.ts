@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  min_length_password: 8,
+  groups: {
+    viewer: 'viewer',
+    producer: 'producer'
+  },
   url_base_api: 'http://localhost:8000',
   paths_api: {
     users: '/users',
