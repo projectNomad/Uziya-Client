@@ -10,7 +10,7 @@ const appRoutes: Routes = [{
   path: 'auth',
   component: LoginLayoutComponent,
   children: [
-    { path: 'login', component: LoginComponent },
+    { path: '', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     {
       path: 'register/activate/:token',
