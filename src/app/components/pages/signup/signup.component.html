@@ -25,9 +25,6 @@
                class="form-control" formControlName="firstname">
         <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
           <div *ngIf="f.firstname.errors.required">{{ 'register.user.form.firstname.errors.required' | translate }}</div>
-          <div *ngIf="f.firstname.errors.minLength">
-            {{ 'register.user.form.firstname.errors.minword' | translate }} {{minLengthFirstName}}
-          </div>
           <div *ngIf="f.firstname.getError('apiError')">
             <ul class="list-inline">
               <li *ngFor="let errorMessage of f.firstname.getError('apiError')">
