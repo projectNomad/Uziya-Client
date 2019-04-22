@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
 import {environment} from '../../environments/environment';
-import GlobalService from './globalService';
+import GlobalService from './core/globalService';
 import {User} from '../models/user';
 
 @Injectable({
@@ -11,27 +11,22 @@ import {User} from '../models/user';
 })
 export class UserService extends GlobalService {
 
-  urlProfile = environment.url_base_api + environment.paths_api.profile;
-  urlActivation = environment.url_base_api + environment.paths_api.activation;
-  urlSaveUser = environment.url_base_api + environment.paths_api.users;
-  urlUpdateUser = environment.url_base_api + environment.paths_api.profile;
-
   constructor(private httpClient: HttpClient) {
     super();
   }
 
   getProfile(): Observable<User> {
-    const headers = this.getHeaders();
+    // const headers = this.getHeaders();
     return this.httpClient.get<User>(
-      this.urlProfile,
-      {headers}
+      environment.paths_api.profile,
+      // {headers}
     );
   }
 
   activate(token: string): Observable<any> {
     const headers = this.getHeaders();
     return this.httpClient.post<any>(
-      this.urlActivation,
+      environment.paths_api.activation,
       {
         activation_token: token
       },
@@ -42,7 +37,7 @@ export class UserService extends GlobalService {
   createNewUser(user): Observable<any> {
     const headers = this.getHeaders();
     return this.httpClient.post<any>(
-      this.urlSaveUser,
+      environment.paths_api.users,
       user,
       {headers});
   }
@@ -50,7 +45,7 @@ export class UserService extends GlobalService {
   updateUser(user): Observable<any> {
     const headers = this.getHeaders();
     return this.httpClient.patch<any>(
-      this.urlUpdateUser,
+      environment.paths_api.profile,
       user,
       {headers});
   }
@@ -58,7 +53,7 @@ export class UserService extends GlobalService {
   changePassword(id: number, password: string, newPassword: string): Observable<any>  {
     const headers = this.getHeaders();
     return this.httpClient.patch<any>(
-      this.urlProfile,
+      environment.paths_api.profile,
       {
         password,
         newPassword

@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
-import GlobalService from './globalService';
+import GlobalService from './core/globalService';
 
 interface AuthenticationResponse {
   token: string;
@@ -13,9 +13,6 @@ interface AuthenticationResponse {
   providedIn: 'root'
 })
 export class AuthService extends GlobalService {
-  urlAuthentication = environment.url_base_api + environment.paths_api.authentication;
-  urlResetPassword = environment.url_base_api + environment.paths_api.reset_password;
-  urlChangePassword = environment.url_base_api + environment.paths_api.change_password;
 
   constructor(private httpClient: HttpClient) {
     super();
@@ -23,7 +20,7 @@ export class AuthService extends GlobalService {
 
   authenticate(email: string, password: string): Observable<AuthenticationResponse> {
     return this.httpClient.post<AuthenticationResponse>(
-      this.urlAuthentication,
+      environment.paths_api.authentication,
       {
         login: email,
         password,
@@ -32,25 +29,25 @@ export class AuthService extends GlobalService {
   }
 
   resetPassword(email: string): Observable<any> {
-    const headers = this.getHeaders();
+    // const headers = this.getHeaders();
     return this.httpClient.post<any>(
-      this.urlResetPassword,
+      environment.paths_api.reset_password,
       {
         email
       },
-      {headers}
+      // {headers}
     );
   }
 
   changePassword(token: string, password: string): Observable<any> {
-    const headers = this.getHeaders();
+    // const headers = this.getHeaders();
     return this.httpClient.post<any>(
-      this.urlChangePassword,
+      environment.paths_api.change_password,
       {
         token,
         new_password: password
       },
-      {headers}
+      // {headers}
     );
   }
 

@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  min_length_password: 8,
-  url_base_api: 'http://localhost:8000',
+  baseApiUrl: 'http://localhost:8000', // For connecting to server running elsewhere update the base API URL
+  apiProvider: '',
+  apiVersion: '',
+  serverUrl: '',
   paths_api: {
     users: '/users',
     profile: '/profile',
@@ -22,7 +24,16 @@ export const environment = {
       delete: '/videos/genres/delete'
     }
   },
+  groups: {
+    viewer: 'viewer',
+    producer: 'producer'
+  },
+  defaultLanguage: 'fr',
+  supportedLanguages: ['en', 'fr'],
 };
+
+// Server URL
+environment.serverUrl = `${environment.baseApiUrl}${environment.apiProvider}${environment.apiVersion}`;
 
 /*
  * For easier debugging in development mode, you can import the following file

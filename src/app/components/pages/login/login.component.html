@@ -1,50 +1,41 @@
 <div class="row" id="bloc-login">
   <div class="col-lg-3 col-sm-9" id="bloc-login_form">
-    <h2>Connectez-vous</h2>
+    <h2>{{ 'login.title' | translate }}</h2>
     <hr>
     <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <input type="email"
-               placeholder="Email"
+               placeholder="{{ 'login.form.email.placeholder' | translate }}"
                class="form-control form-control-sm"
                [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
                formControlName="email">
         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-          <div *ngIf="f.email.errors.required">Email is required</div>
-          <div *ngIf="f.email.errors.email">Email invalid</div>
+          <div *ngIf="f.email.errors.required">{{ 'login.form.email.errors.required' | translate }}</div>
+          <div *ngIf="f.email.errors.email">{{ 'login.form.email.errors.invalid' | translate }}</div>
         </div>
       </div>
       <div class="form-group">
         <input type="password"
-               placeholder="Password"
+               placeholder="{{ 'login.form.password.placeholder' | translate }}"
                class="form-control form-control-sm"
                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
                formControlName="password">
         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-          <div *ngIf="f.password.errors.required">Password is required</div>
+          <div *ngIf="f.password.errors.required">{{ 'login.form.password.errors.required' | translate }}</div>
         </div>
       </div>
       <div>
         <button class="btn btn-primary" id="btn-submit-save-user"
-                type="submit">Connectez-vous</button>
+                type="submit">{{ 'login.form.submit' | translate }}</button>
       </div>
       <div id="group-link">
         <ul class="list-inline">
-          <li class="list-inline-item"><a routerLink="/forgot-password">Mot de passe oublié?</a></li>
-          <li class="list-inline-item"><a routerLink="/auth/signup">Créer un compte</a></li>
+          <li class="list-inline-item"><a routerLink="/forgot-password">{{ 'login.forgotpassword' | translate }}</a></li>
+          <li class="list-inline-item"><a routerLink="/auth/signup">{{ 'login.createaccount' | translate }}</a></li>
         </ul>
       </div>
     </form>
     <p class="text-danger">{{ errorMessage }}</p>
-
-    <div class="footer-menu pt-lg-5 text-center">
-      <ul class="list-inline">
-        <li class="list-inline-item"><a href="#">Contactez-nous</a></li>
-        <li class="list-inline-item"><a href="#">A propos</a></li>
-      </ul>
-
-      <p class="small text-center">© Uziya, 2019 - Tous droits réservés</p>
-    </div>
   </div>
 
   <div class="col-lg-9 col-sm-12" id="bloc-login_infos">
@@ -52,7 +43,7 @@
       <ng-template ngbSlide>
         <img [src]="images[0]" alt="Random first slide" width="80%">
         <div class="carousel-caption">
-          <h3>Partager vos projets vidéo</h3>
+          <h3>{{ 'login.infos.title' | translate }}</h3>
           <p><b>Uziya</b> est une plateforme de partage de films indépendants, amateurs ou encore web serie.</p>
         </div>
       </ng-template>

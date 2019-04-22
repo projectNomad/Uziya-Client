@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
   signinForm: FormGroup;
   errorMessage: string;
   submitted = false;
-  minLengthPassword = environment.min_length_password;
   images = [
     'assets/images/static/login/1.jpg',
     'assets/images/static/login/2.JPG',

@@ -15,8 +15,6 @@ import { MustMatch } from '../../../../_helpers/must-match.validator';
 })
 export class SignupComponent implements OnInit {
   signupForm: FormGroup;
-  minLengthPassword = environment.min_length_password;
-  minLengthFirstName = 2
   submitted = false;
   images = [
     'assets/images/static/login/1.jpg',
@@ -37,16 +35,16 @@ export class SignupComponent implements OnInit {
 
   initForm() {
     this.signupForm = this.formBuilder.group({
-        firstname: [null, [ Validators.minLength(this.minLengthFirstName) ]],
+        firstname: [null, [ Validators.required, Validators.minLength(2) ]],
         lastname: [null],
         email: [null, [Validators.required, Validators.email]],
-        group: ['t', [Validators.required]],
+        group: [environment.groups.viewer, [Validators.required]],
         password: [null, [
           Validators.required,
-          Validators.pattern(/[0-9a-zA-Z]{8,}/),
-          Validators.minLength(environment.min_length_password)
+          Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/),
+          Validators.minLength(8)
         ]],
-        confirmation: [null, [ Validators.required ]]
+        confirmation: [null]
       },
       {
         validator: MustMatch('password', 'confirmation')
