@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
-import GlobalService from './globalService';
+import GlobalService from './core/globalService';
 
 interface AuthenticationResponse {
   token: string;

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseApiUrl: 'http://localhost:8000', // For connecting to server running elsewhere update the base API URL
-  apiProvider: '/fr',
+  apiProvider: '',
   apiVersion: '',
   serverUrl: '',
   paths_api: {
