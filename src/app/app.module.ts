@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {HttpClientModule, HttpClient, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { SimpleNotificationsModule } from 'angular2-notifications';
@@ -17,6 +17,7 @@ import { LoginLayoutComponent} from './layouts/login-layout/login-layout.compone
 import { SignupComponent } from './components/pages/signup/signup.component';
 import { FooterComponent } from './components/share/footer/footer.component';
 import { RegisterActivationComponent } from './components/pages/register-activation/register-activation.component';
+import {ApiPrefixInterceptor} from '../_helpers/api-prefix.interceptor';
 
 
 @NgModule({
@@ -48,7 +49,13 @@ import { RegisterActivationComponent } from './components/pages/register-activat
     }),
     SimpleNotificationsModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiPrefixInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
