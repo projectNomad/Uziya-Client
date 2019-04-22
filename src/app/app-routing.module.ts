@@ -5,6 +5,7 @@ import {LoginLayoutComponent} from './layouts/login-layout/login-layout.componen
 import {LoginComponent} from './components/pages/login/login.component';
 import {SignupComponent} from './components/pages/signup/signup.component';
 import {RegisterActivationComponent} from './components/pages/register-activation/register-activation.component';
+import {ForgotPasswordComponent} from './components/pages/forgot-password/forgot-password.component';
 
 const appRoutes: Routes = [{
   path: 'auth',
@@ -15,7 +16,11 @@ const appRoutes: Routes = [{
     {
       path: 'register/activate/:token',
       component: RegisterActivationComponent
-    }
+    },
+    {
+      path: 'forgot-password',
+      component: ForgotPasswordComponent,
+    },
   ]
 }];
 

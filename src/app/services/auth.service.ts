@@ -29,13 +29,11 @@ export class AuthService extends GlobalService {
   }
 
   resetPassword(email: string): Observable<any> {
-    // const headers = this.getHeaders();
     return this.httpClient.post<any>(
       environment.paths_api.reset_password,
       {
         email
       },
-      // {headers}
     );
   }
 

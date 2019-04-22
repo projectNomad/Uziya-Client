@@ -18,6 +18,8 @@ import { SignupComponent } from './components/pages/signup/signup.component';
 import { FooterComponent } from './components/share/footer/footer.component';
 import { RegisterActivationComponent } from './components/pages/register-activation/register-activation.component';
 import {ApiPrefixInterceptor} from '../_helpers/api-prefix.interceptor';
+import { ForgotPasswordComponent } from './components/pages/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './components/pages/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import {ApiPrefixInterceptor} from '../_helpers/api-prefix.interceptor';
     SignupComponent,
     FooterComponent,
     RegisterActivationComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

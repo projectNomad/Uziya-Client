@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import {NotificationsService} from 'angular2-notifications';
+import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 import { UserService } from '../../../services/user.service';
 import {environment} from '../../../../environments/environment';
@@ -77,7 +78,8 @@ export class SignupComponent implements OnInit {
     this.userService.createNewUser(user)
       .subscribe(
       value => {
-        this.notificationService.success('Enregistrement reussi', value.detail);
+        this.submitted = false;
+        this.notificationService.success(_('register.user.form.success'), value.detail);
       },
         err => {
           this.submitted = true;

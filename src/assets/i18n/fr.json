@@ -6,6 +6,18 @@
 		},
 		"reserved": "© Uziya, 2019 - tous droits réservés"
 	},
+	"forgot": {
+		"password": {
+			"link": "Créer un compte.",
+			"message": "Vous n'avez pas de compte?",
+			"submit": "Envoyer",
+			"title": "Réinitialiser votre mot de passe"
+		},
+		"success": {
+			"message": "Un courriel de vérification vient d\\'être envoyé! Vérifie tes courriels pour réinitialiser ton mot de passe.",
+			"title": "Votre compte a ete retrouve"
+		}
+	},
 	"login": {
 		"createaccount": "Créer un compte",
 		"forgotpassword": "Mot de passe oublié",
@@ -55,7 +67,8 @@
 				"email": {
 					"errors": {
 						"invalid": "Email invalide.",
-						"required": "Email requis."
+						"required": "Email requis.",
+						"userNotExist": "Cet utilisateur n'existe pas"
 					},
 					"label": "Email"
 				},
@@ -87,7 +100,8 @@
 					},
 					"label": "Mot de passe"
 				},
-				"submit": "Envoyer"
+				"submit": "Envoyer",
+				"success": "Féllicitation, vous venez de vous enregistrer."
 			},
 			"message": {
 				"linklogin": "Connectez-vous",
