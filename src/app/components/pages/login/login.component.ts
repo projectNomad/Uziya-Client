@@ -69,19 +69,19 @@ export class LoginComponent implements OnInit {
     this.authService.authenticate(email, password)
       .subscribe(
       (value) => {
-        localStorage.setItem('token', value.token);
+        localStorage.setItem(environment.cookiesName.token, value.token);
 
         // get user profile
         this.userService.getProfile()
           .pipe(map(result => result))
           .subscribe(
             data => {
-              localStorage.setItem('userProfile', JSON.stringify(data));
+              localStorage.setItem(environment.cookiesName.profile, JSON.stringify(data));
               this.notificationService.success(
                 null,
-                'Bonjour ' + data.last_name
+                'Bonjour ' + data.first_name
               );
-              // this.router.navigate(['/']);
+              this.router.navigate(['/auth']);
             }
           );
       },

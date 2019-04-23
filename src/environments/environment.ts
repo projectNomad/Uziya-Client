@@ -28,6 +28,10 @@ export const environment = {
     viewer: 'viewer',
     producer: 'producer'
   },
+  cookiesName: {
+    token: 'uziyaToken',
+    profile: 'uziyaCredentials',
+  },
   defaultLanguage: 'fr',
   supportedLanguages: ['en', 'fr'],
 };

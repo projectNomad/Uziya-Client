@@ -35,7 +35,7 @@ export class ApiPrefixInterceptor implements HttpInterceptor {
       return next.handle(request);
     }
 
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem(environment.cookiesName.token);
     let header = new HttpHeaders({
       'Content-Type':  'application/json'
     });

@@ -66,9 +66,6 @@
                formControlName="password">
         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
           <div *ngIf="f.password.errors.required">{{ 'register.user.form.password.errors.required' | translate }}</div>
-          <div *ngIf="f.password.errors.minLength">
-            {{ 'register.user.form.password.errors.minword' | translate }}
-          </div>
           <div *ngIf="f.password.errors.pattern">
             <ul>
               <li>{{ 'register.user.form.password.errors.pattern.message1' | translate }}</li>

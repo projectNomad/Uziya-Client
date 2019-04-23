@@ -38,19 +38,17 @@ export class AuthService extends GlobalService {
   }
 
   changePassword(token: string, password: string): Observable<any> {
-    // const headers = this.getHeaders();
     return this.httpClient.post<any>(
       environment.paths_api.change_password,
       {
         token,
         new_password: password
       },
-      // {headers}
     );
   }
 
   isAuthenticated() {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem(environment.cookiesName.token);
 
     if (token) {
       return true;
@@ -60,6 +58,6 @@ export class AuthService extends GlobalService {
   }
 
   getProfile() {
-    return JSON.parse(localStorage.getItem('userProfile'));
+    return JSON.parse(localStorage.getItem(environment.cookiesName.profile));
   }
 }
