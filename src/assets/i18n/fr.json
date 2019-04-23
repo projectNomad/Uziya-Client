@@ -18,6 +18,17 @@
 			"title": "Votre compte a ete retrouve"
 		}
 	},
+	"form": {
+		"resetPassword": {
+			"confirmPassword": {
+				"label": "Confirmer votre mot de passe"
+			},
+			"newPassword": {
+				"label": "Nouveau mot de passe"
+			},
+			"title": "Réinitialiser votre mot de passe"
+		}
+	},
 	"login": {
 		"createaccount": "Créer un compte",
 		"forgotpassword": "Mot de passe oublié",
