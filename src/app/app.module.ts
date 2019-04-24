@@ -17,9 +17,10 @@ import { LoginLayoutComponent} from './layouts/login-layout/login-layout.compone
 import { SignupComponent } from './components/pages/signup/signup.component';
 import { FooterComponent } from './components/share/footer/footer.component';
 import { RegisterActivationComponent } from './components/pages/register-activation/register-activation.component';
-import {ApiPrefixInterceptor} from '../_helpers/api-prefix.interceptor';
+import {ApiPrefixInterceptor} from '../interceptors/api-prefix.interceptor';
 import { ForgotPasswordComponent } from './components/pages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/pages/reset-password/reset-password.component';
+import { ErrorHandlerInterceptor } from '../interceptors/error-handler.interceptor';
 
 
 @NgModule({
@@ -57,6 +58,11 @@ import { ResetPasswordComponent } from './components/pages/reset-password/reset-
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiPrefixInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorHandlerInterceptor,
       multi: true
     }
   ],
