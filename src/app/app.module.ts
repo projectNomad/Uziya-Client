@@ -13,16 +13,16 @@ import {TranslateMessageFormatCompiler} from 'ngx-translate-messageformat-compil
 import { AppComponent } from './app.component';
 import {ApiPrefixInterceptor} from '../interceptors/api-prefix.interceptor';
 import { ErrorHandlerInterceptor } from '../interceptors/error-handler.interceptor';
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { UserComponent } from './components/user/user.component';
 import { SharedModule} from './components/shared/shared.module';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
     UserComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +42,7 @@ import { SharedModule} from './components/shared/shared.module';
       }
     }),
     SimpleNotificationsModule.forRoot(),
-    SharedModule
+    SharedModule,
   ],
   providers: [
     {

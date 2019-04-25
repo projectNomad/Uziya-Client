@@ -22,9 +22,10 @@ export class LocalStorageGuard implements CanActivate {
 
     if (this.authService.isAuthenticated() && profile) {
       if (profile.groups[0].name === 'producer') {
+        this.router.navigate(['/admin']);
+      } else {
         this.router.navigate(['/']);
       }
-      this.router.navigate(['/']);
     }
     return true;
   }

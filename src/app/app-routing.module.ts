@@ -5,6 +5,7 @@ import {LocalStorageGuard} from './guards/local-storage.guard';
 
 const appRoutes: Routes = [
   { path: 'auth', loadChildren: './components/user/user.module#UserModule', canActivate: [LocalStorageGuard] },
+  { path: 'admin', loadChildren: './components/admin/admin.module#AdminModule' },
 ];
 
 @NgModule({
