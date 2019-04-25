@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import {LocalStorageGuard} from './guards/local-storage.guard';
+
 const appRoutes: Routes = [
-  { path: 'auth', loadChildren: './components/user/user.module#UserModule' },
+  { path: 'auth', loadChildren: './components/user/user.module#UserModule', canActivate: [LocalStorageGuard] },
 ];
 
 @NgModule({
