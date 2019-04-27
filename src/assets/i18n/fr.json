@@ -1,4 +1,11 @@
 {
+	"admin": {
+		"header": {
+			"logout": "Déconnexion",
+			"returnclient": "Retour au site",
+			"setting": "Préférence"
+		}
+	},
 	"footer": {
 		"menu1": {
 			"about": "À propos",
@@ -99,7 +106,6 @@
 				},
 				"password": {
 					"errors": {
-						"minword": "Mot de passe doit avoir au minimum",
 						"pattern": {
 							"message1": "Le mot de passe doit avoir au moins une lettre majuscule.",
 							"message2": "Le mot de passe doit avoir au moins une lettre minuscule.",

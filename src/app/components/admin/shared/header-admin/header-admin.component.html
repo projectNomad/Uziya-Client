@@ -1,0 +1,29 @@
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Uziya admin</a>
+<!--  <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search">-->
+  <ul class="navbar-nav px-5">
+    <li class="nav-item text-nowrap">
+      <div ngbDropdown>
+        <button class="btn btn-link" id="dropdownConfig" ngbDropdownToggle>
+          <i class="far fa-user-circle"></i>
+          {{user.first_name}}
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+          <button ngbDropdownItem>
+            <i class="fas fa-cog"></i>
+            {{ 'admin.header.setting' | translate }}
+          </button>
+          <button ngbDropdownItem>
+            <i class="fas fa-external-link-alt"></i>
+            {{ 'admin.header.returnclient' | translate }}
+          </button>
+          <div class="dropdown-divider"></div>
+          <button ngbDropdownItem (click)="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            {{ 'admin.header.logout' | translate }}
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>

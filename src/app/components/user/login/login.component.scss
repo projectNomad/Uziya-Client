@@ -1,0 +1,23 @@
+//@import "~bootstrap/sass/functions";
+//@import "~bootstrap/sass/variables";
+//@import "~bootstrap/sass/mixins";
+
+#bloc-login{
+  h2{ color: white; }
+
+  #bloc-login_infos{ padding-top: 5%; }
+  #bloc-login_form{ padding-top: 15%; }
+
+  .form-group{ margin-bottom: 30px; }
+
+  #group-link{ padding-top: 20px; }
+
+  .carousel{
+    text-align: center;
+
+    &-caption{
+      background-color: rgba(0, 0, 0, .5);
+    }
+  }
+}
+

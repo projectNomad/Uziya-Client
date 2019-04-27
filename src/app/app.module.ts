@@ -4,7 +4,6 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule, HttpClient, HTTP_INTERCEPTORS} from '@angular/common/http';
 
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {TranslateLoader, TranslateModule, TranslateCompiler} from '@ngx-translate/core';
@@ -12,34 +11,24 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateMessageFormatCompiler} from 'ngx-translate-messageformat-compiler';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/pages/login/login.component';
-import { LoginLayoutComponent} from './layouts/login-layout/login-layout.component';
-import { SignupComponent } from './components/pages/signup/signup.component';
-import { FooterComponent } from './components/share/footer/footer.component';
-import { RegisterActivationComponent } from './components/pages/register-activation/register-activation.component';
-import {ApiPrefixInterceptor} from '../interceptors/api-prefix.interceptor';
-import { ForgotPasswordComponent } from './components/pages/forgot-password/forgot-password.component';
-import { ResetPasswordComponent } from './components/pages/reset-password/reset-password.component';
-import { ErrorHandlerInterceptor } from '../interceptors/error-handler.interceptor';
+import {ApiPrefixInterceptor} from './interceptors/api-prefix.interceptor';
+import { ErrorHandlerInterceptor } from './interceptors/error-handler.interceptor';
+import { UserComponent } from './components/user/user.component';
+import { SharedModule} from './components/shared/shared.module';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginLayoutComponent,
-    LoginComponent,
-    SignupComponent,
-    FooterComponent,
-    RegisterActivationComponent,
-    ForgotPasswordComponent,
-    ResetPasswordComponent,
+    UserComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbCarouselModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
@@ -52,7 +41,8 @@ import { ErrorHandlerInterceptor } from '../interceptors/error-handler.intercept
         useClass: TranslateMessageFormatCompiler
       }
     }),
-    SimpleNotificationsModule.forRoot()
+    SimpleNotificationsModule.forRoot(),
+    SharedModule,
   ],
   providers: [
     {
