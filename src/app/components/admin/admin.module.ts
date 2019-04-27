@@ -5,8 +5,9 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule} from '../shared/shared.module';
 import { AdminLayoutComponent } from '../../layouts/admin-layout/admin-layout.component';
 import { HomeComponent } from './home/home.component';
-import { HeaderAdminComponent} from '../shared/header-admin/header-admin.component';
-import { MenuLeftComponent } from './menu-left/menu-left.component';
+import { HeaderAdminComponent} from './shared/header-admin/header-admin.component';
+import { MenuLeftComponent } from './shared/menu-left/menu-left.component';
+import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { MenuLeftComponent } from './menu-left/menu-left.component';
     CommonModule,
     AdminRoutingModule,
     SharedModule,
+    NgbDropdownModule,
   ]
 })
 export class AdminModule { }

@@ -60,4 +60,22 @@ export class AuthService extends GlobalService {
   getProfile() {
     return JSON.parse(localStorage.getItem(environment.cookiesName.profile));
   }
+
+  isAdmin() {
+    const profile = this.getProfile();
+    let result = false;
+
+    if (profile && this.isAuthenticated()) {
+      profile.groups.find(group => {
+        result = group.name === environment.groups.producer;
+      });
+    }
+
+    return result;
+  }
+
+  logout() {
+    localStorage.removeItem(environment.cookiesName.token);
+    localStorage.removeItem(environment.cookiesName.profile);
+  }
 }
