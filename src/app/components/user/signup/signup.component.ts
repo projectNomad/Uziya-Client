@@ -7,7 +7,7 @@ import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 import { UserService } from '../../../services/user.service';
 import {environment} from '../../../../environments/environment';
-import { MustMatch } from '../../../../_helpers/must-match.validator';
+import { MustMatch } from '../../../_helpers/must-match.validator';
 
 @Component({
   selector: 'app-signup',

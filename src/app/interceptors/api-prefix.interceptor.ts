@@ -11,8 +11,8 @@ import {
 import { Observable } from 'rxjs';
 
 /** Environment Configuration */
-import { environment} from '../environments/environment';
-import {I18nService} from '../app/services/core/i18n.service';
+import { environment} from '../../environments/environment';
+import {I18nService} from '../services/core/i18n.service';
 
 /**
  * Http request interceptor to prefix a request with `environment.serverUrl`.

@@ -11,8 +11,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateMessageFormatCompiler} from 'ngx-translate-messageformat-compiler';
 
 import { AppComponent } from './app.component';
-import {ApiPrefixInterceptor} from '../interceptors/api-prefix.interceptor';
-import { ErrorHandlerInterceptor } from '../interceptors/error-handler.interceptor';
+import {ApiPrefixInterceptor} from './interceptors/api-prefix.interceptor';
+import { ErrorHandlerInterceptor } from './interceptors/error-handler.interceptor';
 import { UserComponent } from './components/user/user.component';
 import { SharedModule} from './components/shared/shared.module';
 import { AdminComponent } from './components/admin/admin.component';

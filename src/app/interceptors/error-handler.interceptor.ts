@@ -8,12 +8,12 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 /** Environment Configuration */
-import {environment} from '../environments/environment';
+import {environment} from '../../environments/environment';
 /** rxjs Imports */
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 /** Custom Services */
-import { Logger} from '../app/services/core/logger.service';
+import { Logger} from '../services/core/logger.service';
 
 import {NotificationsService} from 'angular2-notifications';
 

@@ -5,7 +5,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { NotificationsService } from 'angular2-notifications';
 
 import { AuthService } from '../../../services/auth.service';
-import { MustMatch } from '../../../../_helpers/must-match.validator';
+import { MustMatch } from '../../../_helpers/must-match.validator';
 
 
 @Component({
