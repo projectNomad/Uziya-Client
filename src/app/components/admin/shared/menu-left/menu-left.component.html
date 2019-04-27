@@ -2,15 +2,15 @@
   <div class="sidebar-sticky">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" routerLink="/admin">
+        <a class="nav-link active" routerLink="/admin" [class]>
           <i class="fa fa-home"></i>
-          Dashboard <span class="sr-only">(current)</span>
+          {{ 'admin.menuLeft.dashboard' | translate }}
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" routerLink="/admin/movies">
           <i class="fa fa-file"></i>
-          Orders
+          {{ 'admin.menuLeft.movies' | translate }}
         </a>
       </li>
       <li class="nav-item">

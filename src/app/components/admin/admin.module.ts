@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderAdminComponent} from './shared/header-admin/header-admin.component';
 import { MenuLeftComponent } from './shared/menu-left/menu-left.component';
 import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import { MoviesComponent } from './movies/movies.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
     AdminLayoutComponent,
     HomeComponent,
     HeaderAdminComponent,
-    MenuLeftComponent
+    MenuLeftComponent,
+    MoviesComponent
   ],
   imports: [
     CommonModule,

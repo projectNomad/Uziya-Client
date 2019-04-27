@@ -9,9 +9,17 @@
           {{user.first_name}}
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownConfig">
-          <button ngbDropdownItem>{{ 'admin.header.returnclient' | translate }}</button>
-          <button ngbDropdownItem>{{ 'admin.header.setting' | translate }}</button>
+          <button ngbDropdownItem>
+            <i class="fas fa-cog"></i>
+            {{ 'admin.header.setting' | translate }}
+          </button>
+          <button ngbDropdownItem>
+            <i class="fas fa-external-link-alt"></i>
+            {{ 'admin.header.returnclient' | translate }}
+          </button>
+          <div class="dropdown-divider"></div>
           <button ngbDropdownItem (click)="logout()">
+            <i class="fas fa-sign-out-alt"></i>
             {{ 'admin.header.logout' | translate }}
           </button>
         </div>
