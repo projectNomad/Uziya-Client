@@ -8,6 +8,9 @@ export const environment = {
   apiProvider: '',
   apiVersion: '',
   serverUrl: '',
+  video: {
+    minimumSize: 783504130
+  },
   paths_api: {
     users: '/users',
     profile: '/profile',
