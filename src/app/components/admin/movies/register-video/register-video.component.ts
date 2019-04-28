@@ -37,7 +37,6 @@ export class RegisterVideoComponent implements OnInit {
     private config: NgSelectConfig
   ) {
     this.config.notFoundText = _('admin.movies.uploadVideo.videoNotFound');
-
     this.options = {
       concurrency: 1,
       // allowedContentTypes: ['mp4'],
@@ -66,7 +65,6 @@ export class RegisterVideoComponent implements OnInit {
   }
 
   onUploadOutput(output: UploadOutput): void {
-
     if (output.type === 'allAddedToQueue') {
       // if you want to start the upload directly
     } else if (output.type === 'addedToQueue' && typeof output.file !== 'undefined') {
@@ -92,7 +90,6 @@ export class RegisterVideoComponent implements OnInit {
       if (output.file.response.hasOwnProperty('file') &&
         typeof output.file.response.file === 'object' ||
         output.file.responseStatus !== 201) {
-
         this.errors.push(output.file.response.message);
         this.files = [];
         return;

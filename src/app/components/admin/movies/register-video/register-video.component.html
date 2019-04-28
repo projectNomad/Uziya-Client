@@ -9,7 +9,6 @@
   <div class="row" *ngIf="!showFormVideo">
     <div class="col-md-12">
       <div class="upload-box">
-
         <div class="upload-box__content">
           <div class="upload-box__content__drop-container" ngFileDrop [options]="options"
                (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
@@ -77,7 +76,6 @@
 
   <div class="row" *ngIf="showFormVideo">
     <form [formGroup]="form2AddVideoForm" (ngSubmit)="onSubmit()">
-
       <div>
         <input type="hidden" formControlName="id">
 
