@@ -1,31 +1,25 @@
-<app-header-page></app-header-page>
+<app-header-page titlePage="{{ 'admin.menuLeft.movies' | translate }}" [breadcrumb]="breadcrumb"></app-header-page>
+
 <div class="container">
   <div class="row">
-    <h1>Envoyer votre projet</h1>
+    <h1>{{ 'admin.movies.uploadVideo.sendYourProject' | translate }}</h1>
   </div>
   <div class="row">
   </div>
   <div class="row" *ngIf="!showFormVideo">
     <div class="col-md-12">
       <div class="upload-box">
-
-        <div class="upload-box__header">
-          <div class="upload-box__header__title">
-            <h2>Envoyer votre projet</h2>
-          </div>
-        </div>
-
         <div class="upload-box__content">
           <div class="upload-box__content__drop-container" ngFileDrop [options]="options"
                (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
             <div class="middle-info">
-              <div class="back-text">Déposé votre projet</div>
+              <div class="back-text">{{ 'admin.movies.uploadVideo.deposeProject' | translate }}</div>
 
               <input type="file" ngFileSelect [options]="options" #selectVideo
                      (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput"
                      multiple accept="video/mp4, video/webm">
 
-              <button (click)="selectVideo.click()">Selectionner votre projet</button>
+              <button (click)="selectVideo.click()">{{ 'admin.movies.uploadVideo.selectProject' | translate }}</button>
             </div>
           </div>
           <div class="upload-box__content__items" *ngFor="let f of files; let i = index;">
@@ -50,8 +44,8 @@
               <div class="upload-box__content__items__content__progress-text-content">
                 <span class="progress-text" [class.is-done]="f?.progress?.data?.percentage === 100">
                   <span>{{ f.progress?.data?.percentage }}% </span>
-                  <span *ngIf="f.progress?.data?.percentage !== 100">Uploading...</span>
-                  <span *ngIf="f.progress?.data?.percentage === 100">Done</span>
+                  <span *ngIf="f.progress?.data?.percentage !== 100">{{ 'admin.movies.uploadVideo.uploading' | translate }}</span>
+                  <span *ngIf="f.progress?.data?.percentage === 100">{{ 'admin.movies.uploadVideo.done' | translate }}</span>
                 </span>
                 <span class="speed-and-eta-text" *ngIf="f.progress?.data?.percentage !== 0 && f.progress?.data?.percentage !== 100">
                   <span>{{ f.progress?.data?.speedHuman }} </span>
@@ -64,9 +58,9 @@
 
         <div class="row">
           <div class="col-md-3">
-            <button class="btn btn-primary" (click)="startUpload()">Envoyer</button>
+            <button class="btn btn-primary" (click)="startUpload()">{{ 'admin.movies.uploadVideo.send' | translate }}</button>
             &nbsp;&nbsp;
-            <button class="btn btn-danger" *ngIf="files.length > 0" (click)="removeAllFiles()">Supprimer tout</button>
+            <button class="btn btn-danger" *ngIf="files.length > 0" (click)="removeAllFiles()">{{ 'admin.movies.uploadVideo.deleteAll' | translate }}</button>
           </div>
           <div class="col-md-9">
             <div class="text-justify text-danger"
@@ -82,16 +76,11 @@
 
   <div class="row" *ngIf="showFormVideo">
     <form [formGroup]="form2AddVideoForm" (ngSubmit)="onSubmit()">
-
-      <section>
-        <h3>Enregistrer votre vidéo</h3>
-      </section>
-
       <div>
         <input type="hidden" formControlName="id">
 
         <div class="form-group">
-          <label for="title">Title</label>
+          <label for="title">{{ 'admin.movies.uploadVideo.tilte' | translate }}</label>
           <input type="text"
                  id="title"
                  class="form-control"
@@ -101,12 +90,11 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" formControlName="active" id="active-true" value="1">
-            <label class="form-check-label" for="active-true">Activer</label>
+            <label class="form-check-label" for="active-true">{{ 'admin.movies.uploadVideo.activate' | translate }}</label>
           </div>
-
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" formControlName="active" id="active-false" value="0">
-            <label class="form-check-label" for="active-false">Desactiver</label>
+            <label class="form-check-label" for="active-false">{{ 'admin.movies.uploadVideo.deactivate' | translate }}</label>
           </div>
         </div>
 
@@ -118,15 +106,14 @@
         </div>
 
         <div class="form-group">
-          <label for="description">Description</label>
+          <label for="description">{{ 'admin.movies.uploadVideo.description' | translate }}</label>
           <textarea name="" id="description" cols="30" rows="10" formControlName="description"
                     class="form-control" id="description"></textarea>
         </div>
       </div>
 
       <button class="btn btn-primary" type="submit"
-              [disabled]="form2AddVideoForm.invalid">Modifier</button>
-
+              [disabled]="form2AddVideoForm.invalid">{{ 'admin.movies.uploadVideo.save' | translate }}</button>
     </form>
   </div>
 </div>

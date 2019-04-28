@@ -1,0 +1,18 @@
+#bloc-signup h2 {
+  color: white; }
+#bloc-signup #bloc-signup_infos {
+  padding-top: 8%; }
+#bloc-signup #bloc-signup_form {
+  padding-top: 5%; }
+#bloc-signup .form-group {
+  margin-bottom: 30px; }
+#bloc-signup #group-link {
+  padding-top: 20px; }
+#bloc-signup .carousel {
+  text-align: center; }
+  #bloc-signup .carousel .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); }
+#bloc-signup .carousel-inner:focus {
+  box-shadow: none; }
+
+/*# sourceMappingURL=signup.component.css.map */

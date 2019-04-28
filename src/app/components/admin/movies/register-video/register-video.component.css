@@ -1,0 +1,42 @@
+.upload-box__content {
+  border: 2px solid #eaeaea;
+  margin-bottom: 20px; }
+  .upload-box__content__drop-container {
+    text-align: center;
+    border: 2px dashed gray;
+    width: 100%;
+    height: 250px; }
+    .upload-box__content__drop-container .middle-info {
+      display: inline-block;
+      margin-top: 5%; }
+    .upload-box__content__drop-container input {
+      display: none; }
+    .upload-box__content__drop-container .back-text {
+      color: #eaeaea;
+      font-size: 2em; }
+  .upload-box__content__items {
+    padding: 0 20px 0 20px;
+    border: 1px solid #eaeaea; }
+    .upload-box__content__items__content__filename {
+      width: 100%;
+      height: 40px; }
+      .upload-box__content__items__content__filename .filename-left {
+        width: 98%; }
+      .upload-box__content__items__content__filename span {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+    .upload-box__content__items__content__progress-content {
+      padding: 0 30px 0 30px; }
+      .upload-box__content__items__content__progress-content .progress {
+        height: 3px; }
+    .upload-box__content__items__content__progress-text-content .progress-text, .upload-box__content__items__content__progress-text-content .speed-and-eta-text {
+      display: inline-block; }
+    .upload-box__content__items__content__progress-text-content .progress-text {
+      color: red;
+      width: 81%; }
+    .upload-box__content__items__content__progress-text-content .speed-and-eta-text {
+      color: green; }
+
+/*# sourceMappingURL=register-video.component.css.map */

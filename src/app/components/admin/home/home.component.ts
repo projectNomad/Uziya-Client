@@ -9,8 +9,16 @@ import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbDropdownConfig]
 })
 export class HomeComponent implements OnInit {
+  breadcrumb: any[];
 
-  constructor() {}
+  constructor() {
+    this.breadcrumb = [
+      {
+        title: 'home',
+        link: null
+      }
+    ];
+  }
 
   ngOnInit() {
   }

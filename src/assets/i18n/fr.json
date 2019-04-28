@@ -4,6 +4,31 @@
 			"logout": "Déconnexion",
 			"returnclient": "Retour au site",
 			"setting": "Préférence"
+		},
+		"menuLeft": {
+			"dashboard": "Tableau de bord",
+			"movies": "Videos"
+		},
+		"movies": {
+			"button": {
+				"uploadMovie": "Envoyer vidéo"
+			},
+			"uploadVideo": {
+				"activate": "Activer",
+				"deactivate": "Désactiver",
+				"deleteAll": "Supprimer tout",
+				"deposeProject": "Déposer votre projet",
+				"description": "Description",
+				"done": "Fait",
+				"save": "Enregistrer",
+				"selectProject": "Selectionner votre projet",
+				"send": "Envoyer",
+				"sendYourProject": "Envoyer votre projet",
+				"tilte": "Titre",
+				"uploading": "Télécharger...",
+				"videoNotFound": "Video genre not found",
+				"videoSave": "Votre vidéo a été enregistrée"
+			}
 		}
 	},
 	"footer": {
