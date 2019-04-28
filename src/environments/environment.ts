@@ -3,8 +3,44 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseApiUrl: 'http://localhost:8000', // For connecting to server running elsewhere update the base API URL
+  apiProvider: '',
+  apiVersion: '',
+  serverUrl: '',
+  video: {
+    minimumSize: 783504130
+  },
+  paths_api: {
+    users: '/users',
+    profile: '/profile',
+    activation: '/users/activate',
+    authentication: '/authentication',
+    reset_password: '/reset_password',
+    change_password: '/change_password',
+    video: {
+      create_list: '/videos/?param=user',
+      update: '/videos/',
+    },
+    genre: {
+      list: '/videos/genres',
+      delete: '/videos/genres/delete'
+    }
+  },
+  groups: {
+    viewer: 'viewer',
+    producer: 'producer'
+  },
+  cookiesName: {
+    token: 'uziyaToken',
+    profile: 'uziyaCredentials',
+  },
+  defaultLanguage: 'fr',
+  supportedLanguages: ['en', 'fr'],
 };
+
+// Server URL
+environment.serverUrl = `${environment.baseApiUrl}${environment.apiProvider}${environment.apiVersion}`;
 
 /*
  * For easier debugging in development mode, you can import the following file

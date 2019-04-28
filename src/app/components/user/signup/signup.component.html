@@ -1,0 +1,136 @@
+<div class="row" id="bloc-signup">
+  <div class="col-lg-4 col-sm-9" id="bloc-signup_form">
+    <h2>{{ 'register.user.title' | translate }}</h2>
+    <hr>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label>{{ 'register.user.form.group.choicetitle' | translate }}</label><br>
+        <div class="radio-inline">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="group" id="inlineRadio1" value="viewer">
+            <label class="form-check-label" for="inlineRadio1">{{ 'register.user.form.group.choicemovie' | translate }}</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="group" id="inlineRadio2" value="producer">
+            <label class="form-check-label" for="inlineRadio2">{{ 'register.user.form.group.choiceproject' | translate }}</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="text" placeholder="{{ 'register.user.form.firstname.label' | translate }}"
+               [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }"
+               class="form-control" formControlName="firstname">
+        <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+          <div *ngIf="f.firstname.errors.required">{{ 'register.user.form.firstname.errors.required' | translate }}</div>
+          <div *ngIf="f.firstname.getError('apiError')">
+            <ul class="list-inline">
+              <li *ngFor="let errorMessage of f.firstname.getError('apiError')">
+                {{ errorMessage}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="text" placeholder="{{ 'register.user.form.lastname.label' | translate }}"
+               [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"
+               class="form-control" formControlName="lastname">
+      </div>
+
+      <div class="form-group">
+        <input type="email" placeholder="{{ 'register.user.form.email.label' | translate }}"
+               [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+               class="form-control"
+               formControlName="email">
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">{{ 'register.user.form.email.errors.required' | translate }}</div>
+          <div *ngIf="f.email.errors.email">{{ 'register.user.form.email.errors.invalid' | translate }}</div>
+          <div *ngIf="f.email.getError('apiError')">
+            <ul class="list-inline">
+              <li *ngFor="let errorMessage of f.email.getError('apiError')">
+                {{ errorMessage}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="password" placeholder="{{ 'register.user.form.password.label' | translate }}"
+               class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+               formControlName="password">
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">{{ 'register.user.form.password.errors.required' | translate }}</div>
+          <div *ngIf="f.password.errors.pattern">
+            <ul>
+              <li>{{ 'register.user.form.password.errors.pattern.message1' | translate }}</li>
+              <li>{{ 'register.user.form.password.errors.pattern.message2' | translate }}</li>
+              <li>{{ 'register.user.form.password.errors.pattern.message3' | translate }}</li>
+              <li>{{ 'register.user.form.password.errors.pattern.message4' | translate }}</li>
+              <li>{{ 'register.user.form.password.errors.pattern.message5' | translate }}</li>
+            </ul>
+          </div>
+          <div *ngIf="f.password.getError('apiError')">
+            <ul class="list-inline">
+              <li *ngFor="let errorMessage of f.password.getError('apiError')">
+                {{ errorMessage}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input formControlName="confirmation" placeholder="{{ 'register.user.form.confirmation.label' | translate }}"
+               class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmation.errors }" type="password">
+        <div *ngIf="submitted && f.confirmation.errors" class="invalid-feedback">
+          <div *ngIf="f.confirmation.errors.mustMatch">
+            {{ 'register.user.form.confirmation.errors.mustmatch' | translate }}
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="btn-submit-save-user"
+              type="submit">{{ 'register.user.form.submit' | translate }}</button>
+      <div>
+        {{ 'register.user.message.login' | translate }}
+        <a routerLink="/auth">{{ 'register.user.message.linklogin' | translate }}</a>
+      </div>
+    </form>
+  </div>
+  <div class="col-lg-8 col-sm-12" id="bloc-signup_infos">
+    <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide>
+        <img [src]="images[0]" alt="Random first slide" width="80%">
+        <div class="carousel-caption">
+          <h3>Partager vos projets vidéo</h3>
+          <p><b>Uziya</b> est une plateforme de partage de films indépendants, amateurs ou encore web serie.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img [src]="images[1]" alt="Random second slide" width="80%">
+        <div class="carousel-caption">
+          <h3>Notre Objectif</h3>
+          <p>
+            Est d'aider les amateurs et/ou professionnels du secteur de l'audio-visuel
+            de présenter à notre communauté leurs projets.
+          </p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img [src]="images[2]" alt="Random third slide" width="80%">
+        <div class="carousel-caption">
+          <h3>Objectif secondaire</h3>
+          <p>
+            Permettre aux artistes d'avoir une meilleure visibilité et un meilleur retour de
+            la communauté sur leur travaille.
+          </p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>

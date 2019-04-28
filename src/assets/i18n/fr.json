@@ -1,0 +1,155 @@
+{
+	"admin": {
+		"header": {
+			"logout": "Déconnexion",
+			"returnclient": "Retour au site",
+			"setting": "Préférence"
+		},
+		"menuLeft": {
+			"dashboard": "Tableau de bord",
+			"movies": "Videos"
+		},
+		"movies": {
+			"button": {
+				"uploadMovie": "Envoyer vidéo"
+			},
+			"uploadVideo": {
+				"activate": "Activer",
+				"deactivate": "Désactiver",
+				"deleteAll": "Supprimer tout",
+				"deposeProject": "Déposer votre projet",
+				"description": "Description",
+				"done": "Fait",
+				"save": "Enregistrer",
+				"selectProject": "Selectionner votre projet",
+				"send": "Envoyer",
+				"sendYourProject": "Envoyer votre projet",
+				"tilte": "Titre",
+				"uploading": "Télécharger...",
+				"videoNotFound": "Video genre not found",
+				"videoSave": "Votre vidéo a été enregistrée"
+			}
+		}
+	},
+	"footer": {
+		"menu1": {
+			"about": "À propos",
+			"contactus": "Contactez-nous"
+		},
+		"reserved": "© Uziya, 2019 - tous droits réservés"
+	},
+	"forgot": {
+		"password": {
+			"link": "Créer un compte.",
+			"message": "Vous n'avez pas de compte?",
+			"submit": "Envoyer",
+			"title": "Réinitialiser votre mot de passe"
+		},
+		"success": {
+			"message": "Un courriel de vérification vient d\\'être envoyé! Vérifie tes courriels pour réinitialiser ton mot de passe.",
+			"title": "Votre compte a ete retrouve"
+		}
+	},
+	"form": {
+		"resetPassword": {
+			"confirmPassword": {
+				"label": "Confirmer votre mot de passe"
+			},
+			"newPassword": {
+				"label": "Nouveau mot de passe"
+			},
+			"title": "Réinitialiser votre mot de passe"
+		}
+	},
+	"login": {
+		"createaccount": "Créer un compte",
+		"forgotpassword": "Mot de passe oublié",
+		"form": {
+			"email": {
+				"errors": {
+					"invalid": "Email invalide",
+					"required": "Email requis"
+				},
+				"placeholder": "Email"
+			},
+			"password": {
+				"errors": {
+					"required": "Mot de passe requis"
+				},
+				"placeholder": "Mot de passe"
+			},
+			"submit": "Connexion"
+		},
+		"infos": {
+			"title": "Partager vos projets vidéos"
+		},
+		"title": "Connectez-vous"
+	},
+	"register": {
+		"user": {
+			"activate": {
+				"link": {
+					"login": "Connectez-vous"
+				},
+				"notwork": {
+					"message": "Vérifiez que votre compte n'a pas déjà été activé, si vous avez de la difficulté, merci contacter l'équipe administrative.",
+					"title": "Votre compte n'a pas pu être activé"
+				},
+				"work": {
+					"message": "Fellicitation! Vous pouvez maintenant vous connectez à notre plateforme.",
+					"title": "Votre compte a été activé."
+				}
+			},
+			"form": {
+				"confirmation": {
+					"errors": {
+						"mustmatch": "Vos mots de passe ne sont pas identique"
+					},
+					"label": "Confirmation mot de passe"
+				},
+				"email": {
+					"errors": {
+						"invalid": "Email invalide.",
+						"required": "Email requis.",
+						"userNotExist": "Cet utilisateur n'existe pas"
+					},
+					"label": "Email"
+				},
+				"firstname": {
+					"errors": {
+						"required": "Prénom requis"
+					},
+					"label": "Prénom"
+				},
+				"group": {
+					"choicemovie": "Je veux voir des projets",
+					"choiceproject": "Je veux proposer des projets",
+					"choicetitle": "Qui êtes vous?"
+				},
+				"lastname": {
+					"label": "Nom"
+				},
+				"password": {
+					"errors": {
+						"pattern": {
+							"message1": "Le mot de passe doit avoir au moins une lettre majuscule.",
+							"message2": "Le mot de passe doit avoir au moins une lettre minuscule.",
+							"message3": "Le mot de passe doit avoir au moins un chiffre.",
+							"message4": "Le mot de passe doit contenir au moins un de ces caractères spéciaux (!, @, #, $, %, ^, &).",
+							"message5": "Le mot de passe doit avoir au moins 8 caractéres."
+						},
+						"required": "mot de passe requis"
+					},
+					"label": "Mot de passe"
+				},
+				"submit": "Envoyer",
+				"success": "Féllicitation, vous venez de vous enregistrer."
+			},
+			"message": {
+				"linklogin": "Connectez-vous",
+				"login": "Avez-vous un compte?"
+			},
+			"title": "Créer un compte"
+		}
+	}
+}

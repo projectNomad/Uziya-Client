@@ -1,0 +1,16 @@
+<nav class="mt-3" aria-label="breadcrumb" *ngIf="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" *ngFor="let elt of breadcrumb">
+      <a *ngIf="elt.link" href="{{elt?.link}}">{{elt?.title}}</a>
+      <span *ngIf="elt.link === null">{{elt?.title}}</span>
+    </li>
+  </ol>
+</nav>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">{{ titlePage }}</h1>
+  <div class="btn-toolbar mb-2 mb-md-0" *ngIf="buttonsEnd">
+    <div class="btn-group mr-2" *ngFor="let btn of buttonsEnd">
+      <button class="btn btn-sm btn-outline-secondary" routerLink="{{btn.link}}">{{btn.title}}</button>
+    </div>
+  </div>
+</div>
