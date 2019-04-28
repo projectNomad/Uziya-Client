@@ -9,7 +9,10 @@
           {{user.first_name}}
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownConfig">
-          <button ngbDropdownItem>
+          <button ngbDropdownItem routerLink="/admin/movies/upload">
+            <i class="fas fa-upload"></i>
+            {{ 'admin.header.uploadVideo' | translate }}
+          </button><button ngbDropdownItem>
             <i class="fas fa-cog"></i>
             {{ 'admin.header.setting' | translate }}
           </button>

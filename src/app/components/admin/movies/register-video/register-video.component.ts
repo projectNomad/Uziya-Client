@@ -26,8 +26,9 @@ export class RegisterVideoComponent implements OnInit {
   errors: string[];
   form2AddVideoForm: FormGroup;
   videos: object[];
-  showFormVideo: boolean
+  showFormVideo: boolean;
   genres$: Observable<Genre[]>;
+  breadcrumb: any[];
 
   constructor(
     private form2AddVideoBuilder: FormBuilder,
@@ -48,6 +49,20 @@ export class RegisterVideoComponent implements OnInit {
     this.errors = [];
     this.videos = [];
     this.showFormVideo = false;
+    this.breadcrumb = [
+      {
+        title: 'home',
+        link: '/admin'
+      },
+      {
+        title: 'movies',
+        link: '/admin/movies'
+      },
+      {
+        title: 'upload',
+        link: null
+      },
+    ];
   }
 
   onUploadOutput(output: UploadOutput): void {
