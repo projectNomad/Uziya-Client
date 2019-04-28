@@ -7,6 +7,7 @@ import {MoviesService} from '../../../../services/movies.service';
 import {humanizeBytes, UploaderOptions, UploadFile, UploadInput, UploadOutput, UploadStatus} from 'ngx-uploader';
 import {NgSelectConfig} from '@ng-select/ng-select';
 import {NotificationsService} from 'angular2-notifications';
+import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 import {Genre} from '../../../../models/video.model';
 
@@ -25,8 +26,9 @@ export class RegisterVideoComponent implements OnInit {
   errors: string[];
   form2AddVideoForm: FormGroup;
   videos: object[];
-  showFormVideo: boolean
+  showFormVideo: boolean;
   genres$: Observable<Genre[]>;
+  breadcrumb: any[];
 
   constructor(
     private form2AddVideoBuilder: FormBuilder,
@@ -34,8 +36,7 @@ export class RegisterVideoComponent implements OnInit {
     private notificationService: NotificationsService,
     private config: NgSelectConfig
   ) {
-    this.config.notFoundText = 'Video genre not found';
-
+    this.config.notFoundText = _('admin.movies.uploadVideo.videoNotFound');
     this.options = {
       concurrency: 1,
       // allowedContentTypes: ['mp4'],
@@ -45,10 +46,24 @@ export class RegisterVideoComponent implements OnInit {
     this.uploadInput = new EventEmitter<UploadInput>(); // input events, we use this to emit data to ngx-uploader
     this.humanizeBytes = humanizeBytes;
     this.errors = [];
-
     this.videos = [];
     this.showFormVideo = false;
+    this.breadcrumb = [
+      {
+        title: 'home',
+        link: '/admin'
+      },
+      {
+        title: 'movies',
+        link: '/admin/movies'
+      },
+      {
+        title: 'upload',
+        link: null
+      },
+    ];
   }
+
   onUploadOutput(output: UploadOutput): void {
     if (output.type === 'allAddedToQueue') {
       // if you want to start the upload directly
@@ -56,7 +71,9 @@ export class RegisterVideoComponent implements OnInit {
       this.errors = [];
       this.files.push(output.file);
     } else if (output.type === 'uploading' && typeof output.file !== 'undefined') {
-      const index = this.files.findIndex(file => typeof output.file !== 'undefined' && file.id === output.file.id);
+      const index = this.files.findIndex(
+        file => typeof output.file !== 'undefined' && file.id === output.file.id
+      );
       this.files[index] = output.file;
     } else if (output.type === 'cancelled' || output.type === 'removed') {
       this.files = this.files.filter((file: UploadFile) => file !== output.file);
@@ -73,8 +90,6 @@ export class RegisterVideoComponent implements OnInit {
       if (output.file.response.hasOwnProperty('file') &&
         typeof output.file.response.file === 'object' ||
         output.file.responseStatus !== 201) {
-
-        this.showFormVideo = false;
         this.errors.push(output.file.response.message);
         this.files = [];
         return;
@@ -104,16 +119,15 @@ export class RegisterVideoComponent implements OnInit {
   }
 
   startUpload(): void {
-    const event = this.videoService.createNewVideo();
-    this.uploadInput.emit(event);
+    this.uploadInput.emit(this.videoService.createNewVideo());
   }
 
   cancelUpload(id: string): void {
-    this.uploadInput.emit({ type: 'cancel', id: id });
+    this.uploadInput.emit({ type: 'cancel', id });
   }
 
   removeFile(id: string): void {
-    this.uploadInput.emit({ type: 'remove', id: id });
+    this.uploadInput.emit({ type: 'remove', id });
   }
 
   removeAllFiles(): void {
@@ -125,24 +139,20 @@ export class RegisterVideoComponent implements OnInit {
     const video = {
       id: this.form2AddVideoForm.get('id').value,
       title: this.form2AddVideoForm.get('title').value,
-      is_actived: (this.form2AddVideoForm.get('active').value === '1') ?
-        new Date : new Date('1960-01-01'),
+      is_actived: (this.form2AddVideoForm.get('active').value === '1') ? new Date() : new Date('1960-01-01'),
       description: this.form2AddVideoForm.get('description').value,
       genres: this.form2AddVideoForm.get('genres').value,
     };
 
-    console.log(video.genres)
-
     this.videoService.updateVideo(video, video.id).subscribe(
       value => {
-
       },
       error => {
         this.showFormVideo = true;
       },
       () => {
         this.showFormVideo = false;
-        this.notificationService.success(null, 'Votre vidéo a été enregistrée');
+        this.notificationService.success(null, _('admin.movies.uploadVideo.videoSave'));
         this.videos = [];
       }
     );

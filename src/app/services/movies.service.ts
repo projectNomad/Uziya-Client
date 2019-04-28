@@ -21,7 +21,7 @@ export class MoviesService {
     return  {
       type: 'uploadAll',
       url: environment.baseApiUrl + '/' + currentLangage + environment.paths_api.video.create_list,
-      headers: { Authorization: 'Token ' + localStorage.getItem(environment.cookiesName.token) },
+      headers: { Authorization: 'token ' + localStorage.getItem(environment.cookiesName.token) },
       method: 'POST'
       // data: { foo: 'bar' }
     };

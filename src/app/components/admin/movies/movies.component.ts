@@ -6,8 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
+  buttonsEnd: any[];
+  breadcrumb: any[];
 
-  constructor() { }
+  constructor() {
+    this.breadcrumb = [
+      {
+        title: 'home',
+        link: '/admin'
+      },
+      {
+        title: 'movies',
+        link: null
+      },
+    ];
+    this.buttonsEnd = [
+      {
+        title: 'upload video',
+        link: '/admin/movies/upload'
+      },
+    ];
+  }
 
   ngOnInit() {
   }
