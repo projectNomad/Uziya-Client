@@ -5,13 +5,14 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent} from './footer/footer.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
     TranslateModule,
     RouterModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     CommonModule,

@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {TranslateLoader, TranslateModule, TranslateCompiler} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateMessageFormatCompiler} from 'ngx-translate-messageformat-compiler';
+import {DataTablesModule} from 'angular-datatables';
 
 import { AppComponent } from './app.component';
 import {ApiPrefixInterceptor} from './interceptors/api-prefix.interceptor';

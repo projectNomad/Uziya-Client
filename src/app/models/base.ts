@@ -1,3 +1,5 @@
+import {Genre} from './video.model';
+
 /**
  * Base model with default methods for all the application's models
  */
@@ -21,4 +23,11 @@ export class Base {
     }
     return props;
   }
+}
+
+export class PagedResults<T> {
+  count?: any;
+  next?: any;
+  previous?: any;
+  results?: any;
 }

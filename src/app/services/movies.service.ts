@@ -2,8 +2,11 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
+
 import {UploadInput} from 'ngx-uploader';
-import {PagedResults, Video} from '../models/video.model';
+
+import {Video, Genre} from '../models/video.model';
+import {PagedResults} from '../models/base';
 import {I18nService} from './core/i18n.service';
 
 @Injectable({
@@ -33,9 +36,9 @@ export class MoviesService {
       video);
   }
 
-  public getListVideos() {
+  public getListVideos(): Observable<PagedResults<Video>> {
 
-    return this.httpClient.get<any>(
+    return this.httpClient.get<PagedResults<Video>>(
       environment.paths_api.video.create_list,
     );
   }
@@ -56,9 +59,9 @@ export class MoviesService {
   /**
    * Services Genre
    */
-  public getListGenres(): Observable<PagedResults<Video>> {
+  public getListGenres(): Observable<PagedResults<Genre>> {
 
-    return this.httpClient.get<PagedResults<Video>>(
+    return this.httpClient.get<PagedResults<Genre>>(
       environment.paths_api.genre.list
     );
   }
