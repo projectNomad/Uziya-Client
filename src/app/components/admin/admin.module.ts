@@ -14,7 +14,7 @@ import { MenuLeftComponent } from './shared/menu-left/menu-left.component';
 import { MoviesComponent } from './movies/movies.component';
 import { RegisterVideoComponent } from './movies/register-video/register-video.component';
 import { HeaderPageComponent } from './shared/header-page/header-page.component';
-
+import {DataTablesModule} from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import { HeaderPageComponent } from './shared/header-page/header-page.component'
     SharedModule,
     NgbDropdownModule,
     NgxUploaderModule,
-    NgSelectModule
+    NgSelectModule,
+    DataTablesModule
   ]
 })
 export class AdminModule { }
