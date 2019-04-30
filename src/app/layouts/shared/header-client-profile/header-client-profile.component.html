@@ -1,0 +1,37 @@
+<ul class="navbar-nav px-5">
+  <li class="nav-item text-nowrap">
+    <div ngbDropdown>
+      <button class="btn btn-link" id="dropdownConfig" ngbDropdownToggle>
+        <i class="fas fa-user-circle"></i>
+        {{user.first_name}}
+      </button>
+      <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+        <button ngbDropdownItem routerLink="/auth/profile/{{user.id}}">
+          <i class="fas fa-user"></i>
+          {{ 'layout.header.profileUser' | translate }}
+        </button>
+        <button ngbDropdownItem routerLink="/admin/videos/upload" *ngIf="isAdmin">
+          <i class="fas fa-upload"></i>
+          {{ 'layout.header.uploadVideo' | translate }}
+        </button>
+        <button ngbDropdownItem>
+          <i class="fas fa-cog"></i>
+          {{ 'layout.header.setting' | translate }}
+        </button>
+        <button ngbDropdownItem routerLink="/">
+          <i class="fas fa-external-link-alt"></i>
+          {{ 'layout.header.returnclient' | translate }}
+        </button>
+        <div class="dropdown-divider"></div>
+        <button ngbDropdownItem *ngIf="isAdmin" routerLink="/admin">
+          <i class="fas fa-sign-out-alt"></i>
+          {{ 'layout.header.returnAdmin' | translate }}
+        </button>
+        <button ngbDropdownItem (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i>
+          {{ 'layout.header.logout' | translate }}
+        </button>
+      </div>
+    </div>
+  </li>
+</ul>

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NgxUploaderModule } from 'ngx-uploader';
 import { NgSelectModule } from '@ng-select/ng-select';
-import {NgbDropdownModule, NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule} from '../shared/shared.module';
@@ -17,6 +17,7 @@ import {DataTablesModule} from 'angular-datatables';
 import { DetailsVideoComponent } from './videos/details-video/details-video.component';
 import { UpdateVideoComponent } from './videos/update-video/update-video.component';
 import {MenuLeftAdminComponent} from '../../layouts/shared/menu-left-admin/menu-left-admin.component';
+import {ClientModule} from '../client/client.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import {MenuLeftAdminComponent} from '../../layouts/shared/menu-left-admin/menu-
     NgxUploaderModule,
     NgSelectModule,
     DataTablesModule,
-    NgbTooltipModule
+    ClientModule,
   ]
 })
 export class AdminModule { }

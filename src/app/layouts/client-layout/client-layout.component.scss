@@ -1,2 +1,9 @@
-@import "../../../assets/sass/variables";
-@import "../../../assets/sass/global";
+@import "~src/assets/sass/variables";
+@import "~src/assets/sass/global";
+
+.input-group-text{
+  background-color: $body_bg;
+  border: 1px solid $body_bg;
+  border-bottom: 2px solid $input_border_color;
+  color: $text_color_global;
+}
