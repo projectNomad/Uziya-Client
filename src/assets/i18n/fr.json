@@ -1,11 +1,5 @@
 {
 	"admin": {
-		"header": {
-			"logout": "Déconnexion",
-			"returnclient": "Retour au site",
-			"setting": "Préférence",
-			"uploadVideo": "Envoyer votre vidéo"
-		},
 		"menuLeft": {
 			"dashboard": "Tableau de bord",
 			"videos": "Videos"
@@ -39,10 +33,19 @@
 			"tableGenres": "Genres",
 			"tableNoData": "Aucune donnée",
 			"tableTitle": "Titre",
+			"update": {
+				"title": "Envoyer votre projet"
+			},
 			"uploadVideo": {
 				"videoNotFound": "Video genre not found",
 				"videoSave": "Votre vidéo a été enregistrée"
 			}
+		}
+	},
+	"client": {
+		"header": {
+			"home": "Accueil",
+			"search": "Rechercher"
 		}
 	},
 	"footer": {
@@ -75,6 +78,16 @@
 			"title": "Réinitialiser votre mot de passe"
 		}
 	},
+	"layout": {
+		"header": {
+			"logout": "Déconnexion",
+			"profileUser": "Profile",
+			"returnAdmin": "Retour admin",
+			"returnclient": "Retour site",
+			"setting": "Préférences",
+			"uploadVideo": "Envoyer un projet"
+		}
+	},
 	"login": {
 		"createaccount": "Créer un compte",
 		"forgotpassword": "Mot de passe oublié",
@@ -100,32 +113,32 @@
 		"title": "Connectez-vous"
 	},
 	"register": {
-		"user": {
+		"auth": {
 			"activate": {
 				"link": {
-					"login": "Connectez-vous"
+					"login": "Connexion"
 				},
 				"notwork": {
-					"message": "Vérifiez que votre compte n'a pas déjà été activé, si vous avez de la difficulté, merci contacter l'équipe administrative.",
-					"title": "Votre compte n'a pas pu être activé"
+					"message": "Désolé. vous n'êtes pas connecté",
+					"title": "Connexion ratée"
 				},
 				"work": {
-					"message": "Fellicitation! Vous pouvez maintenant vous connectez à notre plateforme.",
-					"title": "Votre compte a été activé."
+					"message": "Bonjour,",
+					"title": "Vous êtes connecté"
 				}
 			},
 			"form": {
 				"confirmation": {
 					"errors": {
-						"mustmatch": "Vos mots de passe ne sont pas identique"
+						"mustmatch": "Les mots de passe ne correspondent pas"
 					},
-					"label": "Confirmation mot de passe"
+					"label": "Confirmation"
 				},
 				"email": {
 					"errors": {
-						"invalid": "Email invalide.",
-						"required": "Email requis.",
-						"userNotExist": "Cet utilisateur n'existe pas"
+						"invalid": "Email invalide",
+						"required": "Email requis",
+						"userNotExist": "Utilisateur existe déjà avec cet email"
 					},
 					"label": "Email"
 				},
@@ -136,9 +149,9 @@
 					"label": "Prénom"
 				},
 				"group": {
-					"choicemovie": "Je veux voir des projets",
-					"choiceproject": "Je veux proposer des projets",
-					"choicetitle": "Qui êtes vous?"
+					"choicemovie": "Regarder des projets",
+					"choiceproject": "Envoyer vos projets",
+					"choicetitle": "Qui êtes-vous?"
 				},
 				"lastname": {
 					"label": "Nom"
@@ -146,24 +159,28 @@
 				"password": {
 					"errors": {
 						"pattern": {
-							"message1": "Le mot de passe doit avoir au moins une lettre majuscule.",
-							"message2": "Le mot de passe doit avoir au moins une lettre minuscule.",
-							"message3": "Le mot de passe doit avoir au moins un chiffre.",
-							"message4": "Le mot de passe doit contenir au moins un de ces caractères spéciaux (!, @, #, $, %, ^, &).",
-							"message5": "Le mot de passe doit avoir au moins 8 caractéres."
+              "message1": "Le mot de passe doit avoir au moins une lettre majuscule.",
+              "message2": "Le mot de passe doit avoir au moins une lettre minuscule.",
+              "message3": "Le mot de passe doit avoir au moins un chiffre.",
+              "message4": "Le mot de passe doit contenir au moins un de ces caractères spéciaux (!, @, #, $, %, ^, &).",
+              "message5": "Le mot de passe doit avoir au moins 8 caractéres."
 						},
-						"required": "mot de passe requis"
+						"required": "Mot de passe requis"
 					},
 					"label": "Mot de passe"
 				},
-				"submit": "Envoyer",
-				"success": "Féllicitation, vous venez de vous enregistrer."
+				"submit": "Envoyer"
 			},
 			"message": {
 				"linklogin": "Connectez-vous",
 				"login": "Avez-vous un compte?"
 			},
-			"title": "Créer un compte"
+			"title": "Connexion"
+		},
+		"user": {
+			"form": {
+				"success": "Féllicitation, vous venez de vous enregistrer."
+			}
 		}
 	}
 }
