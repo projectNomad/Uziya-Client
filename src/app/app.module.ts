@@ -17,6 +17,8 @@ import { ErrorHandlerInterceptor } from './interceptors/error-handler.intercepto
 import { AuthComponent } from './components/auth/auth.component';
 import { SharedModule} from './components/shared/shared.module';
 import { AdminComponent } from './components/admin/admin.component';
+import { ClientComponent } from './components/client/client.component';
+import { ClientModule } from './components/client/client.module';
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { AdminComponent } from './components/admin/admin.component';
     AppComponent,
     AuthComponent,
     AdminComponent,
+    ClientComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { AdminComponent } from './components/admin/admin.component';
     }),
     SimpleNotificationsModule.forRoot(),
     SharedModule,
+    ClientModule,
   ],
   providers: [
     {
