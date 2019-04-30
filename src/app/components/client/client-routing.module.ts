@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     component: ClientLayoutComponent,
     children: [
-      { path: 'user', component: UserComponent },
+      { path: 'user/:id', component: UserComponent },
     ]
   }
 ];

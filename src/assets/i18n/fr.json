@@ -46,6 +46,11 @@
 		"header": {
 			"home": "Accueil",
 			"search": "Rechercher"
+		},
+		"user": {
+			"profile": {
+				"updateProfile": "Modifier votre projet"
+			}
 		}
 	},
 	"footer": {
@@ -148,6 +153,9 @@
 					},
 					"label": "Prénom"
 				},
+				"gender": {
+					"label": "Genre"
+				},
 				"group": {
 					"choicemovie": "Regarder des projets",
 					"choiceproject": "Envoyer vos projets",
@@ -159,11 +167,11 @@
 				"password": {
 					"errors": {
 						"pattern": {
-              "message1": "Le mot de passe doit avoir au moins une lettre majuscule.",
-              "message2": "Le mot de passe doit avoir au moins une lettre minuscule.",
-              "message3": "Le mot de passe doit avoir au moins un chiffre.",
-              "message4": "Le mot de passe doit contenir au moins un de ces caractères spéciaux (!, @, #, $, %, ^, &).",
-              "message5": "Le mot de passe doit avoir au moins 8 caractéres."
+							"message1": "Le mot de passe doit avoir au moins une lettre majuscule.",
+							"message2": "Le mot de passe doit avoir au moins une lettre minuscule.",
+							"message3": "Le mot de passe doit avoir au moins un chiffre.",
+							"message4": "Le mot de passe doit contenir au moins un de ces caractères spéciaux (!, @, #, $, %, ^, &).",
+							"message5": "Le mot de passe doit avoir au moins 8 caractéres."
 						},
 						"required": "Mot de passe requis"
 					},

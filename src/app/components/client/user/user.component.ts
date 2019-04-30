@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import {User} from '../../../models/user';
+import {AuthService} from '../../../services/auth.service';
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  user: User;
+
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
+    this.user = this.authService.getProfile();
+    console.log(this.user);
   }
 
 }

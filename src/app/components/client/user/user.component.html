@@ -1,3 +1,28 @@
-<p>
-  user works!
-</p>
+<div class="row">
+
+  <div class="container">
+
+    <section>
+      <h1>{{ this.user.last_name }} {{ this.user.first_name }}</h1>
+    </section>
+
+    <div class="row">
+      <ul>
+        <li>{{ 'register.auth.form.lastname.label' | translate }}: {{ this.user.first_name }}</li>
+        <li>{{ 'register.auth.form.firstname.label' | translate }}: {{ this.user.last_name }}</li>
+        <li>{{ 'register.auth.form.email.label' | translate }} : {{ this.user.email }}</li>
+        <li>{{ 'register.auth.form.gender.label' | translate }} : {{ this.user.gender }}</li>
+        <li>{{ 'register.auth.form.group.choicetitle' | translate }} : {{ this.user.groups[0]?.name }}</li>
+        <li>{{ 'admin.videos.details.tableCreate' | translate }} : {{ this.user.date_joined | date:'medium' }}</li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <a class="nav-link" routerLink="user/profile/{{user.id}}" tabindex="-1">
+        {{'client.user.profile.updateProfile' | translate}}
+      </a>
+    </div>
+
+  </div>
+
+</div>
