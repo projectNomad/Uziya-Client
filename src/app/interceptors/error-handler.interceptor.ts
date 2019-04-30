@@ -14,8 +14,10 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 /** Custom Services */
 import { Logger} from '../services/core/logger.service';
+import {Router} from '@angular/router';
 
 import {NotificationsService} from 'angular2-notifications';
+import {AuthService} from '../services/auth.service';
 
 /** Initialize Logger */
 const log = new Logger('ErrorHandlerInterceptor');
@@ -28,6 +30,8 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
 
   constructor(
     private notificationService: NotificationsService,
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   /**
@@ -69,6 +73,9 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
       this.notificationService.error('Error', 'Invalid Token. Please try again!' + endMessage);
     } else if (status === 400) {
       this.notificationService.error('Error', 'Invalid parameters were passed in the request!' + endMessage);
+    } else if (status === 401) {
+      this.authService.logout();
+      this.router.navigate(['/auth']);
     } else if (status === 403) {
       this.notificationService.error('Error', 'You are not authorized for this request!' + endMessage);
     } else if (status === 404) {

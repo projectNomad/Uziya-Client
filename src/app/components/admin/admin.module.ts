@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NgxUploaderModule } from 'ngx-uploader';
 import { NgSelectModule } from '@ng-select/ng-select';
-import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbDropdownModule, NgbTooltipModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule} from '../shared/shared.module';
@@ -15,6 +15,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { RegisterVideoComponent } from './movies/register-video/register-video.component';
 import { HeaderPageComponent } from './shared/header-page/header-page.component';
 import {DataTablesModule} from 'angular-datatables';
+import { DetailsVideoComponent } from './movies/details-video/details-video.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {DataTablesModule} from 'angular-datatables';
     MenuLeftComponent,
     MoviesComponent,
     RegisterVideoComponent,
-    HeaderPageComponent
+    HeaderPageComponent,
+    DetailsVideoComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import {DataTablesModule} from 'angular-datatables';
     NgbDropdownModule,
     NgxUploaderModule,
     NgSelectModule,
-    DataTablesModule
+    DataTablesModule,
+    NgbTooltipModule
   ]
 })
 export class AdminModule { }

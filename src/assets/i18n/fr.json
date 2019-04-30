@@ -3,29 +3,43 @@
 		"header": {
 			"logout": "Déconnexion",
 			"returnclient": "Retour au site",
-			"setting": "Préférence"
+			"setting": "Préférence",
+			"uploadVideo": "Envoyer votre vidéo"
 		},
 		"menuLeft": {
 			"dashboard": "Tableau de bord",
 			"movies": "Videos"
 		},
 		"movies": {
-			"button": {
-				"uploadMovie": "Envoyer vidéo"
+			"details": {
+				"deleteLink": "Supprimer",
+				"description": "Description",
+				"tableCreate": "Crée le",
+				"tableSize": "Taille",
+				"updateLink": "Modifier",
+				"watchMovieLink": "Regarder la vidéo"
 			},
-			"uploadVideo": {
+			"register": {
 				"activate": "Activer",
 				"deactivate": "Désactiver",
 				"deleteAll": "Supprimer tout",
 				"deposeProject": "Déposer votre projet",
 				"description": "Description",
 				"done": "Fait",
-				"save": "Enregistrer",
+				"save": "Sauvegarder",
 				"selectProject": "Selectionner votre projet",
 				"send": "Envoyer",
 				"sendYourProject": "Envoyer votre projet",
 				"tilte": "Titre",
-				"uploading": "Télécharger...",
+				"uploading": "Chargement..."
+			},
+			"tableActive": "Activer",
+			"tableDuration": "Durée",
+			"tableDurationMinutes": "minute",
+			"tableGenres": "Genres",
+			"tableNoData": "Aucune donnée",
+			"tableTitle": "Titre",
+			"uploadVideo": {
 				"videoNotFound": "Video genre not found",
 				"videoSave": "Votre vidéo a été enregistrée"
 			}

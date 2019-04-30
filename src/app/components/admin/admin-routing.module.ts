@@ -5,6 +5,7 @@ import {AdminLayoutComponent} from '../../layouts/admin-layout/admin-layout.comp
 import {HomeComponent} from './home/home.component';
 import {MoviesComponent} from './movies/movies.component';
 import {RegisterVideoComponent} from './movies/register-video/register-video.component';
+import {DetailsVideoComponent} from './movies/details-video/details-video.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'movies', component: MoviesComponent },
       { path: 'movies/upload', component: RegisterVideoComponent },
+      { path: 'movies/details/:id', component: DetailsVideoComponent },
     ]
   }
 ];
