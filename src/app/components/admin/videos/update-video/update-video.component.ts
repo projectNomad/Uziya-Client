@@ -5,7 +5,7 @@ import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 
 import {NotificationsService} from 'angular2-notifications';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbModalConfig,} from '@ng-bootstrap/ng-bootstrap';
 import {User} from '../../../../models/user';
 import {Genre, Video} from '../../../../models/video.model';
 import {AuthService} from '../../../../services/auth.service';
@@ -14,7 +14,8 @@ import {VideoService} from '../../../../services/video.service';
 @Component({
   selector: 'app-update-video',
   templateUrl: './update-video.component.html',
-  styleUrls: ['./update-video.component.scss']
+  styleUrls: ['./update-video.component.scss'],
+  providers: [NgbModalConfig, NgbModal]
 })
 export class UpdateVideoComponent implements OnInit {
   breadcrumb = [
@@ -23,8 +24,8 @@ export class UpdateVideoComponent implements OnInit {
       link: '/admin'
     },
     {
-      title: 'movies',
-      link: '/admin/movies/'
+      title: 'videos',
+      link: '/admin/videos/'
     }
   ];
   buttonsEnd = [
@@ -105,7 +106,7 @@ export class UpdateVideoComponent implements OnInit {
         console.log(error);
       },
       () => {
-        this.router.navigate(['/video/user']);
+        this.router.navigate(['/admin/videos/details/', this.video.id]);
       }
     );
   }

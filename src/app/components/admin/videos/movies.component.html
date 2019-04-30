@@ -1,4 +1,4 @@
-<app-header-page titlePage="{{ 'admin.menuLeft.movies' | translate }}"
+<app-header-page titlePage="{{ 'admin.menuLeft.videos' | translate }}"
                  [breadcrumb]="breadcrumb" [buttonsEnd]="buttonsEnd"></app-header-page>
 
 <div class="container">
@@ -10,13 +10,13 @@
           <thead class="thead-dark">
           <tr>
             <th scope="col">id</th>
-            <th scope="col">{{ 'admin.movies.tableTitle' | translate }}</th>
-            <th scope="col">{{ 'admin.movies.tableActive' | translate }}</th>
+            <th scope="col">{{ 'admin.videos.tableTitle' | translate }}</th>
+            <th scope="col">{{ 'admin.videos.tableActive' | translate }}</th>
             <th scope="col">
-              {{ 'admin.movies.tableDuration' | translate }}
-              ({{ 'admin.movies.tableDurationMinutes' | translate }})
+              {{ 'admin.videos.tableDuration' | translate }}
+              ({{ 'admin.videos.tableDurationMinutes' | translate }})
             </th>
-            <th scope="col">{{ 'admin.movies.tableGenres' | translate }}</th>
+            <th scope="col">{{ 'admin.videos.tableGenres' | translate }}</th>
           </tr>
           </thead>
           <tbody *ngIf="videos?.length != 0">
@@ -34,7 +34,7 @@
           </tbody>
           <tbody *ngIf="videos?.length == 0">
           <tr>
-            <td colspan="5" class="no-data-available">{{ 'admin.movies.tableNoData' | translate }}</td>
+            <td colspan="5" class="no-data-available">{{ 'admin.videos.tableNoData' | translate }}</td>
           </tr>
           <tbody>
         </table>

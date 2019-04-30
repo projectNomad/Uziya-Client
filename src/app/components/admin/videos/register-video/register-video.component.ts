@@ -36,7 +36,7 @@ export class RegisterVideoComponent implements OnInit {
     private notificationService: NotificationsService,
     private config: NgSelectConfig
   ) {
-    this.config.notFoundText = _('admin.movies.uploadVideo.videoNotFound');
+    this.config.notFoundText = _('admin.videos.uploadVideo.videoNotFound');
     this.options = {
       concurrency: 1,
       // allowedContentTypes: ['mp4'],
@@ -54,8 +54,8 @@ export class RegisterVideoComponent implements OnInit {
         link: '/admin'
       },
       {
-        title: 'movies',
-        link: '/admin/movies'
+        title: 'videos',
+        link: '/admin/videos'
       },
       {
         title: 'upload',
@@ -152,7 +152,7 @@ export class RegisterVideoComponent implements OnInit {
       },
       () => {
         this.showFormVideo = false;
-        this.notificationService.success(null, _('admin.movies.uploadVideo.videoSave'));
+        this.notificationService.success(null, _('admin.videos.uploadVideo.videoSave'));
         this.videos = [];
       }
     );

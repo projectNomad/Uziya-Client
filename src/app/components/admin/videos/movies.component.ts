@@ -17,14 +17,14 @@ export class MoviesComponent implements OnInit {
       link: '/admin'
     },
     {
-      title: 'movies',
+      title: 'videos',
       link: null
     },
   ];
   buttonsEnd = [
     {
       title: 'upload video',
-      link: '/admin/movies/upload'
+      link: '/admin/videos/upload'
     },
   ];
   dtOptions: DataTables.Settings = {};
@@ -84,7 +84,7 @@ export class MoviesComponent implements OnInit {
 
   someClickHandler(data) {
     console.log(data[0]);
-    this.router.navigate(['/admin/movies/details/', data[0]]);
+    this.router.navigate(['/admin/videos/details/', data[0]]);
   }
 
 }

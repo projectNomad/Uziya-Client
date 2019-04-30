@@ -22,14 +22,14 @@ export class DetailsVideoComponent implements OnInit {
       link: '/admin'
     },
     {
-      title: 'movies',
-      link: '/admin/movies/'
+      title: 'videos',
+      link: '/admin/videos/'
     }
   ];
   buttonsEnd = [
     {
       title: 'upload video',
-      link: '/admin/movies/upload'
+      link: '/admin/videos/upload'
     },
   ];
   video: Video;
@@ -97,7 +97,7 @@ export class DetailsVideoComponent implements OnInit {
       },
       () => {
         this.modalService.dismissAll();
-        this.router.navigate(['/admin/movies']);
+        this.router.navigate(['/admin/videos']);
       }
     );
   }

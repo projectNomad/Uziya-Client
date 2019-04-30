@@ -3,10 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {AdminLayoutComponent} from '../../layouts/admin-layout/admin-layout.component';
 import {HomeComponent} from './home/home.component';
-import {MoviesComponent} from './movies/movies.component';
-import {RegisterVideoComponent} from './movies/register-video/register-video.component';
-import {DetailsVideoComponent} from './movies/details-video/details-video.component';
-import {UpdateVideoComponent} from './movies/update-video/update-video.component';
+import {MoviesComponent} from './videos/movies.component';
+import {RegisterVideoComponent} from './videos/register-video/register-video.component';
+import {DetailsVideoComponent} from './videos/details-video/details-video.component';
+import {UpdateVideoComponent} from './videos/update-video/update-video.component';
 
 const routes: Routes = [
   {
@@ -14,10 +14,10 @@ const routes: Routes = [
     component: AdminLayoutComponent,
     children: [
       { path: '', component: HomeComponent },
-      { path: 'movies', component: MoviesComponent },
-      { path: 'movies/upload', component: RegisterVideoComponent },
-      { path: 'movies/details/:id', component: DetailsVideoComponent },
-      { path: 'movies/update/:id', component: UpdateVideoComponent },
+      { path: 'videos', component: MoviesComponent },
+      { path: 'videos/upload', component: RegisterVideoComponent },
+      { path: 'videos/details/:id', component: DetailsVideoComponent },
+      { path: 'videos/update/:id', component: UpdateVideoComponent },
     ]
   }
 ];

@@ -11,12 +11,12 @@ import { AdminLayoutComponent } from '../../layouts/admin-layout/admin-layout.co
 import { HomeComponent } from './home/home.component';
 import { HeaderAdminComponent} from './shared/header-admin/header-admin.component';
 import { MenuLeftComponent } from './shared/menu-left/menu-left.component';
-import { MoviesComponent } from './movies/movies.component';
-import { RegisterVideoComponent } from './movies/register-video/register-video.component';
+import { MoviesComponent } from './videos/movies.component';
+import { RegisterVideoComponent } from './videos/register-video/register-video.component';
 import { HeaderPageComponent } from './shared/header-page/header-page.component';
 import {DataTablesModule} from 'angular-datatables';
-import { DetailsVideoComponent } from './movies/details-video/details-video.component';
-import { UpdateVideoComponent } from './movies/update-video/update-video.component';
+import { DetailsVideoComponent } from './videos/details-video/details-video.component';
+import { UpdateVideoComponent } from './videos/update-video/update-video.component';
 
 @NgModule({
   declarations: [
