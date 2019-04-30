@@ -1,17 +1,27 @@
 //global
-$color_princ: #007bff;
-$error_color: red;
+$clr1: #1976D2;
+$clr2: #2196F3;
+$clr3: #03A9F4;
+$clr4: #BBDEFB;
 
-$body_bg: black;
+$clr5: black;
+$clr6: #757575;
+$clr7: #BDBDBD;
+
+$clr8: red;
+
+
+$error_color: $clr8;
+$body_bg: $clr5;
 
 $text_size_global: .9em;
 $text_color_global: rgba(255, 255, 255, .5)!important;
 //$text_color_global: #eaeaea;
 
-$link_color_global: $color_princ;
-$link_active_color_global: #36c2f7;
-$link_hover_color_global: #36c2f7;
+$link_color_global: $clr1;
+$link_active_color_global: $clr3;
+$link_hover_color_global: $clr4;
 
-$input_bg: black;
-$input_border_color: gray;
-$input_active_border_color: #1e95fe;
+$input_bg: $clr5;
+$input_border_color: $clr6;
+$input_active_border_color: $clr2;
