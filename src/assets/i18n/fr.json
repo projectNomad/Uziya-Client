@@ -8,9 +8,9 @@
 		},
 		"menuLeft": {
 			"dashboard": "Tableau de bord",
-			"movies": "Videos"
+			"videos": "Videos"
 		},
-		"movies": {
+		"videos": {
 			"details": {
 				"deleteLink": "Supprimer",
 				"description": "Description",

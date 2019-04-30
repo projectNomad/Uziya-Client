@@ -1,19 +1,19 @@
-<app-header-page titlePage="{{ 'admin.menuLeft.movies' | translate }}"
+<app-header-page titlePage="{{ 'admin.menuLeft.videos' | translate }}"
                  [breadcrumb]="breadcrumb" [buttonsEnd]="buttonsEnd"></app-header-page>
 
 <div class="container video-details-group">
   <section class="video-details-group_titles">
     <h1 class="video-details-group_titles_h1">{{video?.title}}</h1>
     <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">{{ 'admin.movies.details.watchMovieLink' | translate }}</a></li>
+      <li class="list-inline-item"><a href="#">{{ 'admin.videos.details.watchMovieLink' | translate }}</a></li>
       <li class="list-inline-item">
-        <a [routerLink]="['/video/update', video?.id]" class="btn btn-link">
-          {{ 'admin.movies.details.updateLink' | translate }}
+        <a [routerLink]="['/admin/videos/update', video?.id]" class="btn btn-link">
+          {{ 'admin.videos.details.updateLink' | translate }}
         </a>
       </li>
       <li class="list-inline-item">
         <a (click)="active_modal(content, video)" class="btn btn-link">
-          {{ 'admin.movies.details.deleteLink' | translate }}
+          {{ 'admin.videos.details.deleteLink' | translate }}
         </a>
       </li>
     </ul>
@@ -25,12 +25,12 @@
         <div class="table-responsive">
           <table class="table table-bordered video-details-group_infos_table">
             <tr>
-              <td class="col-title">{{ 'admin.movies.tableTitle' | translate }}</td>
+              <td class="col-title">{{ 'admin.videos.tableTitle' | translate }}</td>
               <td>{{ video.title ? video.title : 'no title' }}</td>
-              <td class="col-title">{{ 'admin.movies.tableGenres' | translate }}</td>
+              <td class="col-title">{{ 'admin.videos.tableGenres' | translate }}</td>
             </tr>
             <tr>
-              <td class="col-title">{{ 'admin.movies.tableDuration' | translate }}</td>
+              <td class="col-title">{{ 'admin.videos.tableDuration' | translate }}</td>
               <td>{{ (video.duration / 60).toFixed(2) }}</td>
               <td rowspan="5">
                 <ul class="list-inline">
@@ -41,22 +41,22 @@
               </td>
             </tr>
             <tr>
-              <td class="col-title">{{ 'admin.movies.details.tableSize' | translate }}</td>
+              <td class="col-title">{{ 'admin.videos.details.tableSize' | translate }}</td>
               <td>{{ video.size }}</td>
             </tr>
             <tr>
-              <td class="col-title">{{ 'admin.movies.tableActive' | translate }}</td>
+              <td class="col-title">{{ 'admin.videos.tableActive' | translate }}</td>
               <td class="text-center"><input type="checkbox" [checked]="video.is_active" disabled></td>
             </tr>
             <tr>
-              <td class="col-title">{{ 'admin.movies.details.tableCreate' | translate }}</td>
+              <td class="col-title">{{ 'admin.videos.details.tableCreate' | translate }}</td>
               <td>{{ video.is_created | date }}</td>
             </tr>
           </table>
         </div>
       </div>
       <div class="col-md-12">
-        <h3>{{ 'admin.movies.details.description' | translate }}</h3>
+        <h3>{{ 'admin.videos.details.description' | translate }}</h3>
         <div>
           {{ video.description }}
         </div>

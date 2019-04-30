@@ -1,8 +1,8 @@
-<app-header-page titlePage="{{ 'admin.menuLeft.movies' | translate }}" [breadcrumb]="breadcrumb"></app-header-page>
+<app-header-page titlePage="{{ 'admin.menuLeft.videos' | translate }}" [breadcrumb]="breadcrumb"></app-header-page>
 
 <div class="container">
   <div class="row">
-    <h1>{{ 'admin.movies.register.sendYourProject' | translate }}</h1>
+    <h1>{{ 'admin.videos.register.sendYourProject' | translate }}</h1>
   </div>
   <div class="row">
   </div>
@@ -13,13 +13,13 @@
           <div class="upload-box__content__drop-container" ngFileDrop [options]="options"
                (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
             <div class="middle-info">
-              <div class="back-text">{{ 'admin.movies.register.deposeProject' | translate }}</div>
+              <div class="back-text">{{ 'admin.videos.register.deposeProject' | translate }}</div>
 
               <input type="file" ngFileSelect [options]="options" #selectVideo
                      (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput"
                      multiple accept="video/mp4, video/webm">
 
-              <button (click)="selectVideo.click()">{{ 'admin.movies.register.selectProject' | translate }}</button>
+              <button (click)="selectVideo.click()">{{ 'admin.videos.register.selectProject' | translate }}</button>
             </div>
           </div>
           <div class="upload-box__content__items" *ngFor="let f of files; let i = index;">
@@ -44,8 +44,8 @@
               <div class="upload-box__content__items__content__progress-text-content">
                 <span class="progress-text" [class.is-done]="f?.progress?.data?.percentage === 100">
                   <span>{{ f.progress?.data?.percentage }}% </span>
-                  <span *ngIf="f.progress?.data?.percentage !== 100">{{ 'admin.movies.register.uploading' | translate }}</span>
-                  <span *ngIf="f.progress?.data?.percentage === 100">{{ 'admin.movies.register.done' | translate }}</span>
+                  <span *ngIf="f.progress?.data?.percentage !== 100">{{ 'admin.videos.register.uploading' | translate }}</span>
+                  <span *ngIf="f.progress?.data?.percentage === 100">{{ 'admin.videos.register.done' | translate }}</span>
                 </span>
                 <span class="speed-and-eta-text" *ngIf="f.progress?.data?.percentage !== 0 && f.progress?.data?.percentage !== 100">
                   <span>{{ f.progress?.data?.speedHuman }} </span>
@@ -58,9 +58,9 @@
 
         <div class="row">
           <div class="col-md-3">
-            <button class="btn btn-primary" (click)="startUpload()">{{ 'admin.movies.register.send' | translate }}</button>
+            <button class="btn btn-primary" (click)="startUpload()">{{ 'admin.videos.register.send' | translate }}</button>
             &nbsp;&nbsp;
-            <button class="btn btn-danger" *ngIf="files.length > 0" (click)="removeAllFiles()">{{ 'admin.movies.register.deleteAll' | translate }}</button>
+            <button class="btn btn-danger" *ngIf="files.length > 0" (click)="removeAllFiles()">{{ 'admin.videos.register.deleteAll' | translate }}</button>
           </div>
           <div class="col-md-9">
             <div class="text-justify text-danger"
@@ -80,7 +80,7 @@
         <input type="hidden" formControlName="id">
 
         <div class="form-group">
-          <label for="title">{{ 'admin.movies.register.tilte' | translate }}</label>
+          <label for="title">{{ 'admin.videos.register.tilte' | translate }}</label>
           <input type="text"
                  id="title"
                  class="form-control"
@@ -90,11 +90,11 @@
         <div class="form-group">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" formControlName="active" id="active-true" value="1">
-            <label class="form-check-label" for="active-true">{{ 'admin.movies.register.activate' | translate }}</label>
+            <label class="form-check-label" for="active-true">{{ 'admin.videos.register.activate' | translate }}</label>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" formControlName="active" id="active-false" value="0">
-            <label class="form-check-label" for="active-false">{{ 'admin.movies.register.deactivate' | translate }}</label>
+            <label class="form-check-label" for="active-false">{{ 'admin.videos.register.deactivate' | translate }}</label>
           </div>
         </div>
 
@@ -106,14 +106,14 @@
         </div>
 
         <div class="form-group">
-          <label for="description">{{ 'admin.movies.register.description' | translate }}</label>
+          <label for="description">{{ 'admin.videos.register.description' | translate }}</label>
           <textarea name="" id="description" cols="30" rows="10" formControlName="description"
                     class="form-control" id="description"></textarea>
         </div>
       </div>
 
       <button class="btn btn-primary" type="submit"
-              [disabled]="form2AddVideoForm.invalid">{{ 'admin.movies.register.save' | translate }}</button>
+              [disabled]="form2AddVideoForm.invalid">{{ 'admin.videos.register.save' | translate }}</button>
     </form>
   </div>
 </div>

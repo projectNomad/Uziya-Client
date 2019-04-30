@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {Router} from '@angular/router';
 
-import {MoviesService} from '../../../services/movies.service';
+import {VideoService} from '../../../services/video.service';
 
 @Component({
   selector: 'app-movies',
@@ -17,14 +17,14 @@ export class MoviesComponent implements OnInit {
       link: '/admin'
     },
     {
-      title: 'movies',
+      title: 'videos',
       link: null
     },
   ];
   buttonsEnd = [
     {
       title: 'upload video',
-      link: '/admin/movies/upload'
+      link: '/admin/videos/upload'
     },
   ];
   dtOptions: DataTables.Settings = {};
@@ -34,7 +34,7 @@ export class MoviesComponent implements OnInit {
   videos: any;
 
   constructor(
-    private movieService: MoviesService,
+    private videoService: VideoService,
     private router: Router,
   ) {
     this.dtTrigger = new Subject();
@@ -72,7 +72,7 @@ export class MoviesComponent implements OnInit {
       }
     };
 
-    this.movieService.getListVideos()
+    this.videoService.getListVideos()
       .pipe(map(result => result.results))
       .subscribe(
         value => {
@@ -84,7 +84,7 @@ export class MoviesComponent implements OnInit {
 
   someClickHandler(data) {
     console.log(data[0]);
-    this.router.navigate(['/admin/movies/details/', data[0]]);
+    this.router.navigate(['/admin/videos/details/', data[0]]);
   }
 
 }

@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import {MoviesService} from '../../../../services/movies.service';
+import {VideoService} from '../../../../services/video.service';
 import {humanizeBytes, UploaderOptions, UploadFile, UploadInput, UploadOutput, UploadStatus} from 'ngx-uploader';
 import {NgSelectConfig} from '@ng-select/ng-select';
 import {NotificationsService} from 'angular2-notifications';
@@ -32,11 +32,11 @@ export class RegisterVideoComponent implements OnInit {
 
   constructor(
     private form2AddVideoBuilder: FormBuilder,
-    private videoService: MoviesService,
+    private videoService: VideoService,
     private notificationService: NotificationsService,
     private config: NgSelectConfig
   ) {
-    this.config.notFoundText = _('admin.movies.uploadVideo.videoNotFound');
+    this.config.notFoundText = _('admin.videos.uploadVideo.videoNotFound');
     this.options = {
       concurrency: 1,
       // allowedContentTypes: ['mp4'],
@@ -54,8 +54,8 @@ export class RegisterVideoComponent implements OnInit {
         link: '/admin'
       },
       {
-        title: 'movies',
-        link: '/admin/movies'
+        title: 'videos',
+        link: '/admin/videos'
       },
       {
         title: 'upload',
@@ -152,7 +152,7 @@ export class RegisterVideoComponent implements OnInit {
       },
       () => {
         this.showFormVideo = false;
-        this.notificationService.success(null, _('admin.movies.uploadVideo.videoSave'));
+        this.notificationService.success(null, _('admin.videos.uploadVideo.videoSave'));
         this.videos = [];
       }
     );

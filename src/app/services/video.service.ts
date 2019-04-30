@@ -12,7 +12,7 @@ import {I18nService} from './core/i18n.service';
 @Injectable({
   providedIn: 'root'
 })
-export class MoviesService {
+export class VideoService {
 
   constructor(
     private httpClient: HttpClient,
