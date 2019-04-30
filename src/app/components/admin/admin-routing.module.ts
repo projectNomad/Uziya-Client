@@ -6,6 +6,7 @@ import {HomeComponent} from './home/home.component';
 import {MoviesComponent} from './movies/movies.component';
 import {RegisterVideoComponent} from './movies/register-video/register-video.component';
 import {DetailsVideoComponent} from './movies/details-video/details-video.component';
+import {UpdateVideoComponent} from './movies/update-video/update-video.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: 'movies', component: MoviesComponent },
       { path: 'movies/upload', component: RegisterVideoComponent },
       { path: 'movies/details/:id', component: DetailsVideoComponent },
+      { path: 'movies/update/:id', component: UpdateVideoComponent },
     ]
   }
 ];

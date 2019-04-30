@@ -4,7 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {NotificationsService} from 'angular2-notifications';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {MoviesService} from '../../../../services/movies.service';
+import {VideoService} from '../../../../services/video.service';
 import {AuthService} from '../../../../services/auth.service';
 import {Video} from '../../../../models/video.model';
 import {User} from '../../../../models/user';
@@ -38,7 +38,7 @@ export class DetailsVideoComponent implements OnInit {
   pathViewFile: string;
 
   constructor(
-    private videoService: MoviesService,
+    private videoService: VideoService,
     private authService: AuthService,
     private activatedRoute: ActivatedRoute,
     private notificationService: NotificationsService,

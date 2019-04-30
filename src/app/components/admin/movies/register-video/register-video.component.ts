@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import {MoviesService} from '../../../../services/movies.service';
+import {VideoService} from '../../../../services/video.service';
 import {humanizeBytes, UploaderOptions, UploadFile, UploadInput, UploadOutput, UploadStatus} from 'ngx-uploader';
 import {NgSelectConfig} from '@ng-select/ng-select';
 import {NotificationsService} from 'angular2-notifications';
@@ -32,7 +32,7 @@ export class RegisterVideoComponent implements OnInit {
 
   constructor(
     private form2AddVideoBuilder: FormBuilder,
-    private videoService: MoviesService,
+    private videoService: VideoService,
     private notificationService: NotificationsService,
     private config: NgSelectConfig
   ) {

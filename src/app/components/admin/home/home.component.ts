@@ -3,7 +3,7 @@ import {Component, OnInit } from '@angular/core';
 
 import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
 
-import {MoviesService} from '../../../services/movies.service';
+import {VideoService} from '../../../services/video.service';
 
 @Component({
   selector: 'app-home',

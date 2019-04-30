@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {Router} from '@angular/router';
 
-import {MoviesService} from '../../../services/movies.service';
+import {VideoService} from '../../../services/video.service';
 
 @Component({
   selector: 'app-movies',
@@ -34,7 +34,7 @@ export class MoviesComponent implements OnInit {
   videos: any;
 
   constructor(
-    private movieService: MoviesService,
+    private videoService: VideoService,
     private router: Router,
   ) {
     this.dtTrigger = new Subject();
@@ -72,7 +72,7 @@ export class MoviesComponent implements OnInit {
       }
     };
 
-    this.movieService.getListVideos()
+    this.videoService.getListVideos()
       .pipe(map(result => result.results))
       .subscribe(
         value => {
