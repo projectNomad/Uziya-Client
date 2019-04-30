@@ -16,6 +16,7 @@ import { RegisterVideoComponent } from './movies/register-video/register-video.c
 import { HeaderPageComponent } from './shared/header-page/header-page.component';
 import {DataTablesModule} from 'angular-datatables';
 import { DetailsVideoComponent } from './movies/details-video/details-video.component';
+import { UpdateVideoComponent } from './movies/update-video/update-video.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DetailsVideoComponent } from './movies/details-video/details-video.comp
     MoviesComponent,
     RegisterVideoComponent,
     HeaderPageComponent,
-    DetailsVideoComponent
+    DetailsVideoComponent,
+    UpdateVideoComponent
   ],
   imports: [
     CommonModule,
