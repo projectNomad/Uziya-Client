@@ -11,7 +11,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { RegisterActivationComponent} from './register-activation/register-activation.component';
 import { SignupComponent} from './signup/signup.component';
 import { LoginLayoutComponent} from '../../layouts/login-layout/login-layout.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from '../client/user/profile/profile.component';
 
 @NgModule({
   declarations: [

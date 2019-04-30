@@ -9,21 +9,21 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule} from '../shared/shared.module';
 import { AdminLayoutComponent } from '../../layouts/admin-layout/admin-layout.component';
 import { HomeComponent } from './home/home.component';
-import { HeaderAdminComponent} from './shared/header-admin/header-admin.component';
-import { MenuLeftComponent } from './shared/menu-left/menu-left.component';
+import { HeaderAdminComponent} from '../../layouts/shared/header-admin/header-admin.component';
 import { MoviesComponent } from './videos/movies.component';
 import { RegisterVideoComponent } from './videos/register-video/register-video.component';
 import { HeaderPageComponent } from './shared/header-page/header-page.component';
 import {DataTablesModule} from 'angular-datatables';
 import { DetailsVideoComponent } from './videos/details-video/details-video.component';
 import { UpdateVideoComponent } from './videos/update-video/update-video.component';
+import {MenuLeftAdminComponent} from '../../layouts/shared/menu-left-admin/menu-left-admin.component';
 
 @NgModule({
   declarations: [
     AdminLayoutComponent,
     HomeComponent,
     HeaderAdminComponent,
-    MenuLeftComponent,
+    MenuLeftAdminComponent,
     MoviesComponent,
     RegisterVideoComponent,
     HeaderPageComponent,

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { FooterComponent} from './footer/footer.component';
+import { FooterComponent} from '../../layouts/shared/footer/footer.component';
 
 
 @NgModule({

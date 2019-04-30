@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 
 import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
 
-import { AuthService } from '../../../../services/auth.service';
-import {User} from '../../../../models/user';
+import {AuthService} from '../../../services/auth.service';
+import {User} from '../../../models/user';
 
 @Component({
   selector: 'app-header-admin',
