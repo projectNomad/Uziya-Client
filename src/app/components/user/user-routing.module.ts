@@ -7,6 +7,7 @@ import {SignupComponent} from './signup/signup.component';
 import {RegisterActivationComponent} from './register-activation/register-activation.component';
 import {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
 import {ResetPasswordComponent} from './reset-password/reset-password.component';
+import {ProfileComponent} from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'reset-password/:token',
         component: ResetPasswordComponent,
+      },
+      {
+        path: 'profile/:id',
+        component: ProfileComponent,
       },
     ]
   }
