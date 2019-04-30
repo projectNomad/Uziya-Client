@@ -14,7 +14,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import {ApiPrefixInterceptor} from './interceptors/api-prefix.interceptor';
 import { ErrorHandlerInterceptor } from './interceptors/error-handler.interceptor';
-import { UserComponent } from './components/user/user.component';
+import { AuthComponent } from './components/auth/auth.component';
 import { SharedModule} from './components/shared/shared.module';
 import { AdminComponent } from './components/admin/admin.component';
 
@@ -22,7 +22,7 @@ import { AdminComponent } from './components/admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
+    AuthComponent,
     AdminComponent,
   ],
   imports: [

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SharedModule} from '../shared/shared.module';
-import { UserRoutingModule } from './user-routing.module';
+import { AuthRoutingModule } from './auth-routing.module';
 import { ForgotPasswordComponent} from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
@@ -25,9 +25,9 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   imports: [
     CommonModule,
-    UserRoutingModule,
+    AuthRoutingModule,
     SharedModule,
     NgbCarouselModule,
   ]
 })
-export class UserModule { }
+export class AuthModule { }

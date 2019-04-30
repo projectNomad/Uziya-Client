@@ -1,30 +1,30 @@
 <div class="row" id="bloc-signup">
   <div class="col-lg-4 col-sm-9" id="bloc-signup_form">
-    <h2>{{ 'register.user.title' | translate }}</h2>
+    <h2>{{ 'register.auth.title' | translate }}</h2>
     <hr>
 
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
 
       <div class="form-group">
-        <label>{{ 'register.user.form.group.choicetitle' | translate }}</label><br>
+        <label>{{ 'register.auth.form.group.choicetitle' | translate }}</label><br>
         <div class="radio-inline">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" formControlName="group" id="inlineRadio1" value="viewer">
-            <label class="form-check-label" for="inlineRadio1">{{ 'register.user.form.group.choicemovie' | translate }}</label>
+            <label class="form-check-label" for="inlineRadio1">{{ 'register.auth.form.group.choicemovie' | translate }}</label>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" formControlName="group" id="inlineRadio2" value="producer">
-            <label class="form-check-label" for="inlineRadio2">{{ 'register.user.form.group.choiceproject' | translate }}</label>
+            <label class="form-check-label" for="inlineRadio2">{{ 'register.auth.form.group.choiceproject' | translate }}</label>
           </div>
         </div>
       </div>
 
       <div class="form-group">
-        <input type="text" placeholder="{{ 'register.user.form.firstname.label' | translate }}"
+        <input type="text" placeholder="{{ 'register.auth.form.firstname.label' | translate }}"
                [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }"
                class="form-control" formControlName="firstname">
         <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
-          <div *ngIf="f.firstname.errors.required">{{ 'register.user.form.firstname.errors.required' | translate }}</div>
+          <div *ngIf="f.firstname.errors.required">{{ 'register.auth.form.firstname.errors.required' | translate }}</div>
           <div *ngIf="f.firstname.getError('apiError')">
             <ul class="list-inline">
               <li *ngFor="let errorMessage of f.firstname.getError('apiError')">
@@ -36,19 +36,19 @@
       </div>
 
       <div class="form-group">
-        <input type="text" placeholder="{{ 'register.user.form.lastname.label' | translate }}"
+        <input type="text" placeholder="{{ 'register.auth.form.lastname.label' | translate }}"
                [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"
                class="form-control" formControlName="lastname">
       </div>
 
       <div class="form-group">
-        <input type="email" placeholder="{{ 'register.user.form.email.label' | translate }}"
+        <input type="email" placeholder="{{ 'register.auth.form.email.label' | translate }}"
                [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
                class="form-control"
                formControlName="email">
         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-          <div *ngIf="f.email.errors.required">{{ 'register.user.form.email.errors.required' | translate }}</div>
-          <div *ngIf="f.email.errors.email">{{ 'register.user.form.email.errors.invalid' | translate }}</div>
+          <div *ngIf="f.email.errors.required">{{ 'register.auth.form.email.errors.required' | translate }}</div>
+          <div *ngIf="f.email.errors.email">{{ 'register.auth.form.email.errors.invalid' | translate }}</div>
           <div *ngIf="f.email.getError('apiError')">
             <ul class="list-inline">
               <li *ngFor="let errorMessage of f.email.getError('apiError')">
@@ -60,19 +60,19 @@
       </div>
 
       <div class="form-group">
-        <input type="password" placeholder="{{ 'register.user.form.password.label' | translate }}"
+        <input type="password" placeholder="{{ 'register.auth.form.password.label' | translate }}"
                class="form-control"
                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
                formControlName="password">
         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-          <div *ngIf="f.password.errors.required">{{ 'register.user.form.password.errors.required' | translate }}</div>
+          <div *ngIf="f.password.errors.required">{{ 'register.auth.form.password.errors.required' | translate }}</div>
           <div *ngIf="f.password.errors.pattern">
             <ul>
-              <li>{{ 'register.user.form.password.errors.pattern.message1' | translate }}</li>
-              <li>{{ 'register.user.form.password.errors.pattern.message2' | translate }}</li>
-              <li>{{ 'register.user.form.password.errors.pattern.message3' | translate }}</li>
-              <li>{{ 'register.user.form.password.errors.pattern.message4' | translate }}</li>
-              <li>{{ 'register.user.form.password.errors.pattern.message5' | translate }}</li>
+              <li>{{ 'register.auth.form.password.errors.pattern.message1' | translate }}</li>
+              <li>{{ 'register.auth.form.password.errors.pattern.message2' | translate }}</li>
+              <li>{{ 'register.auth.form.password.errors.pattern.message3' | translate }}</li>
+              <li>{{ 'register.auth.form.password.errors.pattern.message4' | translate }}</li>
+              <li>{{ 'register.auth.form.password.errors.pattern.message5' | translate }}</li>
             </ul>
           </div>
           <div *ngIf="f.password.getError('apiError')">
@@ -86,19 +86,19 @@
       </div>
 
       <div class="form-group">
-        <input formControlName="confirmation" placeholder="{{ 'register.user.form.confirmation.label' | translate }}"
+        <input formControlName="confirmation" placeholder="{{ 'register.auth.form.confirmation.label' | translate }}"
                class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmation.errors }" type="password">
         <div *ngIf="submitted && f.confirmation.errors" class="invalid-feedback">
           <div *ngIf="f.confirmation.errors.mustMatch">
-            {{ 'register.user.form.confirmation.errors.mustmatch' | translate }}
+            {{ 'register.auth.form.confirmation.errors.mustmatch' | translate }}
           </div>
         </div>
       </div>
       <button class="btn btn-primary" id="btn-submit-save-user"
-              type="submit">{{ 'register.user.form.submit' | translate }}</button>
+              type="submit">{{ 'register.auth.form.submit' | translate }}</button>
       <div>
-        {{ 'register.user.message.login' | translate }}
-        <a routerLink="/auth">{{ 'register.user.message.linklogin' | translate }}</a>
+        {{ 'register.auth.message.login' | translate }}
+        <a routerLink="/auth">{{ 'register.auth.message.linklogin' | translate }}</a>
       </div>
     </form>
   </div>

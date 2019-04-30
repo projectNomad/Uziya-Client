@@ -67,7 +67,7 @@ export class UpdateVideoComponent implements OnInit {
       },
       error => {
         this.notificationService.error(null, 'video not found');
-        this.router.navigate(['/video/user']);
+        this.router.navigate(['/video/auth']);
       },
       () => {
         this.initForm();

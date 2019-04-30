@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
       (value) => {
         localStorage.setItem(environment.cookiesName.token, value.token);
 
-        // get user profile
+        // get auth profile
         this.userService.getProfile()
           .pipe(map(result => result))
           .subscribe(
