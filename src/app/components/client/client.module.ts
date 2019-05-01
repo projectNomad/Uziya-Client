@@ -7,7 +7,6 @@ import {ClientLayoutComponent} from '../../layouts/client-layout/client-layout.c
 import { SharedModule} from '../shared/shared.module';
 import { HomeClientComponent } from './home-client/home-client.component';
 import {UserComponent} from './user/user.component';
-import {HeaderClientProfileComponent} from '../../layouts/shared/header-client-profile/header-client-profile.component';
 import {HeaderClientComponent} from '../../layouts/shared/header-client/header-client.component';
 import {ProfileComponent} from './user/profile/profile.component';
 
@@ -17,7 +16,6 @@ import {ProfileComponent} from './user/profile/profile.component';
     ClientLayoutComponent,
     HomeClientComponent,
     UserComponent,
-    HeaderClientProfileComponent,
     HeaderClientComponent,
     ProfileComponent
   ],

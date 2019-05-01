@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent} from '../../layouts/shared/footer/footer.component';
+import {HeaderClientProfileComponent} from '../../layouts/shared/header-client-profile/header-client-profile.component';
+import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -13,14 +15,20 @@ import { FooterComponent} from '../../layouts/shared/footer/footer.component';
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
+    NgbDropdownModule,
   ],
   exports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     TranslateModule,
-    FooterComponent
+    NgbDropdownModule,
+    FooterComponent,
+    HeaderClientProfileComponent
   ],
-  declarations: [FooterComponent]
+  declarations: [
+    HeaderClientProfileComponent,
+    FooterComponent
+  ]
 })
 export class SharedModule {}

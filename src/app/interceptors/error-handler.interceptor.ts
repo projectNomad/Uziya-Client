@@ -72,10 +72,11 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
     ) {
       this.notificationService.error('Error', 'Invalid Token. Please try again!' + endMessage);
     } else if (status === 400) {
-      this.notificationService.error('Error', 'Invalid parameters were passed in the request!' + endMessage);
+      // this.notificationService.error('Error', 'Invalid parameters were passed in the request!' + endMessage);
     } else if (status === 401) {
       this.authService.logout();
       this.router.navigate(['/auth']);
+      this.notificationService.info('Information', 'Your token is expiring. thank you for reconnecting yourself');
     } else if (status === 403) {
       this.notificationService.error('Error', 'You are not authorized for this request!' + endMessage);
     } else if (status === 404) {

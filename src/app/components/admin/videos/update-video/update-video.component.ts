@@ -64,6 +64,10 @@ export class UpdateVideoComponent implements OnInit {
       value => {
         this.video = value;
         this.videoGenres = this.video.genres;
+        this.breadcrumb.push({
+          title: this.video.title,
+          link: '/admin/videos/details/' + this.video.id
+        });
       },
       error => {
         this.notificationService.error(null, 'video not found');
