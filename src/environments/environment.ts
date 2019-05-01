@@ -15,6 +15,7 @@ export const environment = {
     users: '/users',
     profile: '/profile',
     activation: '/users/activate',
+    update_password: '/users/update_password',
     authentication: '/authentication',
     reset_password: '/reset_password',
     change_password: '/change_password',

@@ -110,11 +110,11 @@ export class ProfileComponent implements OnInit {
 
     const apassword = this.updatePwdForm.get('apassword').value;
     const password = this.updatePwdForm.get('password').value;
-    const id = this.user.id;
 
-    this.userService.changePassword(id, apassword, password).subscribe(
+    this.userService.updatePassword(apassword, password).subscribe(
       value => {
         this.submitted = false;
+        console.log(value);
         this.notificationService.success(null, 'Modification du mot de passe reussi');
         this.router.navigate(['/user']);
       },
