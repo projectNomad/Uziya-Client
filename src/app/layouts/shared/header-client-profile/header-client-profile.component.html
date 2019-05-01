@@ -6,7 +6,7 @@
         {{user.first_name}}
       </button>
       <div ngbDropdownMenu aria-labelledby="dropdownConfig">
-        <button ngbDropdownItem routerLink="/user/{{user.id}}">
+        <button ngbDropdownItem routerLink="/user">
           <i class="fas fa-user"></i>
           {{ 'layout.header.profileUser' | translate }}
         </button>
@@ -18,15 +18,16 @@
           <i class="fas fa-cog"></i>
           {{ 'layout.header.setting' | translate }}
         </button>
+        <div class="dropdown-divider"></div>
         <button ngbDropdownItem routerLink="/">
           <i class="fas fa-external-link-alt"></i>
           {{ 'layout.header.returnclient' | translate }}
         </button>
-        <div class="dropdown-divider"></div>
         <button ngbDropdownItem *ngIf="isAdmin" routerLink="/admin">
-          <i class="fas fa-sign-out-alt"></i>
+          <i class="fas fa-external-link-alt"></i>
           {{ 'layout.header.returnAdmin' | translate }}
         </button>
+        <div class="dropdown-divider"></div>
         <button ngbDropdownItem (click)="logout()">
           <i class="fas fa-sign-out-alt"></i>
           {{ 'layout.header.logout' | translate }}

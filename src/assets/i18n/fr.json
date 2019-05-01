@@ -42,15 +42,54 @@
 			}
 		}
 	},
+	"auth": {
+		"register": {
+			"choiceRole": "Qui êtes-vous?",
+			"confirmPassword": "Confirmer",
+			"email": "Email",
+			"errors": {
+				"emailInvalid": "Email invalide",
+				"emailRequired": "Email requis",
+				"firstnameRequired": "prénom requis",
+				"password": {
+					"message1": "Le mot de passe doit avoir au moins une lettre majuscule.",
+					"message2": "Le mot de passe doit avoir au moins une lettre minuscule.",
+					"message3": "Le mot de passe doit avoir au moins un chiffre.",
+					"message4": "Le mot de passe doit contenir au moins un de ces caractères spéciaux (!, @, #, $, %, ^, &).",
+					"message5": "Le mot de passe doit avoir au moins 8 caractéres."
+				},
+				"passwordRequired": "Mot de passe requis",
+				"passwordmustmatch": "Mots de passe non identiques"
+			},
+			"firstname": "Prénom",
+			"haveyouaccount": "Avez vous un compte?",
+			"lastname": "Nom",
+			"loginlink": "Connectez-vous",
+			"man": "Homme",
+			"password": "Mot de passe",
+			"roleProducer": "Réalisteurs",
+			"roleViewer": "Visionneur",
+			"sexe": "Sexe",
+			"submit": "Envoyer",
+			"update": "Modifier",
+			"woman": "Femme"
+		}
+	},
 	"client": {
 		"header": {
 			"home": "Accueil",
 			"search": "Rechercher"
 		},
 		"user": {
+			"confirmPassword": "Confirmer mot de passe",
+			"currentPassword": "Mot de passe actuel",
+			"newPassword": "Nouveau mot de passe",
 			"profile": {
 				"updateProfile": "Modifier votre projet"
-			}
+			},
+			"updateaccount": "Modifier votre compte",
+			"updateaprofile": "Modifier votre profile",
+			"updatepassword": "Modifier le mot de passe"
 		}
 	},
 	"footer": {
@@ -136,8 +175,7 @@
 				"confirmation": {
 					"errors": {
 						"mustmatch": "Les mots de passe ne correspondent pas"
-					},
-					"label": "Confirmation"
+					}
 				},
 				"email": {
 					"errors": {
@@ -148,17 +186,12 @@
 					"label": "Email"
 				},
 				"firstname": {
-					"errors": {
-						"required": "Prénom requis"
-					},
 					"label": "Prénom"
 				},
 				"gender": {
 					"label": "Genre"
 				},
 				"group": {
-					"choicemovie": "Regarder des projets",
-					"choiceproject": "Envoyer vos projets",
 					"choicetitle": "Qui êtes-vous?"
 				},
 				"lastname": {
@@ -174,14 +207,8 @@
 							"message5": "Le mot de passe doit avoir au moins 8 caractéres."
 						},
 						"required": "Mot de passe requis"
-					},
-					"label": "Mot de passe"
-				},
-				"submit": "Envoyer"
-			},
-			"message": {
-				"linklogin": "Connectez-vous",
-				"login": "Avez-vous un compte?"
+					}
+				}
 			},
 			"title": "Connexion"
 		},

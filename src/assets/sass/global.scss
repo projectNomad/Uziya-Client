@@ -4,6 +4,10 @@ body {
   background-color: $body_bg;
 }
 
+[role="main"] {
+  min-height: $body_min_height;
+}
+
 //global css title
 h1, h2, h3{ color: white; }
 

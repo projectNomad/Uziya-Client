@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit {
                 null,
                 'Bonjour ' + data.first_name
               );
-              this.router.navigate(['/auth']);
+              this.router.navigate(['/']);
             }
           );
       },

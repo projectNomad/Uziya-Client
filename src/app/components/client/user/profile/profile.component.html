@@ -1,3 +1,129 @@
-<p>
-  profile works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <h1>{{ 'client.user.updateaccount' | translate }}</h1>
+    <hr>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <form [formGroup]="updateUserForm" (ngSubmit)="onSubmitUpdateUser()">
+        <section>
+          <h3>{{ 'client.user.updateaprofile' | translate }}</h3>
+        </section>
+
+        <div class="form-group">
+          <label for="lastname">{{ 'auth.register.lastname' | translate }}</label>
+          <input type="text" id="lastname" class="form-control" formControlName="lastname"
+                 [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }">
+        </div>
+
+        <div class="form-group">
+          <label for="firstname">{{ 'auth.register.firstname' | translate }}</label>
+          <input type="text" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }"
+                 id="firstname" class="form-control" formControlName="firstname">
+          <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+            <div *ngIf="f.firstname.errors.required">{{ 'auth.register.errors.firstnameRequired' | translate }}</div>
+            <div *ngIf="f.firstname.getError('apiError')">
+              <ul class="list-inline">
+                <li *ngFor="let errorMessage of f.firstname.getError('apiError')">
+                  {{ errorMessage}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">{{ 'auth.register.email' | translate }}</label>
+          <input type="text" id="email" class="form-control" formControlName="email"
+                 [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">{{ 'auth.register.errors.emailRequired' | translate }}</div>
+            <div *ngIf="f.email.errors.email">{{ 'auth.register.errors.emailInvalid' | translate }}</div>
+            <div *ngIf="f.email.getError('apiError')">
+              <ul class="list-inline">
+                <li *ngFor="let errorMessage of f.email.getError('apiError')">
+                  {{ errorMessage}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>{{ 'auth.register.sexe' | translate }}</label><br>
+          <div class="radio-inline">
+            <label><input type="radio" value="M" formControlName="gender"> {{ 'auth.register.man' | translate }}</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label><input type="radio" value="F" formControlName="gender"> {{ 'auth.register.woman' | translate }}</label>
+          </div>
+          <div class="text-justify text-danger"
+               *ngFor="let errorMessage of updateUserForm.controls['gender'].getError('apiError')">
+            {{ errorMessage}}
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">{{ 'auth.register.update' | translate }}</button>
+      </form>
+    </div>
+
+    <div class="col-md-4">
+      <section>
+        <h3>{{ 'client.user.updatepassword' | translate }}</h3>
+      </section>
+      <form  [formGroup]="updatePwdForm" (ngSubmit)="onSubmitPwdUser()">
+        <div class="form-group">
+          <label for="apassword">{{ 'client.user.currentPassword' | translate }}</label>
+          <input type="password" id="apassword" class="form-control" formControlName="apassword"
+                 [ngClass]="{ 'is-invalid': submittedPwd && fP.password.errors }">
+          <div *ngIf="submittedPwd && fP.apassword.errors" class="invalid-feedback">
+            <div *ngIf="fP.apassword.errors.required">
+              {{ 'auth.register.errors.passwordRequired' | translate }}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">{{ 'client.user.newPassword' | translate }}</label>
+          <input type="password" id="password" class="form-control" formControlName="password"
+                 [ngClass]="{ 'is-invalid': submittedPwd && fP.password.errors }">
+          <div *ngIf="submittedPwd && fP.password.errors" class="invalid-feedback">
+            <div *ngIf="fP.password.errors.required">{{ 'auth.register.errors.passwordmustmatch' | translate }}</div>
+            <div *ngIf="fP.password.errors.pattern">
+              <ul>
+                <li>{{ 'auth.register.errors.password.message1' | translate }}</li>
+                <li>{{ 'auth.register.errors.password.message2' | translate }}</li>
+                <li>{{ 'auth.register.errors.password.message3' | translate }}</li>
+                <li>{{ 'auth.register.errors.password.message4' | translate }}</li>
+                <li>{{ 'auth.register.errors.password.message5' | translate }}</li>
+              </ul>
+            </div>
+            <div *ngIf="fP.password.getError('apiError')">
+              <ul class="list-inline">
+                <li *ngFor="let errorMessage of fP.password.getError('apiError')">
+                  {{ errorMessage}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="form_password_confirmation">
+            {{ 'client.user.confirmPassword' | translate }}
+          </label>
+          <input formControlName="confirmation"
+                 id="form_password_confirmation"
+                 class="form-control"
+                 type="password" [ngClass]="{ 'is-invalid': submittedPwd && fP.confirmation.errors }" >
+          <div *ngIf="submittedPwd && fP.confirmation.errors" class="invalid-feedback">
+            <div *ngIf="fP.confirmation.errors.mustMatch">
+              {{ 'register.auth.form.confirmation.errors.mustmatch' | translate }}
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">{{ 'auth.register.update' | translate }}</button>
+      </form>
+    </div>
+  </div>
+</div>
