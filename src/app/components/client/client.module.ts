@@ -9,6 +9,7 @@ import { HomeClientComponent } from './home-client/home-client.component';
 import {UserComponent} from './user/user.component';
 import {HeaderClientComponent} from '../../layouts/shared/header-client/header-client.component';
 import {ProfileComponent} from './user/profile/profile.component';
+import { VideosClientComponent } from './videos-client/videos-client.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {ProfileComponent} from './user/profile/profile.component';
     HomeClientComponent,
     UserComponent,
     HeaderClientComponent,
-    ProfileComponent
+    ProfileComponent,
+    VideosClientComponent,
   ],
   imports: [
     ClientRoutingModule,

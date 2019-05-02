@@ -6,6 +6,7 @@ import {AuthGuard} from './guards/auth.guard';
 const appRoutes: Routes = [
   { path: 'auth', loadChildren: './components/auth/auth.module#AuthModule'},
   { path: 'admin', loadChildren: './components/admin/admin.module#AdminModule', canActivate: [AuthGuard] },
+  { path: 'video', loadChildren: './components/video/video.module#VideoModule', canActivate: [AuthGuard] },
   { path: '', loadChildren: './components/client/client.module#ClientModule', canActivate: [AuthGuard] },
 ];
 
