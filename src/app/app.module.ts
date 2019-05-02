@@ -18,6 +18,7 @@ import { AuthComponent } from './components/auth/auth.component';
 import { SharedModule} from './components/shared/shared.module';
 import { AdminComponent } from './components/admin/admin.component';
 import { ClientComponent } from './components/client/client.component';
+import { VideoComponent } from './components/video/video.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ClientComponent } from './components/client/client.component';
     AuthComponent,
     AdminComponent,
     ClientComponent,
+    VideoComponent,
   ],
   imports: [
     BrowserModule,

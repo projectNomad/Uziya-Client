@@ -6,14 +6,15 @@ import {UserComponent} from './user/user.component';
 import {ClientLayoutComponent} from '../../layouts/client-layout/client-layout.component';
 import {ProfileComponent} from './user/profile/profile.component';
 
-const routes: Routes = [
+const routes
+: Routes = [
   {
     path: '',
     component: ClientLayoutComponent,
     children: [
       { path: '', component: HomeClientComponent },
       { path: 'user', component: UserComponent},
-      { path: 'user/profile', component: ProfileComponent},
+      { path: 'user/profile', component: ProfileComponent}
     ]
   }
 ];
