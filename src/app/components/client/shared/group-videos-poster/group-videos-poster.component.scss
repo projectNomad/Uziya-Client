@@ -1,0 +1,97 @@
+@import "~src/assets/sass/variables";
+
+.group-videos-item{
+  width: inherit;
+  padding: 0 20px;
+  overflow: scroll;
+  overflow-y: hidden;
+
+  .title{
+    display: inline-block;
+  }
+
+  &_btn{
+    height: inherit;
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    z-index: 10;
+    padding: 65px 5px 65px 5px;
+    a{
+      padding: inherit;
+    }
+  }
+
+  &_btn_left{
+    right: 15px;
+  }
+  &_btn_right{
+    left: 15px;
+  }
+
+  &_title{
+    font-size: 1.25em;
+  }
+
+  &_body{
+    position: relative;
+    width: 195%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    text-align: left;
+  }
+
+  ul{
+    margin: 0 !important;
+
+    li, a {
+      display: inline-block;
+
+      img.active{
+        border: 3px solid $link_active_color_global;
+        border-bottom: 1px solid $link_active_color_global;
+      }
+    }
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  height: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $body_bg;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $body_bg;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $body_bg;
+}
+
+.border-active{
+  border: 3px solid $link_active_color_global;
+  height: 154px;
+  width: 200px;
+  position: absolute;
+  z-index: 10;
+  padding-top: 148px;
+  padding-left: 72px;
+  transition-property: transform;
+  transition-duration: .5s;
+  transition-timing-function: ease;
+
+  .triangle{
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 15px solid $link_active_color_global;
+  }
+}

@@ -10,6 +10,8 @@ import {UserComponent} from './user/user.component';
 import {HeaderClientComponent} from '../../layouts/shared/header-client/header-client.component';
 import {ProfileComponent} from './user/profile/profile.component';
 import { VideosClientComponent } from './videos-client/videos-client.component';
+import { GroupVideosPosterComponent } from './shared/group-videos-poster/group-videos-poster.component';
+import { DetailsVideoComponent } from './shared/details-video/details-video.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { VideosClientComponent } from './videos-client/videos-client.component';
     HeaderClientComponent,
     ProfileComponent,
     VideosClientComponent,
+    GroupVideosPosterComponent,
+    DetailsVideoComponent,
   ],
   imports: [
     ClientRoutingModule,
