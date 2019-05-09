@@ -11,6 +11,7 @@ import {HeaderClientComponent} from '../../layouts/shared/header-client/header-c
 import {ProfileComponent} from './user/profile/profile.component';
 import { VideosClientComponent } from './videos-client/videos-client.component';
 import { GroupVideosPosterComponent } from './shared/group-videos-poster/group-videos-poster.component';
+import { DetailsVideoComponent } from './shared/details-video/details-video.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { GroupVideosPosterComponent } from './shared/group-videos-poster/group-v
     ProfileComponent,
     VideosClientComponent,
     GroupVideosPosterComponent,
+    DetailsVideoComponent,
   ],
   imports: [
     ClientRoutingModule,

@@ -1,105 +1,36 @@
-<div class="group-videos-item" [class.overflow-hidden]="!isVideoScroll">
-  <div class="group-videos-item_title">{{title}}</div>
+<div class="mb-1 group-videos-item" [class.overflow-hidden]="!isVideoScroll">
+  <div class="group-videos-item_title mb-3">
+    <div class="float-left mr-1 group-videos-item_title"><h4>{{title}}</h4></div>
+    <div class="group-videos-item_links pt-1" *ngIf="footerMenus.length>0">
+      <ul class="list-inline">
+        <li class="list-inline-item" *ngFor="let elt of footerMenus">
+          <small>
+            <a *ngIf="elt.link" href="{{elt.link}}">{{elt.title}}</a>
+            <span *ngIf="!elt.link">{{elt.title}}</span>
+          </small>
+        </li>
+      </ul>
+    </div>
+  </div>
   <div class="text-center group-videos-item_btn group-videos-item_btn_right" *ngIf="isVideoScroll">
     <a href=""><i class="fas fa-chevron-left"></i></a>
   </div>
   <div class="text-center group-videos-item_btn group-videos-item_btn_left" *ngIf="isVideoScroll">
     <a href=""><i class="fas fa-chevron-right"></i></a>
   </div>
+  <div class="border-active" [style.transform]="getTranslationBorderVideoSelected()" *ngIf="videoCurrent">
+    <div class="triangle"></div>
+  </div>
   <div class="group-videos-item_body">
-    <ul class="list-inline" #videosElements>
-      <li *ngFor="let video of videos" class="list-inline-item" (click)="showVideoInfos(video, $event)">
+    <ul class="list-inline">
+      <li *ngFor="let video of videos; let i = index" class="list-inline-item" (click)="onShowVideoInfos(video, i)">
         <a class="group-videos-item_body_cards cursor-pointer">
           <img src="http://placehold.it/200x150" alt="{{video.title}}" class="mx-auto d-block">
         </a>
       </li>
     </ul>
   </div>
-<!--  <div class="border-active"><div class="triangle"></div></div>-->
 </div>
-<div class="row">
-  <div class="col-md-12 pl-4 group-videos-infos" [@animVideoInfos]="isShowVideoInfos ? 'openVideoInfos' : 'closedVideoInfos'">
-    <div class="group-videos-infos_item group-videos-infos_header float-left">
-      <div class="pr-lg-5 mb-lg-5">
-        <button type="button" class="font-size-5 close" aria-label="Close" (click)="hideVideoInfos($event)">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="mb-lg-5"><a class="btn btn-primary" routerLink="video/player/{{videoCurrentClick?.id}}">Play</a></div>
-      <div>
-        <ul class="list-inline">
-          <li><a class="active cursor-pointer" [class.active]="!isShowVideoMenu" (click)="activeVideoMenu()">Presentation</a></li>
-          <li><a class="cursor-pointer" [class.active]="isShowVideoMenu" (click)="activeVideoMenu()">Details</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="group-videos-infos_item group-videos-infos_body pt-lg-5">
-      <div class="row"><h2>{{videoCurrentClick?.title}}</h2></div>
-      <div class="presentation" *ngIf="!isShowVideoMenu">
-        <div class="group-videos-infos_body_infos">
-          <div>
-            <ul class="list-inline">
-              <li class="list-inline-item">{{videoCurrentClick?.duration}}</li>
-            </ul>
-          </div>
-          <div>
-
-          </div>
-          <div class="mb-3">
-            <h3>Description</h3>
-            <div>
-              {{videoCurrentClick?.description}}
-            </div>
-          </div>
-          <div>
-            <ul class="list-inline">
-              <li class="list-inline-item badge badge-primary" *ngFor="let genre of videoCurrentClick?.genres">{{genre.label}}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="details" *ngIf="isShowVideoMenu">
-        <div class="row">
-          <div class="col-md-2">
-            <ul>
-              <li>blablabla</li>
-              <li>blablabla</li>
-              <li>blablabla</li>
-              <li>blablabla</li>
-              <li>blablabla</li>
-              <li>blablabla</li>
-            </ul>
-          </div>
-          <div class="col-md-2">
-            <ul>
-              <li>blablabla</li>
-              <li>blablabla</li>
-              <li>blablabla</li>
-              <li>blablabla</li>
-              <li>blablabla</li>
-              <li>blablabla</li>
-            </ul>
-          </div>
-          <div class="col-md-2">
-            <ul>
-              <li>blablabla</li>
-              <li>blablabla</li>
-              <li>blablabla</li>
-              <li>blablabla</li>
-              <li>blablabla</li>
-              <li>blablabla</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="group-videos-item_footer pl-4" *ngIf="footerMenus.length>0">
-  <ul class="list-inline">
-    <li class="list-inline-item" *ngFor="let elt of footerMenus">
-      <a *ngIf="elt.link" href="{{elt.link}}">{{elt.title}}</a>
-      <span *ngIf="!elt.link">{{elt.title}}</span>
-    </li>
-  </ul>
-</div>
+<app-details-video [video]="videoCurrent"  *ngIf="videoCurrent" (closeDetailInfo)="hideVideoInfos($event)"
+                   [@animVideoInfos]="isShowVideoInfos ? 'openVideoInfos' : 'closedVideoInfos'">
+</app-details-video>

@@ -1,7 +1,9 @@
-import {Component, OnInit, Input, Renderer2, ElementRef, ViewChild} from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import {Component, OnInit, Input} from '@angular/core';
+import {animate, query, state, style, transition, trigger} from '@angular/animations';
 
 import {Video} from '../../../../models/video.model';
+
+const MAX_VIDEOS_VISIBLE = 10;
 
 @Component({
   selector: 'app-group-videos-poster',
@@ -22,29 +24,37 @@ import {Video} from '../../../../models/video.model';
         animate('1ms 5ms')
       ]),
     ]),
+    // trigger('animVideoBorderSelected', [
+    //   transition('* => *', [
+    //     query(':enter', [
+    //       style({transform: 'translateX({{offsetEnter}}%)'}), animate('0.4s ease-in-out')
+    //     ], {optional: true}),
+    //     query(':leave', [
+    //       style({transform: 'translateX(0%)'}),
+    //       animate('0.4s ease-in-out', style({transform: 'translateX({{offsetEnter}}%)'}))
+    //     ], {optional: true}),
+    //   ])
+    // ])
   ]
 })
 export class GroupVideosPosterComponent implements OnInit {
 
   @Input() title: string;
-  @Input() videos: Video[];
   @Input() videosLength: number;
+  @Input() videos: Video[];
 
   footerMenus: any[];
-  isShowVideoInfos = false;
-  videoCurrentClick: Video;
   isVideoScroll: boolean;
-  isShowVideoMenu = false;
-  elementImgActive: any;
-  @ViewChild('videosElements') videosElements: ElementRef;
-
+  isShowVideoInfos = false;
+  videoCurrent: Video;
+  videoPositionCurrent = 0;
+  videoPositions = [0, 208, 416, 624, 832, 1040, 1248, 1456, 1664, 1872];
 
   constructor(
-    private renderer: Renderer2
   ) {}
 
   ngOnInit() {
-    this.isVideoScroll = this.videosLength < 10;
+    this.isVideoScroll = this.videosLength < MAX_VIDEOS_VISIBLE;
     this.footerMenus = [
       {
         title: 'Ajouter',
@@ -57,20 +67,26 @@ export class GroupVideosPosterComponent implements OnInit {
     ];
   }
 
-  showVideoInfos(video: Video, event) {
-    this.elementImgActive = null;
-    this.videoCurrentClick = video;
+  onShowVideoInfos(video: Video, i: number) {
     this.isShowVideoInfos = true;
-    this.elementImgActive = event.target
-    this.renderer.addClass(this.elementImgActive, 'active');
+    this.videoCurrent = video;
+    this.videoPositionCurrent = (i > MAX_VIDEOS_VISIBLE) ? MAX_VIDEOS_VISIBLE : i;
   }
 
   hideVideoInfos(event) {
-    this.isShowVideoInfos = false;
-    this.renderer.removeClass(this.elementImgActive, 'active');
+    this.videoCurrent = null;
   }
 
-  activeVideoMenu() {
-    this.isShowVideoMenu = !this.isShowVideoMenu;
+  getTranslationBorderVideoSelected() {
+    return `translateX(${this.videoPositions[this.videoPositionCurrent]}px)`;
   }
+
+  // getState() {
+  //   console.log('je suis getState', this.videoPositions[this.videoPositionCurrent])
+  //   return {
+  //     params: {
+  //       offsetEnter: this.videoPositions[this.videoPositionCurrent]
+  //     }
+  //   };
+  // }
 }
