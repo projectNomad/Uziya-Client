@@ -10,12 +10,11 @@ export class Video extends Base {
   file: string;
   size: number;
   is_delete: boolean;
-  is_deleted: Date;
   is_active: boolean;
-  is_actived: Date;
   is_created: Date;
   genres: Genre[];
-  is_path_file: string;
+  hostPathFile: string;
+  durationToHMS: string;
 }
 
 export class Genre extends Base {

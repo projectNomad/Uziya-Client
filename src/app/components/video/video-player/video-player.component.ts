@@ -48,7 +48,7 @@ export class VideoPlayerComponent implements OnInit {
         console.log(error);
       },
       () => {
-        this.src = this.getPathVideo();
+        this.src = this.videoP.hostPathFile;
         this.overlay = null;
         this.title = this.videoP.title;
         this.preload = true;
@@ -62,15 +62,6 @@ export class VideoPlayerComponent implements OnInit {
     );
     // this.renderer.listen(this.video, 'ended', () => console.log('video ended'));
     // this.video.addEventListener('ended', () => console.log('video ended'));
-  }
-
-  getPathVideo() {
-    const arrayPath = this.videoP.file.split('/');
-    console.log(arrayPath)
-    arrayPath.splice(3, 2);
-    console.log(arrayPath)
-
-    return arrayPath.join('/');
   }
 
   getOverlayClass(activeClass: string, inactiveClass: string): any {

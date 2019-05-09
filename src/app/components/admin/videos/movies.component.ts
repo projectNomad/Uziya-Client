@@ -54,19 +54,13 @@ export class MoviesComponent implements OnInit {
         },
         {
           width: '70px',
-          render: function (data: any, type: any, full: any) {
-            return (data / 60).toFixed(2);
-          }
         },
         {}
       ],
-      rowCallback: (row: Node, data: any[] | Object, index: number) => {
-        const self = this;
-        // Unbind first in order to avoid any duplicate handler
-        // (see https://github.com/l-lin/angular-datatables/issues/87)
+      rowCallback: (row: Node, data: any[] | object, index: number) => {
         $('td', row).unbind('click');
         $('td', row).bind('click', () => {
-          self.someClickHandler(data);
+          this.someClickHandler(data);
         });
         return row;
       }
@@ -77,13 +71,13 @@ export class MoviesComponent implements OnInit {
       .subscribe(
         value => {
           this.videos = value;
+          console.log(value)
           this.dtTrigger.next();
         }
       );
   }
 
   someClickHandler(data) {
-    console.log(data[0]);
     this.router.navigate(['/admin/videos/details/', data[0]]);
   }
 

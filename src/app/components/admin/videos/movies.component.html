@@ -24,7 +24,7 @@
             <td>{{ video.id }}</td>
             <td>{{ video.title }}</td>
             <td><input type="checkbox" disabled [checked]="video.is_active"></td>
-            <td>{{ video.duration }}</td>
+            <td>{{ video.durationToHMS }}</td>
             <td>
               <ul class="list-inline">
                 <li class="list-inline-item" *ngFor="let genre of video.genres">{{genre.label}}</li>

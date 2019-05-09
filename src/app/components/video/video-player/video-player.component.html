@@ -1,4 +1,4 @@
-<div class="video-player">
+<div class="video-player" *ngIf="videoP">
   <vg-player>
     <div class="header" *ngIf="title" [ngClass]="getOverlayClass('visible', 'hidden')">
       {{title}}

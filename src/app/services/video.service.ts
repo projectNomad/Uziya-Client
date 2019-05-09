@@ -43,7 +43,7 @@ export class VideoService {
     );
   }
 
-  public getVideo(id: number) {
+  public getVideo(id: number): Observable<Video> {
     return this.httpClient.get<Video>(
       environment.paths_api.video.update + id,
     );
