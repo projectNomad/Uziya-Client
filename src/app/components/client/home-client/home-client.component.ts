@@ -21,13 +21,14 @@ export class HomeClientComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.videos$ = this.videoService.getListVideos()
+    this.videos$ = this.videoService.getListVideos({
+      limit: 12
+    })
       .pipe(tap(
         value => {
-          this.videosLength = value.count;
+          this.videosLength = value.results.length;
         }
       ))
       .pipe(map(result => result.results));
   }
-
 }

@@ -8,16 +8,19 @@ import {UploadInput} from 'ngx-uploader';
 import {Video, Genre} from '../models/video.model';
 import {PagedResults} from '../models/base';
 import {I18nService} from './core/i18n.service';
+import ServiceCore from './core/ServiceCore';
 
 @Injectable({
   providedIn: 'root'
 })
-export class VideoService {
+export class VideoService extends ServiceCore {
 
   constructor(
     private httpClient: HttpClient,
     private i18nService: I18nService
-  ) { }
+  ) {
+    super();
+  }
 
   public createNewVideo(): UploadInput {
     const currentLangage = this.i18nService.language;
@@ -36,10 +39,16 @@ export class VideoService {
       video);
   }
 
-  public getListVideos(): Observable<PagedResults<Video>> {
+  public getListVideos(params: {
+    offset?: number;
+    limit?: number;
+  }): Observable<PagedResults<Video>> {
 
     return this.httpClient.get<PagedResults<Video>>(
       environment.paths_api.video.create_list,
+      {
+        params: this.toHttpParams(params)
+      }
     );
   }
 

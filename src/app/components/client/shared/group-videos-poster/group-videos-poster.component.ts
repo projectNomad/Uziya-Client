@@ -3,7 +3,7 @@ import {animate, query, state, style, transition, trigger} from '@angular/animat
 
 import {Video} from '../../../../models/video.model';
 
-const MAX_VIDEOS_VISIBLE = 10;
+const MAX_VIDEOS_VISIBLE = 12;
 
 @Component({
   selector: 'app-group-videos-poster',
@@ -40,7 +40,6 @@ const MAX_VIDEOS_VISIBLE = 10;
 export class GroupVideosPosterComponent implements OnInit {
 
   @Input() title: string;
-  @Input() videosLength: number;
   @Input() videos: Video[];
 
   footerMenus: any[];
@@ -48,13 +47,13 @@ export class GroupVideosPosterComponent implements OnInit {
   isShowVideoInfos = false;
   videoCurrent: Video;
   videoPositionCurrent = 0;
-  videoPositions = [0, 208, 416, 624, 832, 1040, 1248, 1456, 1664, 1872];
+  videoPositions = [0, 208, 416, 624, 832, 1040, 1248, 1456, 1664, 1872, 2080, 2288];
 
   constructor(
   ) {}
 
   ngOnInit() {
-    this.isVideoScroll = this.videosLength < MAX_VIDEOS_VISIBLE;
+    this.isVideoScroll = true;
     this.footerMenus = [
       {
         title: 'Ajouter',
@@ -80,13 +79,4 @@ export class GroupVideosPosterComponent implements OnInit {
   getTranslationBorderVideoSelected() {
     return `translateX(${this.videoPositions[this.videoPositionCurrent]}px)`;
   }
-
-  // getState() {
-  //   console.log('je suis getState', this.videoPositions[this.videoPositionCurrent])
-  //   return {
-  //     params: {
-  //       offsetEnter: this.videoPositions[this.videoPositionCurrent]
-  //     }
-  //   };
-  // }
 }

@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
-import GlobalService from './core/globalService';
+import ServiceCore from './core/ServiceCore';
 
 interface AuthenticationResponse {
   token: string;
@@ -12,7 +12,7 @@ interface AuthenticationResponse {
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService extends GlobalService {
+export class AuthService extends ServiceCore {
 
   constructor(private httpClient: HttpClient) {
     super();

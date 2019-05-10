@@ -9,7 +9,7 @@ import { SharedModule} from '../shared/shared.module';
 import { AdminLayoutComponent } from '../../layouts/admin-layout/admin-layout.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderAdminComponent} from '../../layouts/shared/header-admin/header-admin.component';
-import { MoviesComponent } from './videos/movies.component';
+import { VideosComponent } from './videos/videos.component';
 import { RegisterVideoComponent } from './videos/register-video/register-video.component';
 import { HeaderPageComponent } from './shared/header-page/header-page.component';
 import {DataTablesModule} from 'angular-datatables';
@@ -25,7 +25,7 @@ import {ClientModule} from '../client/client.module';
     HomeComponent,
     HeaderAdminComponent,
     MenuLeftAdminComponent,
-    MoviesComponent,
+    VideosComponent,
     RegisterVideoComponent,
     HeaderPageComponent,
     DetailsVideoComponent,

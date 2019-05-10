@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {AdminLayoutComponent} from '../../layouts/admin-layout/admin-layout.component';
 import {HomeComponent} from './home/home.component';
-import {MoviesComponent} from './videos/movies.component';
+import {VideosComponent} from './videos/videos.component';
 import {RegisterVideoComponent} from './videos/register-video/register-video.component';
 import {DetailsVideoComponent} from './videos/details-video/details-video.component';
 import {UpdateVideoComponent} from './videos/update-video/update-video.component';
@@ -14,7 +14,7 @@ const routes: Routes = [
     component: AdminLayoutComponent,
     children: [
       { path: '', component: HomeComponent },
-      { path: 'videos', component: MoviesComponent },
+      { path: 'videos', component: VideosComponent },
       { path: 'videos/upload', component: RegisterVideoComponent },
       { path: 'videos/details/:id', component: DetailsVideoComponent },
       { path: 'videos/update/:id', component: UpdateVideoComponent },

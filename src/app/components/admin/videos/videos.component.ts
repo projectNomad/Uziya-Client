@@ -7,10 +7,10 @@ import {VideoService} from '../../../services/video.service';
 
 @Component({
   selector: 'app-movies',
-  templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.scss']
+  templateUrl: './videos.component.html',
+  styleUrls: ['./videos.component.scss']
 })
-export class MoviesComponent implements OnInit {
+export class VideosComponent implements OnInit {
   breadcrumb = [
     {
       title: 'home',
@@ -66,7 +66,7 @@ export class MoviesComponent implements OnInit {
       }
     };
 
-    this.videoService.getListVideos()
+    this.videoService.getListVideos({})
       .pipe(map(result => result.results))
       .subscribe(
         value => {
