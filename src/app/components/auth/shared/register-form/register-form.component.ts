@@ -1,33 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import {Component, OnInit, Output, Input, EventEmitter} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {MustMatch} from '../../../../_helpers/must-match.validator';
+import {UserService} from '../../../../services/user.service';
 
-import {NotificationsService} from 'angular2-notifications';
-import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
-
-import { UserService } from '../../../services/user.service';
-import {environment} from '../../../../environments/environment';
-import { MustMatch } from '../../../_helpers/must-match.validator';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  selector: 'app-register-form',
+  templateUrl: './register-form.component.html',
+  styleUrls: ['./register-form.component.scss']
 })
-export class SignupComponent implements OnInit {
+export class RegisterFormComponent implements OnInit {
+
   signupForm: FormGroup;
   submitted = false;
-  images = [
-    'assets/images/static/login/1.jpg',
-    'assets/images/static/login/2.JPG',
-    'assets/images/static/login/3.JPG',
-  ];
+  @Output() successForm = new EventEmitter();;
+  @Input() group;
 
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private notificationService: NotificationsService,
-    private router: Router
   ) { }
 
   ngOnInit() {
@@ -39,7 +30,7 @@ export class SignupComponent implements OnInit {
         firstname: [null, [ Validators.required, Validators.minLength(2) ]],
         lastname: [null],
         email: [null, [Validators.required, Validators.email]],
-        group: [environment.groups.viewer, [Validators.required]],
+        termsuse: [null, [Validators.required]],
         password: [null, [
           Validators.required,
           Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/),
@@ -70,18 +61,20 @@ export class SignupComponent implements OnInit {
       last_name: this.signupForm.get('lastname').value,
       email: this.signupForm.get('email').value,
       password: this.signupForm.get('password').value,
+      is_agreed_terms_use: this.signupForm.get('termsuse').value,
       gender: 'A',
-      group: this.signupForm.get('group').value,
+      group: (this.group === 'producer') ? this.group : ''
     };
 
     this.userService.createNewUser(user)
       .subscribe(
-      value => {
-        this.submitted = false;
-        this.notificationService.success(_('register.user.form.success'), value.detail);
-      },
+        value => {
+          this.submitted = false;
+          this.successForm.emit(true);
+        },
         err => {
           this.submitted = true;
+          this.successForm.emit(false);
 
           if (err.error.first_name) {
             this.f.firstname.setErrors({apiError: err.error.first_name});
@@ -95,11 +88,10 @@ export class SignupComponent implements OnInit {
           if (err.error.password) {
             this.f.password.setErrors({apiError: err.error.password});
           }
-      },
-      () => {
-        this.router.navigate(['/auth/login']);
-      }
-    );
+          if (err.error.termsuse) {
+            this.f.termsuse.setErrors({apiError: err.error.termsuse});
+          }
+        }
+      );
   }
-
 }
