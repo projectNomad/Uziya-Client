@@ -74,22 +74,22 @@
   background: $body_bg;
 }
 
-.border-active{
-  border: 3px solid $link_active_color_global;
-  height: 154px;
-  width: 200px;
-  position: absolute;
-  padding-top: 148px;
-  padding-left: 72px;
-  transition-property: transform;
-  transition-duration: .5s;
-  transition-timing-function: ease;
-
-  .triangle{
-    width: 0;
-    height: 0;
-    border-left: 18px solid transparent;
-    border-right: 18px solid transparent;
-    border-top: 15px solid $link_active_color_global;
-  }
-}
+//.border-active{
+//  border: 3px solid $link_active_color_global;
+//  height: 154px;
+//  width: 200px;
+//  position: absolute;
+//  padding-top: 148px;
+//  padding-left: 72px;
+//  transition-property: transform;
+//  transition-duration: .5s;
+//  transition-timing-function: ease;
+//
+//  .triangle{
+//    width: 0;
+//    height: 0;
+//    border-left: 18px solid transparent;
+//    border-right: 18px solid transparent;
+//    border-top: 15px solid $link_active_color_global;
+//  }
+//}

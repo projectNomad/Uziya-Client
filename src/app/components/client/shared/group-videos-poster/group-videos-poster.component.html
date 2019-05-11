@@ -1,26 +1,26 @@
-<div class="mb-1 group-videos-item" [class.overflow-hidden]="!isVideoScroll">
-  <div class="group-videos-item_title mb-3">
-    <div class="float-left mr-1 group-videos-item_title"><h4>{{title}}</h4></div>
-    <div class="group-videos-item_links pt-1" *ngIf="footerMenus.length>0">
-      <ul class="list-inline">
-        <li class="list-inline-item" *ngFor="let elt of footerMenus">
-          <small>
-            <a *ngIf="elt.link" href="{{elt.link}}">{{elt.title}}</a>
-            <span *ngIf="!elt.link">{{elt.title}}</span>
-          </small>
-        </li>
-      </ul>
-    </div>
+<div class="group-videos-item_title mb-3">
+  <div class="float-left mr-1 group-videos-item_title"><h4>{{title}}</h4></div>
+  <div class="group-videos-item_links pt-1" *ngIf="footerMenus.length>0">
+    <ul class="list-inline">
+      <li class="list-inline-item" *ngFor="let elt of footerMenus">
+        <small>
+          <a *ngIf="elt.link" href="{{elt.link}}">{{elt.title}}</a>
+          <span *ngIf="!elt.link">{{elt.title}}</span>
+        </small>
+      </li>
+    </ul>
   </div>
-  <div class="text-center group-videos-item_btn group-videos-item_btn_right" *ngIf="isVideoScroll">
+</div>
+<div class="mb-1 group-videos-item" *ngIf="videos" [class.overflow-hidden]="videos.length < maxVideosVisibles">
+  <div class="text-center group-videos-item_btn group-videos-item_btn_right" *ngIf="videos.length >= maxVideosVisibles">
     <a href=""><i class="fas fa-chevron-left"></i></a>
   </div>
-  <div class="text-center group-videos-item_btn group-videos-item_btn_left" *ngIf="isVideoScroll">
+  <div class="text-center group-videos-item_btn group-videos-item_btn_left" *ngIf="videos.length >= maxVideosVisibles">
     <a href=""><i class="fas fa-chevron-right"></i></a>
   </div>
-  <div class="border-active" [style.transform]="getTranslationBorderVideoSelected()" *ngIf="videoCurrent">
-    <div class="triangle"></div>
-  </div>
+<!--  <div class="border-active" [style.transform]="getTranslationBorderVideoSelected()" *ngIf="videoCurrent">-->
+<!--    <div class="triangle"></div>-->
+<!--  </div>-->
   <div class="group-videos-item_body">
     <ul class="list-inline">
       <li *ngFor="let video of videos; let i = index" class="list-inline-item" (click)="onShowVideoInfos(video, i)">

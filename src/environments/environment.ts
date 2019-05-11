@@ -8,8 +8,9 @@ export const environment = {
   apiProvider: '',
   apiVersion: '',
   serverUrl: '',
-  video: {
-    minimumSize: 783504130
+  videos: {
+    minimumSize: 783504130,
+    limitVideosGroup: 12
   },
   paths_api: {
     users: '/users',

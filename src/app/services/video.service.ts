@@ -42,6 +42,9 @@ export class VideoService extends ServiceCore {
   public getListVideos(params: {
     offset?: number;
     limit?: number;
+    videoUser?: boolean;
+    is_actived?: boolean;
+    is_deleted?: boolean;
   }): Observable<PagedResults<Video>> {
 
     return this.httpClient.get<PagedResults<Video>>(
