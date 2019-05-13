@@ -55,7 +55,10 @@ export class VideosComponent implements OnInit {
         {
           width: '70px',
         },
-        {}
+        {},
+        {
+          width: '70px',
+        }
       ],
       rowCallback: (row: Node, data: any[] | object, index: number) => {
         $('td', row).unbind('click');
@@ -68,7 +71,7 @@ export class VideosComponent implements OnInit {
 
     this.videoService.getListVideos({
       videoUser: true,
-      is_deleted: false
+      is_deleted: true
     })
       .pipe(map(result => result.results))
       .subscribe(

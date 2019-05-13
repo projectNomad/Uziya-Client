@@ -22,11 +22,9 @@ export class UpdateVideoFormComponent implements OnInit {
 
   @Input() video: any;
   @Output() formSuccess = new EventEmitter();
-  // @Output() formSuccessGenre = new EventEmitter();
 
   formUpdateVideo: FormGroup;
   genres$: Observable<Genre[]>;
-  videoGenres: Genre[];
   genreHasDeleted: Genre;
 
   constructor(
