@@ -33,9 +33,9 @@ export class VideoService extends ServiceCore {
     };
   }
 
-  public updateVideo(video, id: number): Observable<any> {
+  public updateVideo(video: any): Observable<any> {
     return this.httpClient.patch<any>(
-      environment.paths_api.video.update + id,
+      environment.paths_api.video.update + video.id,
       video);
   }
 

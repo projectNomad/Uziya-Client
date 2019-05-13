@@ -44,10 +44,15 @@
               <div class="upload-box__content__items__content__progress-text-content">
                 <span class="progress-text" [class.is-done]="f?.progress?.data?.percentage === 100">
                   <span>{{ f.progress?.data?.percentage }}% </span>
-                  <span *ngIf="f.progress?.data?.percentage !== 100">{{ 'admin.videos.register.uploading' | translate }}</span>
-                  <span *ngIf="f.progress?.data?.percentage === 100">{{ 'admin.videos.register.done' | translate }}</span>
+                  <span *ngIf="f.progress?.data?.percentage !== 100">
+                    {{ 'admin.videos.register.uploading' | translate }}
+                  </span>
+                  <span *ngIf="f.progress?.data?.percentage === 100">
+                    {{ 'admin.videos.register.done' | translate }}
+                  </span>
                 </span>
-                <span class="speed-and-eta-text" *ngIf="f.progress?.data?.percentage !== 0 && f.progress?.data?.percentage !== 100">
+                <span class="speed-and-eta-text"
+                      *ngIf="f.progress?.data?.percentage !== 0 && f.progress?.data?.percentage !== 100">
                   <span>{{ f.progress?.data?.speedHuman }} </span>
                   <span>ETA {{ f.progress?.data?.etaHuman }}</span>
                 </span>
@@ -60,7 +65,9 @@
           <div class="col-md-3">
             <button class="btn btn-primary" (click)="startUpload()">{{ 'admin.videos.register.send' | translate }}</button>
             &nbsp;&nbsp;
-            <button class="btn btn-danger" *ngIf="files.length > 0" (click)="removeAllFiles()">{{ 'admin.videos.register.deleteAll' | translate }}</button>
+            <button class="btn btn-danger" *ngIf="files.length > 0" (click)="removeAllFiles()">
+              {{ 'admin.videos.register.deleteAll' | translate }}
+            </button>
           </div>
           <div class="col-md-9">
             <div class="text-justify text-danger"
@@ -75,46 +82,8 @@
   </div>
 
   <div class="row" *ngIf="showFormVideo">
-    <form [formGroup]="form2AddVideoForm" (ngSubmit)="onSubmit()">
-      <div>
-        <input type="hidden" formControlName="id">
-
-        <div class="form-group">
-          <label for="title">{{ 'admin.videos.register.tilte' | translate }}</label>
-          <input type="text"
-                 id="title"
-                 class="form-control"
-                 formControlName="title">
-        </div>
-
-        <div class="form-group">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" formControlName="active" id="active-true" value="1">
-            <label class="form-check-label" for="active-true">{{ 'admin.videos.register.activate' | translate }}</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" formControlName="active" id="active-false" value="0">
-            <label class="form-check-label" for="active-false">{{ 'admin.videos.register.deactivate' | translate }}</label>
-          </div>
-        </div>
-
-        <div class="form-group" *ngIf="(genres$ | async) as genres">
-          <label>Genre</label>
-          <ng-select [searchable]="true" formControlName="genres" [multiple]="true">
-            <ng-option [value]="genre" *ngFor="let genre of genres">{{genre.label}}</ng-option>
-          </ng-select>
-        </div>
-
-        <div class="form-group">
-          <label for="description">{{ 'admin.videos.register.description' | translate }}</label>
-          <textarea name="" id="description" cols="30" rows="10" formControlName="description"
-                    class="form-control" id="description"></textarea>
-        </div>
-      </div>
-
-      <button class="btn btn-primary" type="submit"
-              [disabled]="form2AddVideoForm.invalid">{{ 'admin.videos.register.save' | translate }}</button>
-    </form>
+    <app-update-video-form *ngFor="let video of videos" [video]="video" (formSuccess)="onSuccessForm($event)">
+    </app-update-video-form>
   </div>
 </div>
 

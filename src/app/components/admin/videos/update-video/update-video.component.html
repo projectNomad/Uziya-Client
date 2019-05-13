@@ -2,76 +2,9 @@
                  [breadcrumb]="breadcrumb" [buttonsEnd]="buttonsEnd"></app-header-page>
 
 <div class="container">
-
   <section *ngIf="video" class="video-details-group_infos">
     <div class="row">
-      <form [formGroup]="formUpdateVideo" (ngSubmit)="onSubmit()">
-        <section>
-          <h3>{{ 'admin.videos.update.title' | translate }}</h3>
-        </section>
-
-        <div>
-          <input type="hidden" formControlName="id">
-
-          <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text"
-                   id="title"
-                   class="form-control"
-                   formControlName="title">
-          </div>
-
-          <div class="form-group">
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" formControlName="active" id="active-true" value="1">
-              <label class="form-check-label" for="active-true">Activer</label>
-            </div>
-
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" formControlName="active" id="active-false" value="0">
-              <label class="form-check-label" for="active-false">Desactiver</label>
-            </div>
-          </div>
-
-          <div class="form-group" *ngIf="(genres$ | async) as genres">
-            <label>Genre</label>
-            <ul *ngIf="videoGenres">
-              <li *ngFor="let videogenre of videoGenres">
-                <button type="button" class="close" aria-label="Close" (click)="active_modal(content, videogenre)">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                {{videogenre.label}}
-              </li>
-            </ul>
-            <ng-select [searchable]="true" formControlName="genres" [multiple]="true">
-              <ng-option [value]="genre" *ngFor="let genre of genres">{{genre.label}}</ng-option>
-            </ng-select>
-          </div>
-
-          <div class="form-group">
-            <label for="description">Description</label>
-            <textarea name="" id="description" cols="30" rows="10" formControlName="description"
-                      class="form-control" id="description"></textarea>
-          </div>
-        </div>
-        <button class="btn btn-primary" type="submit"
-                [disabled]="formUpdateVideo.invalid">Modifier</button>
-      </form>
+      <app-update-video-form [video]="video" (formSuccess)="onSuccessForm($event)"></app-update-video-form>
     </div>
   </section>
 </div>
-
-<!-- Modal -->
-<ng-template #content let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Êtes-vous sûr de vouloir supprimer ce genre?</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-danger" (click)="delGenre()">Supprimer</button>
-    <button type="button" class="btn btn-outline-dark" (click)="d('Cross click')">Fermer</button>
-  </div>
-</ng-template>
