@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
+import {Router} from '@angular/router';
 
 import {VideoService} from '../../../../services/video.service';
 import {humanizeBytes, UploaderOptions, UploadFile, UploadInput, UploadOutput, UploadStatus} from 'ngx-uploader';
@@ -24,17 +24,16 @@ export class RegisterVideoComponent implements OnInit {
   humanizeBytes: Function;
   dragOver: boolean;
   errors: string[];
-  form2AddVideoForm: FormGroup;
   videos: object[];
   showFormVideo: boolean;
   genres$: Observable<Genre[]>;
   breadcrumb: any[];
 
   constructor(
-    private form2AddVideoBuilder: FormBuilder,
     private videoService: VideoService,
     private notificationService: NotificationsService,
-    private config: NgSelectConfig
+    private config: NgSelectConfig,
+    private router: Router
   ) {
     this.config.notFoundText = _('admin.videos.uploadVideo.videoNotFound');
     this.options = {
@@ -94,10 +93,9 @@ export class RegisterVideoComponent implements OnInit {
         this.files = [];
         return;
       }
-
-      this.videos.push(output.file.response.id);
+      this.videos.push(output.file.response);
       this.showFormVideo = true;
-      this.initForm();
+      // this.initForm();
     }
 
     this.files = this.files.filter(file => file.progress.status !== UploadStatus.Done);
@@ -106,16 +104,6 @@ export class RegisterVideoComponent implements OnInit {
   ngOnInit() {
     this.genres$ = this.videoService.getListGenres()
       .pipe(map(result => result.results));
-  }
-
-  initForm() {
-    this.form2AddVideoForm = this.form2AddVideoBuilder.group({
-      id: [this.videos[0], [Validators.required]],
-      title: [null],
-      active: ['0', [Validators.required]],
-      description: [null],
-      genres: [null],
-    });
   }
 
   startUpload(): void {
@@ -135,26 +123,12 @@ export class RegisterVideoComponent implements OnInit {
     this.files = [];
   }
 
-  onSubmit() {
-    const video = {
-      id: this.form2AddVideoForm.get('id').value,
-      title: this.form2AddVideoForm.get('title').value,
-      is_actived: (this.form2AddVideoForm.get('active').value === '1') ? new Date() : new Date('1960-01-01'),
-      description: this.form2AddVideoForm.get('description').value,
-      genres: this.form2AddVideoForm.get('genres').value,
-    };
-
-    this.videoService.updateVideo(video, video.id).subscribe(
-      value => {
-      },
-      error => {
-        this.showFormVideo = true;
-      },
-      () => {
-        this.showFormVideo = false;
-        this.notificationService.success(null, _('admin.videos.uploadVideo.videoSave'));
-        this.videos = [];
-      }
-    );
+  onSuccessForm(event) {
+    if (event) {
+      this.notificationService.success(null, 'Video enregistrer');
+      this.router.navigate(['/admin/videos/']);
+    } else {
+      this.notificationService.error(null, 'Erreur lors de l\'enregistrement');
+    }
   }
 }

@@ -1,0 +1,14 @@
+<div class="title mb-2">
+  <h3>{{ 'Modifier votre affiche' | translate }}</h3>
+</div>
+<div class="row mb-3">
+  <div class=”image-preview” >
+    <img *ngIf="imagePreview" [src]="imagePreview" width="100%">
+    <img *ngIf="!imagePreview && video.avatar" [src]="video.avatar.hostPathFile" width="100%">
+  </div>
+</div>
+<div class="row">
+  <input class="d-none" type="file" (change)="onFileUpload($event)" #selectFile>
+  <button *ngIf="!imagePreview" (click)="selectFile.click()">Select File</button>
+  <button (click)="OnUploadFile()">Upload</button>
+</div>

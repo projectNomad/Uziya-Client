@@ -24,6 +24,9 @@ export const environment = {
       create_list: '/videos/?param=auth',
       update: '/videos/',
     },
+    images: {
+      create: '/videos/images'
+    },
     genre: {
       list: '/videos/genres',
       delete: '/videos/genres/delete'

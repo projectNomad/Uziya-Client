@@ -55,7 +55,10 @@ export class VideosComponent implements OnInit {
         {
           width: '70px',
         },
-        {}
+        {},
+        {
+          width: '70px',
+        }
       ],
       rowCallback: (row: Node, data: any[] | object, index: number) => {
         $('td', row).unbind('click');

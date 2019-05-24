@@ -76,7 +76,7 @@ export class GroupVideosPosterComponent implements OnInit {
     this.videoCurrent = null;
   }
 
-  getTranslationBorderVideoSelected() {
-    return `translateX(${this.videoPositions[this.videoPositionCurrent]}px)`;
-  }
+  // getTranslationBorderVideoSelected() {
+  //   return `translateX(${this.videoPositions[this.videoPositionCurrent]}px)`;
+  // }
 }

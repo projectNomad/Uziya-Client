@@ -17,6 +17,7 @@
               ({{ 'admin.videos.tableDurationMinutes' | translate }})
             </th>
             <th scope="col">{{ 'admin.videos.tableGenres' | translate }}</th>
+            <th scope="col">{{ 'admin.videos.tableDates' | translate }}</th>
           </tr>
           </thead>
           <tbody *ngIf="videos?.length != 0">
@@ -30,6 +31,7 @@
                 <li class="list-inline-item" *ngFor="let genre of video.genres">{{genre.label}}</li>
               </ul>
             </td>
+            <td>{{video.is_created | date}}</td>
           </tr>
           </tbody>
           <tbody *ngIf="videos?.length == 0">

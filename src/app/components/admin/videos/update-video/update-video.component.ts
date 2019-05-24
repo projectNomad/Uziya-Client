@@ -5,7 +5,7 @@ import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 
 import {NotificationsService} from 'angular2-notifications';
-import {NgbModal, NgbModalConfig,} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 import {User} from '../../../../models/user';
 import {Genre, Video} from '../../../../models/video.model';
 import {AuthService} from '../../../../services/auth.service';
@@ -39,7 +39,6 @@ export class UpdateVideoComponent implements OnInit {
   user: User;
   genres$: Observable<Genre[]>;
   videoGenres: Genre[];
-  genreAtDelete: Genre;
 
   constructor(
     private formUpdateVideoBuider: FormBuilder,
@@ -48,7 +47,6 @@ export class UpdateVideoComponent implements OnInit {
     private notificationService: NotificationsService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private modalService: NgbModal
   ) {
     this.video = null;
   }
@@ -89,56 +87,13 @@ export class UpdateVideoComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    const video = {
-      id: this.formUpdateVideo.get('id').value,
-      title: this.formUpdateVideo.get('title').value,
-      description: this.formUpdateVideo.get('description').value,
-      is_actived: (this.formUpdateVideo.get('active').value === '1') ? new Date : new Date('1960-01-01'),
-      genres: this.formUpdateVideo.get('genres').value,
-    };
-
-    this.videoService.updateVideo(video, video.id).subscribe(
-      value => {
-        if (value) {
-          this.notificationService.success(null, value.title + ' a été modifiée');
-        } else {
-          this.notificationService.error(null, 'Erreur lors de la modification');
-        }
-      },
-      error => {
-        console.log(error);
-      },
-      () => {
-        this.router.navigate(['/admin/videos/details/', this.video.id]);
-      }
-    );
-  }
-
-  delGenre() {
-    this.videoService.delGenreVideo(this.video.id, this.genreAtDelete.id).subscribe(
-      value => {
-        if (value) {
-          this.videoGenres = this.videoGenres.filter(
-            (genre: Genre) => genre.label !== value
-          );
-          this.notificationService.success(null, value + ' deleted');
-        } else {
-          this.notificationService.error(null, 'Erreur lors de la modification');
-        }
-      },
-      error => {
-        console.log(error);
-      },
-      () => {
-        this.modalService.dismissAll();
-      }
-    );
-  }
-
-  active_modal(content, genre: Genre) {
-    this.modalService.open(content);
-    this.genreAtDelete = genre;
+  onSuccessForm(event) {
+    if (event) {
+      this.notificationService.success(null, 'Modification réussie');
+      this.router.navigate(['/admin/videos/details/', this.video.id]);
+    } else {
+      this.notificationService.error(null, 'Erreur lors de la modification');
+    }
   }
 
 }
