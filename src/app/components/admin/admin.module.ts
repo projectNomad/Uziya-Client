@@ -18,6 +18,7 @@ import { UpdateVideoComponent } from './videos/update-video/update-video.compone
 import {MenuLeftAdminComponent} from '../../layouts/shared/menu-left-admin/menu-left-admin.component';
 import {ClientModule} from '../client/client.module';
 import { UpdateVideoFormComponent } from './videos/shared/update-video-form/update-video-form.component';
+import { UploadFilesComponent } from './videos/shared/upload-files/upload-files.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { UpdateVideoFormComponent } from './videos/shared/update-video-form/upda
     HeaderPageComponent,
     DetailsVideoComponent,
     UpdateVideoComponent,
-    UpdateVideoFormComponent
+    UpdateVideoFormComponent,
+    UploadFilesComponent
   ],
   imports: [
     CommonModule,
