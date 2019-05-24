@@ -9,7 +9,7 @@ import {NotificationsService} from 'angular2-notifications';
 // import {_} from '@biesbjerg/ngx-translate-extract';
 
 import {VideoService} from '../../../../../services/video.service';
-import {Genre, Video} from '../../../../../models/video.model';
+import {Genre} from '../../../../../models/video.model';
 
 
 @Component({

@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
+import {Router} from '@angular/router';
 
 import {VideoService} from '../../../../services/video.service';
 import {humanizeBytes, UploaderOptions, UploadFile, UploadInput, UploadOutput, UploadStatus} from 'ngx-uploader';
@@ -24,17 +24,16 @@ export class RegisterVideoComponent implements OnInit {
   humanizeBytes: Function;
   dragOver: boolean;
   errors: string[];
-  // form2AddVideoForm: FormGroup;
   videos: object[];
   showFormVideo: boolean;
   genres$: Observable<Genre[]>;
   breadcrumb: any[];
 
   constructor(
-    private form2AddVideoBuilder: FormBuilder,
     private videoService: VideoService,
     private notificationService: NotificationsService,
-    private config: NgSelectConfig
+    private config: NgSelectConfig,
+    private router: Router
   ) {
     this.config.notFoundText = _('admin.videos.uploadVideo.videoNotFound');
     this.options = {
@@ -127,6 +126,7 @@ export class RegisterVideoComponent implements OnInit {
   onSuccessForm(event) {
     if (event) {
       this.notificationService.success(null, 'Video enregistrer');
+      this.router.navigate(['/admin/videos/']);
     } else {
       this.notificationService.error(null, 'Erreur lors de l\'enregistrement');
     }

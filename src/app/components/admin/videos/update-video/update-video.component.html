@@ -1,10 +1,13 @@
 <app-header-page titlePage="{{ 'admin.menuLeft.videos' | translate }}"
                  [breadcrumb]="breadcrumb" [buttonsEnd]="buttonsEnd"></app-header-page>
-
-<div class="container">
-  <section *ngIf="video" class="video-details-group_infos">
-    <div class="row">
+<section>
+  <div *ngIf="video" class="row">
+    <div class="col-md-6">
       <app-update-video-form [video]="video" (formSuccess)="onSuccessForm($event)"></app-update-video-form>
     </div>
-  </section>
-</div>
+
+    <div class="col-md-6">
+      <app-upload-files [video]="video"></app-upload-files>
+    </div>
+  </div>
+</section>

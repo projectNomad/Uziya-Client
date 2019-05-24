@@ -36,19 +36,28 @@ export class ApiPrefixInterceptor implements HttpInterceptor {
     }
 
     const token = localStorage.getItem(environment.cookiesName.token);
-    let header = new HttpHeaders({
-      'Content-Type':  'application/json'
-    });
+
+    let header = request.headers;
+
+    // if (request.headers.has('Content-Type')) {
+    //   console.log('1111')
+    //   header = new HttpHeaders({
+    //     'Content-Type':  'application/json'
+    //   });
+    // }
 
     if (token) {
       header = header.append('Authorization', 'token ' + token);
     }
+
     const apiProvider = '/' + this.i18nService.language;
 
-    return next.handle(request.clone({
+    const requestTmp = request.clone({
       headers: header,
       url: environment.serverUrl + apiProvider + request.url
-    }));
+    });
+
+    return next.handle(requestTmp);
   }
 }
 
