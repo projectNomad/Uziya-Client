@@ -90,7 +90,7 @@ export class UpdateVideoComponent implements OnInit {
   onSuccessForm(event) {
     if (event) {
       this.notificationService.success(null, 'Modification réussie');
-      this.router.navigate(['/admin/videos/details/', this.video.id]);
+      // this.router.navigate(['/admin/videos/details/', this.video.id]);
     } else {
       this.notificationService.error(null, 'Erreur lors de la modification');
     }

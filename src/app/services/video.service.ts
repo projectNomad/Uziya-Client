@@ -28,8 +28,8 @@ export class VideoService extends ServiceCore {
       type: 'uploadAll',
       url: environment.baseApiUrl + '/' + currentLangage + environment.paths_api.video.create_list,
       headers: { Authorization: 'token ' + localStorage.getItem(environment.cookiesName.token) },
-      method: 'POST'
-      // data: { foo: 'bar' }
+      method: 'POST',
+      // data: { avatar: null }
     };
   }
 

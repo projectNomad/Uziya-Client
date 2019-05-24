@@ -126,7 +126,7 @@ export class RegisterVideoComponent implements OnInit {
   onSuccessForm(event) {
     if (event) {
       this.notificationService.success(null, 'Video enregistrer');
-      this.router.navigate(['/admin/videos/']);
+      // this.router.navigate(['/admin/videos/']);
     } else {
       this.notificationService.error(null, 'Erreur lors de l\'enregistrement');
     }
