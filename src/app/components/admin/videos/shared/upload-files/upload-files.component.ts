@@ -38,6 +38,7 @@ export class UploadFilesComponent implements OnInit {
     // console.log(uploadFormData.get('file'));
     this.imageService.uploadImage(uploadFormData).subscribe(
       value => {
+        this.imagePreview = null;
         this.notificationsService.success(null, 'Image ajoutée');
       },
       err => {
