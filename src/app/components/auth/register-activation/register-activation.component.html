@@ -3,28 +3,34 @@
     <div class="col-md-12"><h1 class="text-center">Uziya</h1></div>
 
     <div class="col-md-12 mt-5" *ngIf="!success">
-      <i class="fa fa-5x fa-exclamation-circle register-activation__content__icon" aria-hidden="true"></i>
+      <i class="fa fa-5x fa-exclamation-circle register-activation__content__icon text-danger" aria-hidden="true"></i>
       <h2 class="title title--main">
-        {{ 'register.auth.activate.notwork.title' | translate }}
+        {{ 'auth.registerActivation.titleNotWork' | translate }}
       </h2>
       <p>
-        {{ 'register.auth.activate.notwork.message' | translate }}
+        {{ 'auth.registerActivation.messageNotWork' | translate }}
       </p>
+      <div class="col-md-12 text-center">
+        <a routerLink="/auth">
+          {{ 'auth.registerActivation.linkRegister' | translate }}
+        </a>
+      </div>
     </div>
     <div class="col-md-12 mt-5" *ngIf="success">
-      <i class="fa fa-5x fa-check-circle register-activation__content__icon" aria-hidden="true"></i>
+      <i class="fa fa-5x fa-check-circle register-activation__content__icon text-success" aria-hidden="true"></i>
       <h2 class="title title--main">
-        {{ 'register.auth.activate.work.title' | translate }}
+        {{ 'auth.registerActivation.titleWork' | translate }}
       </h2>
       <p>
-        {{ 'register.auth.activate.work.message' | translate }}
+        {{ 'auth.registerActivation.messageWork' | translate }}
       </p>
+      <div class="col-md-12 text-center">
+        <a routerLink="/register">
+          {{ 'auth.registerActivation.linkLogin' | translate }}
+        </a>
+      </div>
     </div>
-    <div class="col-md-12 text-center">
-      <a routerLink="/auth">
-        {{ 'register.auth.activate.link.login' | translate }}
-      </a>
-    </div>
+
   </div>
 </div>
 

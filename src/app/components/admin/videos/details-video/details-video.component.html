@@ -5,14 +5,16 @@
   <section class="video-details-group_titles">
     <h1 class="video-details-group_titles_h1">{{video.title}}</h1>
     <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">{{ 'admin.videos.details.watchMovieLink' | translate }}</a></li>
       <li class="list-inline-item">
-        <a [routerLink]="['/admin/videos/update', video.id]" class="btn btn-link">
+        <a routerLink="/video/player/{{video?.id}}">{{ 'admin.videos.details.watchMovieLink' | translate }}</a>
+      </li>
+      <li class="list-inline-item">
+        <a routerLink="/admin/videos/update/{{video.id}}" class="btn btn-link">
           {{ 'admin.videos.details.updateLink' | translate }}
         </a>
       </li>
       <li class="list-inline-item">
-        <a (click)="active_modal(content, video)" class="btn btn-link">
+        <a (click)="active_modal(content, video)" class="btn btn-link cursor-pointer">
           {{ 'admin.videos.details.deleteLink' | translate }}
         </a>
       </li>

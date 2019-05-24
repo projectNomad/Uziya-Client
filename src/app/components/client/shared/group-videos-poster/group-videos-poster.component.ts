@@ -2,8 +2,9 @@ import {Component, OnInit, Input} from '@angular/core';
 import {animate, query, state, style, transition, trigger} from '@angular/animations';
 
 import {Video} from '../../../../models/video.model';
+import {environment} from '../../../../../environments/environment';
 
-const MAX_VIDEOS_VISIBLE = 12;
+const MAX_VIDEOS_VISIBLE = environment.videos.limitVideosGroup;
 
 @Component({
   selector: 'app-group-videos-poster',
@@ -43,7 +44,7 @@ export class GroupVideosPosterComponent implements OnInit {
   @Input() videos: Video[];
 
   footerMenus: any[];
-  isVideoScroll: boolean;
+  maxVideosVisibles = environment.videos.limitVideosGroup;
   isShowVideoInfos = false;
   videoCurrent: Video;
   videoPositionCurrent = 0;
@@ -53,7 +54,6 @@ export class GroupVideosPosterComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.isVideoScroll = true;
     this.footerMenus = [
       {
         title: 'Ajouter',
@@ -76,7 +76,7 @@ export class GroupVideosPosterComponent implements OnInit {
     this.videoCurrent = null;
   }
 
-  getTranslationBorderVideoSelected() {
-    return `translateX(${this.videoPositions[this.videoPositionCurrent]}px)`;
-  }
+  // getTranslationBorderVideoSelected() {
+  //   return `translateX(${this.videoPositions[this.videoPositionCurrent]}px)`;
+  // }
 }

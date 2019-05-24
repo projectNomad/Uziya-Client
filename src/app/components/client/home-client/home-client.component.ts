@@ -5,6 +5,7 @@ import {map, tap} from 'rxjs/operators';
 import {VideoService} from '../../../services/video.service';
 import {Video} from '../../../models/video.model';
 import {Observable} from 'rxjs';
+import {environment} from '../../../../environments/environment';
 
 @Component({
   selector: 'app-home-client',
@@ -22,7 +23,8 @@ export class HomeClientComponent implements OnInit {
 
   ngOnInit() {
     this.videos$ = this.videoService.getListVideos({
-      limit: 12
+      limit: environment.videos.limitVideosGroup,
+      is_actived: true
     })
       .pipe(tap(
         value => {

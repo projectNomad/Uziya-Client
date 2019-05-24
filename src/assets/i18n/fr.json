@@ -44,7 +44,6 @@
 	},
 	"auth": {
 		"register": {
-			"choiceRole": "Qui êtes-vous?",
 			"confirmPassword": "Confirmer",
 			"email": "Email",
 			"errors": {
@@ -59,7 +58,8 @@
 					"message5": "Le mot de passe doit avoir au moins 8 caractéres."
 				},
 				"passwordRequired": "Mot de passe requis",
-				"passwordmustmatch": "Mots de passe non identiques"
+				"passwordmustmatch": "Mots de passe non identiques",
+				"termsuseRequired": ""
 			},
 			"firstname": "Prénom",
 			"haveyouaccount": "Avez vous un compte?",
@@ -67,12 +67,18 @@
 			"loginlink": "Connectez-vous",
 			"man": "Homme",
 			"password": "Mot de passe",
-			"roleProducer": "Réalisteurs",
-			"roleViewer": "Visionneur",
 			"sexe": "Sexe",
 			"submit": "Envoyer",
+			"termsuses": "",
 			"update": "Modifier",
 			"woman": "Femme"
+		},
+		"registerActivation": {
+			"linkRegister": "Créer un compte",
+			"messageNotWork": "Votre clé d'activation n'est pas valide. Merci de réecréer votre compte. Si le problème persiste, contactez-nous.",
+			"messageWork": "Votre compte a bel et bien été activé. Vous pouvez maintenant vous connecter.",
+			"titleNotWork": "Désolé!",
+			"titleWork": "Fellicattions!"
 		}
 	},
 	"client": {
@@ -156,21 +162,13 @@
 		},
 		"title": "Connectez-vous"
 	},
+	"rauth": {
+		"registerActivation": {
+			"linkLogin": "Connexion"
+		}
+	},
 	"register": {
 		"auth": {
-			"activate": {
-				"link": {
-					"login": "Connexion"
-				},
-				"notwork": {
-					"message": "Désolé. vous n'êtes pas connecté",
-					"title": "Connexion ratée"
-				},
-				"work": {
-					"message": "Bonjour,",
-					"title": "Vous êtes connecté"
-				}
-			},
 			"form": {
 				"confirmation": {
 					"errors": {
@@ -211,11 +209,6 @@
 				}
 			},
 			"title": "Connexion"
-		},
-		"user": {
-			"form": {
-				"success": "Féllicitation, vous venez de vous enregistrer."
-			}
 		}
 	}
 }

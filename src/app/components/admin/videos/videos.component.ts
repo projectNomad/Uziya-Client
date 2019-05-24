@@ -43,7 +43,7 @@ export class VideosComponent implements OnInit {
   ngOnInit() {
     this.dtOptions = {
       pagingType: 'simple_numbers',
-      pageLength: 6,
+      pageLength: 10,
       columns: [
         { title: 'id', visible: false },
         { },
@@ -55,7 +55,10 @@ export class VideosComponent implements OnInit {
         {
           width: '70px',
         },
-        {}
+        {},
+        {
+          width: '70px',
+        }
       ],
       rowCallback: (row: Node, data: any[] | object, index: number) => {
         $('td', row).unbind('click');
@@ -66,12 +69,14 @@ export class VideosComponent implements OnInit {
       }
     };
 
-    this.videoService.getListVideos({})
+    this.videoService.getListVideos({
+      videoUser: true,
+      is_deleted: true
+    })
       .pipe(map(result => result.results))
       .subscribe(
         value => {
           this.videos = value;
-          console.log(value)
           this.dtTrigger.next();
         }
       );
