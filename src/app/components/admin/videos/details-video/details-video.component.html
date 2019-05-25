@@ -14,6 +14,14 @@
         </a>
       </li>
       <li class="list-inline-item">
+        <a *ngIf="!video.is_active" (click)="activeOrNotVideo(true)" class="btn btn-link cursor-pointer">
+          {{ 'admin.videos.details.activeLink' | translate }}
+        </a>
+        <a *ngIf="video.is_active" (click)="activeOrNotVideo(false)" class="btn btn-link cursor-pointer">
+          {{ 'admin.videos.details.deactiveLink' | translate }}
+        </a>
+      </li>
+      <li class="list-inline-item">
         <a (click)="active_modal(content, video)" class="btn btn-link cursor-pointer">
           {{ 'admin.videos.details.deleteLink' | translate }}
         </a>

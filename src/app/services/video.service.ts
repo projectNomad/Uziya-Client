@@ -35,8 +35,14 @@ export class VideoService extends ServiceCore {
 
   public updateVideo(video: any): Observable<any> {
     return this.httpClient.patch<any>(
-      environment.paths_api.video.update + video.id,
-      video);
+      environment.paths_api.video.update + video.id, video
+    );
+  }
+
+  public activateVideo(video: Video, mode: boolean): Observable<Video> {
+    return this.httpClient.patch<Video>(
+      environment.paths_api.video.activateOrNot + video.id, {video, mode}
+    );
   }
 
   public getListVideos(params: {
@@ -46,7 +52,6 @@ export class VideoService extends ServiceCore {
     is_actived?: boolean;
     is_deleted?: boolean;
   }): Observable<PagedResults<Video>> {
-
     return this.httpClient.get<PagedResults<Video>>(
       environment.paths_api.video.create_list,
       {
@@ -62,7 +67,6 @@ export class VideoService extends ServiceCore {
   }
 
   public deleteVideo(video: any) {
-
     return this.httpClient.patch<any>(
       environment.paths_api.video.update + video.id,
       video);

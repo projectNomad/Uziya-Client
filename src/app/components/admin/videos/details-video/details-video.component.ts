@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import { map } from 'rxjs/operators';
 
 import {NotificationsService} from 'angular2-notifications';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -105,5 +106,22 @@ export class DetailsVideoComponent implements OnInit {
   active_modal(content, video: Video) {
     this.modalService.open(content);
     this.videoAtDelete = video;
+  }
+
+  activeOrNotVideo(mode: boolean) {
+    this.videoService.activateVideo(this.video, mode)
+      .subscribe(
+      value => {
+        this.video = value;
+        if (mode) {
+          this.notificationService.success('', 'Activation réussie');
+        } else {
+          this.notificationService.success('', 'Désactivation réussie');
+        }
+      },
+      err => {
+        this.notificationService.error('', 'Erreur');
+      }
+    );
   }
 }

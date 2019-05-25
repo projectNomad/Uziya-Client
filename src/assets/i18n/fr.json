@@ -4,8 +4,16 @@
 			"dashboard": "Tableau de bord",
 			"videos": "Videos"
 		},
+		"video": {
+			"update": {
+				"FormVideoImageTitle": "Modifier le poster",
+				"FormVideoInformationsTitle": "Modifier les informations générale"
+			}
+		},
 		"videos": {
 			"details": {
+				"activeLink": "Activer",
+				"deactiveLink": "Désactiver",
 				"deleteLink": "Supprimer",
 				"description": "Description",
 				"tableCreate": "Crée le",
@@ -14,8 +22,8 @@
 				"watchMovieLink": "Regarder la vidéo"
 			},
 			"register": {
-				"activate": "Activer",
-				"deactivate": "Désactiver",
+				"active": "Activer",
+				"deactive": "Désactiver",
 				"deleteAll": "Supprimer tout",
 				"deposeProject": "Déposer votre projet",
 				"description": "Description",
@@ -28,17 +36,14 @@
 				"uploading": "Chargement..."
 			},
 			"tableActive": "Activer",
+			"tableDates": "",
 			"tableDuration": "Durée",
 			"tableDurationMinutes": "minute",
 			"tableGenres": "Genres",
 			"tableNoData": "Aucune donnée",
 			"tableTitle": "Titre",
-			"update": {
-				"title": "Envoyer votre projet"
-			},
 			"uploadVideo": {
-				"videoNotFound": "Video genre not found",
-				"videoSave": "Votre vidéo a été enregistrée"
+				"videoNotFound": "Video genre not found"
 			}
 		}
 	},
@@ -59,7 +64,7 @@
 				},
 				"passwordRequired": "Mot de passe requis",
 				"passwordmustmatch": "Mots de passe non identiques",
-				"termsuseRequired": ""
+				"termsuseRequired": "Conditions d<utilisation"
 			},
 			"firstname": "Prénom",
 			"haveyouaccount": "Avez vous un compte?",
@@ -74,6 +79,7 @@
 			"woman": "Femme"
 		},
 		"registerActivation": {
+			"linkLogin": "connectez-vous",
 			"linkRegister": "Créer un compte",
 			"messageNotWork": "Votre clé d'activation n'est pas valide. Merci de réecréer votre compte. Si le problème persiste, contactez-nous.",
 			"messageWork": "Votre compte a bel et bien été activé. Vous pouvez maintenant vous connecter.",
@@ -161,11 +167,6 @@
 			"title": "Partager vos projets vidéos"
 		},
 		"title": "Connectez-vous"
-	},
-	"rauth": {
-		"registerActivation": {
-			"linkLogin": "Connexion"
-		}
 	},
 	"register": {
 		"auth": {
