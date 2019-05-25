@@ -10,18 +10,6 @@
             <label for="title">{{ 'admin.videos.register.tilte' | translate }}</label>
             <input type="text" id="title" class="form-control" formControlName="title">
           </div>
-
-<!--          <div class="form-group">-->
-<!--            <div class="form-check form-check-inline">-->
-<!--              <input type="radio" class="form-check-input" formControlName="active" value="1" id="video-active">-->
-<!--              <label for="video-active" class="form-check-label">{{'admin.videos.register.active' | translate}}</label>-->
-<!--            </div>-->
-<!--            <div class="form-check form-check-inline">-->
-<!--              <input type="radio" class="form-check-input" formControlName="active" value="0" id="video-deactive">-->
-<!--              <label for="video-deactive" class="form-check-label">{{'admin.videos.register.deactive' | translate}}</label>-->
-<!--            </div>-->
-<!--          </div>-->
-
           <div class="form-group" *ngIf="(genres$ | async) as genres">
             <label>Genre</label>
             <ul>
