@@ -60,7 +60,7 @@ export class UpdateVideoFormComponent implements OnInit {
     const video = {
       id: this.video.id,
       title: this.formUpdateVideo.get('title').value,
-      is_actived: (this.formUpdateVideo.get('active').value === '1') ? new Date() : new Date('1960-01-01'),
+      // is_actived: (this.formUpdateVideo.get('active').value === '1') ? new Date() : new Date('1960-01-01'),
       description: this.formUpdateVideo.get('description').value,
       genres: this.formUpdateVideo.get('genres').value,
     };

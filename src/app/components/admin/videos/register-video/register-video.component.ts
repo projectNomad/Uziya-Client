@@ -42,7 +42,8 @@ export class RegisterVideoComponent implements OnInit {
       maxUploads: 1
     };
     this.files = []; // local uploading files array
-    this.uploadInput = new EventEmitter<UploadInput>(); // input events, we use this to emit data to ngx-uploader
+    // input events, we use this to emit data to ngx-uploader
+    this.uploadInput = new EventEmitter<UploadInput>();
     this.humanizeBytes = humanizeBytes;
     this.errors = [];
     this.videos = [];
@@ -126,7 +127,7 @@ export class RegisterVideoComponent implements OnInit {
   onSuccessForm(event) {
     if (event) {
       this.notificationService.success(null, 'Video enregistrer');
-      this.router.navigate(['/admin/videos/']);
+      // this.router.navigate(['/admin/videos/']);
     } else {
       this.notificationService.error(null, 'Erreur lors de l\'enregistrement');
     }

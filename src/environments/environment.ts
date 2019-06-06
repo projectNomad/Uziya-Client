@@ -23,6 +23,7 @@ export const environment = {
     video: {
       create_list: '/videos/?param=auth',
       update: '/videos/',
+      activateOrNot: '/videos/activate/',
     },
     images: {
       create: '/videos/images'
