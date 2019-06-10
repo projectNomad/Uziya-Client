@@ -25,8 +25,8 @@
     <ul class="list-inline">
       <li *ngFor="let video of videos; let i = index" class="list-inline-item" (click)="onShowVideoInfos(video, i)">
         <a class="group-videos-item_body_cards cursor-pointer">
-          <img src="http://placehold.it/200x150" *ngIf="video.avatar" alt="{{video.title}}" class="mx-auto d-block">
-<!--          <img src="{{video.avatar.hostPathFile}}" width="10%" *ngIf="video.avatar" alt="{{video.title}}" class="mx-auto d-block">-->
+          <img src="http://placehold.it/200x150" *ngIf="!video.poster_thumbnail" alt="{{video.title}}" class="mx-auto d-block">
+          <img src="{{video.poster_thumbnail.hostPathFile}}" *ngIf="video.poster_thumbnail" alt="{{video.title}}" class="mx-auto d-block">
         </a>
       </li>
     </ul>

@@ -4,7 +4,8 @@ import {User} from './user';
 export class Video extends Base {
   id: number;
   title: string;
-  avatar: Image;
+  poster: Image;
+  poster_thumbnail: Image;
   description: string;
   owner: User;
   duration: number;

@@ -2,13 +2,22 @@
   <h3>{{ 'admin.video.update.FormVideoImageTitle' | translate }}</h3>
 </div>
 <div class="row mb-3">
-  <div class=”image-preview” >
+  <div class=”image-preview”>
+    <div class="spinner-grow text-primary spinner-element" role="status" *ngIf="loader">
+      <span class="sr-only">Loading...</span>
+    </div>
     <img *ngIf="imagePreview" [src]="imagePreview" width="100%">
-    <img *ngIf="!imagePreview && video.avatar" [src]="video.avatar.hostPathFile" width="100%">
+    <img *ngIf="!imagePreview && video.poster" [src]="video.poster.hostPathFile" width="100%">
   </div>
 </div>
 <div class="row">
   <input class="d-none" type="file" (change)="onFileUpload($event)" #selectFile>
-  <button *ngIf="!imagePreview" (click)="selectFile.click()">Select File</button>
-  <button (click)="OnUploadFile()">Upload</button>
+  <button *ngIf="!imagePreview || !btnLoader" (click)="selectFile.click()">Select File</button>
+  <button (click)="OnUploadFile()" class="btn btn-sm btn-primary" *ngIf="!btnLoader && imagePreview">
+    Upload
+  </button>
+  <button class="btn btn-primary" type="button" disabled *ngIf="btnLoader">
+    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+    Loading...
+  </button>
 </div>

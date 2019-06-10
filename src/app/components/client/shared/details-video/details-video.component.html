@@ -1,6 +1,8 @@
 <div class="row">
 <!--  <div class="col-md-12 pl-4 group-videos-infos" [@animVideoInfos]="isShowVideoInfos ? 'openVideoInfos' : 'closedVideoInfos'">-->
-  <div class="col-md-12 pl-4 group-videos-infos">
+  <div class="col-md-12 pl-4 group-videos-infos"
+       [ngStyle]="{'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(0,0,0,1)) repeat-x, ' +
+        'url('+ video.poster.hostPathFile +') no-repeat, black'}">
     <div class="group-videos-infos_item group-videos-infos_header float-left">
       <div class="pr-lg-5 mb-lg-5">
         <button type="button" class="font-size-5 close" aria-label="Close" (click)="hideVideoInfos($event)">

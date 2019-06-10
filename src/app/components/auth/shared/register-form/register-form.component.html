@@ -9,7 +9,7 @@
       <div *ngIf="f.firstname.getError('apiError')">
         <ul class="list-inline">
           <li *ngFor="let errorMessage of f.firstname.getError('apiError')">
-            {{ errorMessage}}
+            {{ errorMessage }}
           </li>
         </ul>
       </div>

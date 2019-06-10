@@ -13,6 +13,8 @@ import {NotificationsService} from 'angular2-notifications';
 export class UploadFilesComponent implements OnInit {
   @Input() video: Video;
   selectedFile: File;
+  loader = false;
+  btnLoader = false;
   imagePreview: string | ArrayBuffer;
 
   constructor(
@@ -23,22 +25,30 @@ export class UploadFilesComponent implements OnInit {
   ngOnInit() {}
 
   onFileUpload(event) {
+    this.loader = true;
     this.selectedFile = event.target.files[0];
     const reader = new FileReader();
     reader.onload = () => {
       this.imagePreview = reader.result;
+      this.loader = false;
     };
     reader.readAsDataURL(this.selectedFile);
+
   }
 
   OnUploadFile() {
+    this.loader = true;
+    this.btnLoader = true;
+    //
     const uploadFormData = new FormData();
     uploadFormData.append('file', this.selectedFile, this.selectedFile.name);
     uploadFormData.append('video', String(this.video.id));
-    // console.log(uploadFormData.get('file'));
     this.imageService.uploadImage(uploadFormData).subscribe(
       value => {
-        this.imagePreview = null;
+        console.log(value)
+        // this.imagePreview = value.hostPathFile;
+        this.loader = false;
+        this.btnLoader = false;
         this.notificationsService.success(null, 'Image ajoutée');
       },
       err => {
