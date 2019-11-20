@@ -1,215 +1,155 @@
 {
-	"admin": {
-		"menuLeft": {
-			"dashboard": "Tableau de bord",
-			"videos": "Videos"
-		},
-		"video": {
-			"update": {
-				"FormVideoImageTitle": "Modifier le poster",
-				"FormVideoInformationsTitle": "Modifier les informations générale"
-			}
-		},
-		"videos": {
-			"details": {
-				"activeLink": "Activer",
-				"deactiveLink": "Désactiver",
-				"deleteLink": "Supprimer",
-				"description": "Description",
-				"tableCreate": "Crée le",
-				"tableSize": "Taille",
-				"updateLink": "Modifier",
-				"watchMovieLink": "Regarder la vidéo"
-			},
-			"register": {
-				"active": "Activer",
-				"deactive": "Désactiver",
-				"deleteAll": "Supprimer tout",
-				"deposeProject": "Déposer votre projet",
-				"description": "Description",
-				"done": "Fait",
-				"save": "Sauvegarder",
-				"selectProject": "Selectionner votre projet",
-				"send": "Envoyer",
-				"sendYourProject": "Envoyer votre projet",
-				"tilte": "Titre",
-				"uploading": "Chargement..."
-			},
-			"tableActive": "Activer",
-			"tableDates": "",
-			"tableDuration": "Durée",
-			"tableDurationMinutes": "minute",
-			"tableGenres": "Genres",
-			"tableNoData": "Aucune donnée",
-			"tableTitle": "Titre",
-			"uploadVideo": {
-				"videoNotFound": "Video genre not found"
-			}
-		}
-	},
-	"auth": {
-		"register": {
-			"confirmPassword": "Confirmer",
-			"email": "Email",
-			"errors": {
-				"emailInvalid": "Email invalide",
-				"emailRequired": "Email requis",
-				"firstnameRequired": "prénom requis",
-				"password": {
-					"message1": "Le mot de passe doit avoir au moins une lettre majuscule.",
-					"message2": "Le mot de passe doit avoir au moins une lettre minuscule.",
-					"message3": "Le mot de passe doit avoir au moins un chiffre.",
-					"message4": "Le mot de passe doit contenir au moins un de ces caractères spéciaux (!, @, #, $, %, ^, &).",
-					"message5": "Le mot de passe doit avoir au moins 8 caractéres."
-				},
-				"passwordRequired": "Mot de passe requis",
-				"passwordmustmatch": "Mots de passe non identiques",
-				"termsuseRequired": "Conditions d<utilisation"
-			},
-			"firstname": "Prénom",
-			"haveyouaccount": "Avez vous un compte?",
-			"lastname": "Nom",
-			"loginlink": "Connectez-vous",
-			"man": "Homme",
-			"password": "Mot de passe",
-			"sexe": "Sexe",
-			"submit": "Envoyer",
-			"termsuses": "",
-			"update": "Modifier",
-			"woman": "Femme"
-		},
-		"registerActivation": {
-			"linkLogin": "connectez-vous",
-			"linkRegister": "Créer un compte",
-			"messageNotWork": "Votre clé d'activation n'est pas valide. Merci de réecréer votre compte. Si le problème persiste, contactez-nous.",
-			"messageWork": "Votre compte a bel et bien été activé. Vous pouvez maintenant vous connecter.",
-			"titleNotWork": "Désolé!",
-			"titleWork": "Fellicattions!"
-		}
-	},
-	"client": {
-		"header": {
-			"home": "Accueil",
-			"search": "Rechercher"
-		},
-		"user": {
-			"confirmPassword": "Confirmer mot de passe",
-			"currentPassword": "Mot de passe actuel",
-			"newPassword": "Nouveau mot de passe",
-			"profile": {
-				"updateProfile": "Modifier votre projet"
-			},
-			"updateaccount": "Modifier votre compte",
-			"updateaprofile": "Modifier votre profile",
-			"updatepassword": "Modifier le mot de passe"
-		}
-	},
-	"footer": {
-		"menu1": {
-			"about": "À propos",
-			"contactus": "Contactez-nous"
-		},
-		"reserved": "© Uziya, 2019 - tous droits réservés"
-	},
-	"forgot": {
-		"password": {
-			"link": "Créer un compte.",
-			"message": "Vous n'avez pas de compte?",
-			"submit": "Envoyer",
-			"title": "Réinitialiser votre mot de passe"
-		},
-		"success": {
-			"message": "Un courriel de vérification vient d\\'être envoyé! Vérifie tes courriels pour réinitialiser ton mot de passe.",
-			"title": "Votre compte a ete retrouve"
-		}
-	},
-	"form": {
-		"resetPassword": {
-			"confirmPassword": {
-				"label": "Confirmer votre mot de passe"
-			},
-			"newPassword": {
-				"label": "Nouveau mot de passe"
-			},
-			"title": "Réinitialiser votre mot de passe"
-		}
-	},
-	"layout": {
-		"header": {
-			"logout": "Déconnexion",
-			"profileUser": "Profile",
-			"returnAdmin": "Retour admin",
-			"returnclient": "Retour site",
-			"setting": "Préférences",
-			"uploadVideo": "Envoyer un projet"
-		}
-	},
-	"login": {
-		"createaccount": "Créer un compte",
-		"forgotpassword": "Mot de passe oublié",
-		"form": {
-			"email": {
-				"errors": {
-					"invalid": "Email invalide",
-					"required": "Email requis"
-				},
-				"placeholder": "Email"
-			},
-			"password": {
-				"errors": {
-					"required": "Mot de passe requis"
-				},
-				"placeholder": "Mot de passe"
-			},
-			"submit": "Connexion"
-		},
-		"infos": {
-			"title": "Partager vos projets vidéos"
-		},
-		"title": "Connectez-vous"
-	},
-	"register": {
-		"auth": {
-			"form": {
-				"confirmation": {
-					"errors": {
-						"mustmatch": "Les mots de passe ne correspondent pas"
-					}
-				},
-				"email": {
-					"errors": {
-						"invalid": "Email invalide",
-						"required": "Email requis",
-						"userNotExist": "Utilisateur existe déjà avec cet email"
-					},
-					"label": "Email"
-				},
-				"firstname": {
-					"label": "Prénom"
-				},
-				"gender": {
-					"label": "Genre"
-				},
-				"group": {
-					"choicetitle": "Qui êtes-vous?"
-				},
-				"lastname": {
-					"label": "Nom"
-				},
-				"password": {
-					"errors": {
-						"pattern": {
-							"message1": "Le mot de passe doit avoir au moins une lettre majuscule.",
-							"message2": "Le mot de passe doit avoir au moins une lettre minuscule.",
-							"message3": "Le mot de passe doit avoir au moins un chiffre.",
-							"message4": "Le mot de passe doit contenir au moins un de ces caractères spéciaux (!, @, #, $, %, ^, &).",
-							"message5": "Le mot de passe doit avoir au moins 8 caractéres."
-						},
-						"required": "Mot de passe requis"
-					}
-				}
-			},
-			"title": "Connexion"
-		}
-	}
+  "admin.videos.title": "Videos",
+  "admin.videos.tableActive": "Activer",
+  "admin.videos.tableDates": "",
+  "admin.videos.tableDuration": "Durée",
+  "admin.videos.tableDurationMinutes": "minute",
+  "admin.videos.tableGenres": "Genres",
+  "admin.videos.tableNoData": "Aucune donnée",
+  "admin.videos.tableTitle": "Titre",
+  "admin.videos.uploadVideo.videoNotFound": "Video genre not found",
+  "admin.details-video.title": "Videos",
+  "admin.details-video.activeLink": "Activer",
+  "admin.details-video.deactiveLink": "Désactiver",
+  "admin.details-video.deleteLink": "Supprimer",
+  "admin.details-video.description": "Description",
+  "admin.details-video.dateCreate": "Crée le",
+  "admin.details-video.tableSize": "Taille",
+  "admin.details-video.updateLink": "Modifier",
+  "admin.details-video.watchMovieLink": "Regarder la vidéo",
+  "admin.details-video.videoTitle": "Titre",
+  "admin.details-video.genres": "Genres",
+  "admin.details-video.duration": "Durée",
+  "admin.details-video.active": "Activer",
+  "admin.update-video.titleSecond": "Modifier les informations générale",
+  "admin.update-video.videoTilte": "Titre",
+  "admin.update-video.title": "Videos",
+  "admin.update-video.description": "Description",
+  "admin.update-video.save": "Modifier",
+  "admin.update-video.deleteGender": "Suprimer",
+  "admin.update-video.closeGender": "Fermer",
+  "admin.update-video.deleteMessageConfirm": "Êtes-vous sûr de vouloir supprimer le genre {label}?",
+  "admin.update-video.genre": "Genre",
+  "admin.register-video.title": "Videos",
+  "admin.register-video.deleteAll": "Supprimer tout",
+  "admin.register-video.deposeProject": "Déposer votre projet",
+  "admin.register-video.description": "Description",
+  "admin.register-video.done": "Fait",
+  "admin.register-video.selectProject": "Selectionner votre projet",
+  "admin.register-video.send": "Envoyer",
+  "admin.register-video.sendYourProject": "Envoyer votre projet",
+  "admin.register-video.uploading": "Chargement...",
+  "auth.register-activation.linkLogin": "connectez-vous",
+  "auth.register-activation.linkRegister": "Créer un compte",
+  "auth.register-activation.messageNotWork": "Votre clé d'activation n'est pas valide. Merci de réecréer votre compte. Si le problème persiste, contactez-nous.",
+  "auth.register-activation.messageWork": "Votre compte a bel et bien été activé. Vous pouvez maintenant vous connecter.",
+  "auth.register-activation.titleNotWork": "Désolé!",
+  "auth.register-activation.titleWork": "Fellicattions!",
+  "auth.reset-password.password-errors.required": "Mot de passe requis",
+  "auth.reset-password.password-errors.mustmatch": "Mots de passe non identiques",
+  "auth.reset-password.password-errors.message1": "Le mot de passe doit avoir au moins une lettre majuscule.",
+  "auth.reset-password.password-errors.message2": "Le mot de passe doit avoir au moins une lettre minuscule.",
+  "auth.reset-password.password-errors.message3": "Le mot de passe doit avoir au moins un chiffre.",
+  "auth.reset-password.password-errors.message4": "Le mot de passe doit contenir au moins un de ces caractères spéciaux (!, @, #, $, %, ^, &).",
+  "auth.reset-password.password-errors.message5": "Le mot de passe doit avoir au moins 8 caractéres.",
+  "auth.reset-password.confirmPassword": "Confirmer votre mot de passe",
+  "auth.reset-password.newPassword": "Nouveau mot de passe",
+  "auth.reset-password.btnReinit": "Réinitialiser",
+  "auth.reset-password.title": "Réinitialiser votre mot de passe",
+  "auth.forgot-password.title": "Réinitialiser votre mot de passe",
+  "auth.forgot-password.link": "Créer un compte.",
+  "auth.forgot-password.message": "Vous n'avez pas de compte?",
+  "auth.forgot-password.submit": "Envoyer",
+  "auth.forgot-password.success.message": "Un courriel de vérification vient d\\'être envoyé! Vérifie tes courriels pour réinitialiser ton mot de passe.",
+  "auth.forgot-password.success.title": "Votre compte a ete retrouve",
+  "auth.forgot-password.emailInvalid": "Email invalide",
+  "auth.forgot-password.emailRequired": "Email requis",
+  "auth.forgot-password.userNotExist": "Utilisateur existe déjà avec cet email",
+  "auth.forgot-password.email": "Email",
+
+  "client.user.btnUpdateProfile": "Modifier votre profile",
+  "client.user.lastname": "Nom",
+  "client.user.created": "Crée le",
+  "client.user.gender": "Genre",
+  "client.user.firstname": "Prénom",
+  "client.user.choicetitle": "Qui êtes-vous?",
+  "client.user.email": "Email",
+  "client.profile.confirmPassword": "Confirmer mot de passe",
+  "client.profile.currentPassword": "Mot de passe actuel",
+  "client.profile.newPassword": "Nouveau mot de passe",
+  "client.profile.updateaccount": "Modifier votre compte",
+  "client.profile.updateaprofile": "Modifier votre profile",
+  "client.profile.lastname": "Nom",
+  "client.profile.firstname": "Prénom",
+  "client.profile.firstnameRequired": "Prénom requis",
+  "client.profile.emailRequired": "Email requis",
+  "client.profile.emailInvalid": "Email invalide",
+  "client.profile.sexe": "Sexe",
+  "client.profile.man": "Homme",
+  "client.profile.woman": "Femme",
+  "client.profile.email": "Email",
+  "client.profile.btnUpdate": "Modifier",
+  "client.profile.updatepassword": "Modifier le mot de passe",
+  "client.profile.passwordRequired": "Mot de passe requis",
+  "client.profile.password-errors.mustmatch": "Mots de passe non identiques",
+  "client.profile.password-errors.message1": "Le mot de passe doit avoir au moins une lettre majuscule.",
+  "client.profile.password-errors.message2": "Le mot de passe doit avoir au moins une lettre minuscule.",
+  "client.profile.password-errors.message3": "Le mot de passe doit avoir au moins un chiffre.",
+  "client.profile.password-errors.message4": "Le mot de passe doit contenir au moins un de ces caractères spéciaux (!, @, #, $, %, ^, &).",
+  "client.profile.password-errors.message5": "Le mot de passe doit avoir au moins 8 caractéres.",
+  "client.profile.password-errors.required": "Mot de passe requis",
+
+  "footer.reserved": "© Uziya, 2019 - tous droits réservés",
+  "footer.menu1.about": "À propos",
+  "footer.menu1.contactus": "Contactez-nous",
+
+  "header-client-profile.logout": "Déconnexion",
+  "header-client-profile.profileUser": "Profile",
+  "header-client-profile.returnAdmin": "Retour admin",
+  "header-client-profile.returnclient": "Retour site",
+  "header-client-profile.setting": "Préférences",
+  "header-client-profile.uploadVideo": "Envoyer un projet",
+  "header-client.home": "Accueil",
+  "header-client.search": "Rechercher",
+
+  "login.createaccount": "Créer un compte",
+  "login.forgotpassword": "Mot de passe oublié",
+  "login.form.email.placeholder": "Email",
+  "login.form.email.errors.invalid": "Email invalide",
+  "login.form.email.errors.required": "Email requis",
+  "login.form.password.placeholder": "Mot de passe",
+  "login.form.password.errors.required": "Mot de passe requis",
+  "login.form.submit": "Connexion",
+  "login.infos.title": "Partager vos projets vidéos",
+  "login.title": "Connectez-vous",
+
+  "menuLeft.dashboard": "Tableau de bord",
+  "menuLeft.videos": "Videos",
+
+  "register-form.confirmPassword": "Confirmer",
+  "register-form.email": "Email",
+  "register-form.firstname": "Prénom",
+  "register-form.lastname": "Nom",
+  "register-form.password": "Mot de passe",
+  "register-form.submit": "Envoyer",
+  "register-form.termsuses": "Conditions d'utilisation",
+  "register-form.emailInvalid": "Email invalide",
+  "register-form.emailRequired": "Email requis",
+  "register-form.firstnameRequired": "Prénom requis",
+  "register-form.passwordRequired": "Mot de passe requis",
+  "register-form.passwordmustmatch": "Mots de passe non identiques",
+  "register-form.termsuseRequired": "Lire les conditions d'utilisation",
+  "register-form.password-errors.message1": "Le mot de passe doit avoir au moins une lettre majuscule.",
+  "register-form.password-errors.message2": "Le mot de passe doit avoir au moins une lettre minuscule.",
+  "register-form.password-errors.message3": "Le mot de passe doit avoir au moins un chiffre.",
+  "register-form.password-errors.message4": "Le mot de passe doit contenir au moins un de ces caractères spéciaux (!, @, #, $, %, ^, &).",
+  "register-form.password-errors.message5": "Le mot de passe doit avoir au moins 8 caractéres.",
+  "register-user.loginlink": "Connectez-vous",
+  "register-user.title": "Créer un compte",
+  "register-user.haveyouaccount": "Avez vous un compte?",
+
+  "upload-file.FormVideoImageTitle": "Modifier le poster",
+  "upload-file.loading": "Loading...",
+  "upload-file.selectFile": "Select File",
+  "upload-file.btnUpload": "Select File"
 }

@@ -1,10 +1,10 @@
 <div class="title mb-2">
-  <h3>{{ 'admin.video.update.FormVideoImageTitle' | translate }}</h3>
+  <h3>{{ 'upload-file.FormVideoImageTitle' | translate }}</h3>
 </div>
 <div class="row mb-3">
   <div class=”image-preview”>
     <div class="spinner-grow text-primary spinner-element" role="status" *ngIf="loader">
-      <span class="sr-only">Loading...</span>
+      <span class="sr-only">{{ 'upload-file.loading' | translate }}</span>
     </div>
     <img *ngIf="imagePreview" [src]="imagePreview" width="100%">
     <img *ngIf="!imagePreview && video.poster" [src]="video.poster.hostPathFile" width="100%">
@@ -12,12 +12,12 @@
 </div>
 <div class="row">
   <input class="d-none" type="file" (change)="onFileUpload($event)" #selectFile>
-  <button *ngIf="!imagePreview || !btnLoader" (click)="selectFile.click()">Select File</button>
+  <button *ngIf="!imagePreview || !btnLoader" (click)="selectFile.click()">{{ 'upload-file.selectFile' | translate }}</button>
   <button (click)="OnUploadFile()" class="btn btn-sm btn-primary" *ngIf="!btnLoader && imagePreview">
-    Upload
+    {{ 'upload-file.btnUpload' | translate }}
   </button>
   <button class="btn btn-primary" type="button" disabled *ngIf="btnLoader">
     <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-    Loading...
+    {{ 'upload-file.loading' | translate }}
   </button>
 </div>

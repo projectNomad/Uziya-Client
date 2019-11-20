@@ -1,12 +1,12 @@
 <div class="row" id="bloc-signup">
   <div class="col-lg-4 col-sm-9" id="bloc-signup_form">
-    <h2>{{ 'register.auth.title' | translate }}</h2>
+    <h2>{{ 'register-user.title' | translate }}</h2>
     <hr>
 
     <app-register-form [group]="'producer'" (successForm)="onSubmitForm($event)"></app-register-form>
     <div>
-      {{ 'auth.register.haveyouaccount' | translate }}
-      <a routerLink="/auth">{{ 'auth.register.loginlink' | translate }}</a>
+      {{ 'register-user.haveyouaccount' | translate }}
+      <a routerLink="/auth">{{ 'register-user.loginlink' | translate }}</a>
     </div>
   </div>
   <div class="col-lg-8 col-sm-12" id="bloc-signup_infos">

@@ -1,8 +1,8 @@
-<app-header-page titlePage="{{ 'admin.menuLeft.videos' | translate }}" [breadcrumb]="breadcrumb"></app-header-page>
+<app-header-page titlePage="{{ 'admin.register-video.title' | translate }}" [breadcrumb]="breadcrumb"></app-header-page>
 
 <div class="container">
   <div class="row">
-    <h1>{{ 'admin.videos.register.sendYourProject' | translate }}</h1>
+    <h1>{{ 'admin.register-video.sendYourProject' | translate }}</h1>
   </div>
   <div class="row">
   </div>
@@ -13,13 +13,13 @@
           <div class="upload-box__content__drop-container" ngFileDrop [options]="options"
                (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
             <div class="middle-info">
-              <div class="back-text">{{ 'admin.videos.register.deposeProject' | translate }}</div>
+              <div class="back-text">{{ 'admin.register-video.deposeProject' | translate }}</div>
 
               <input type="file" ngFileSelect [options]="options" #selectVideo
                      (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput"
                      multiple accept="video/mp4, video/webm">
 
-              <button (click)="selectVideo.click()">{{ 'admin.videos.register.selectProject' | translate }}</button>
+              <button (click)="selectVideo.click()">{{ 'admin.register-video.selectProject' | translate }}</button>
             </div>
           </div>
           <div class="upload-box__content__items" *ngFor="let f of files; let i = index;">
@@ -45,10 +45,10 @@
                 <span class="progress-text" [class.is-done]="f?.progress?.data?.percentage === 100">
                   <span>{{ f.progress?.data?.percentage }}% </span>
                   <span *ngIf="f.progress?.data?.percentage !== 100">
-                    {{ 'admin.videos.register.uploading' | translate }}
+                    {{ 'admin.register-video.uploading' | translate }}
                   </span>
                   <span *ngIf="f.progress?.data?.percentage === 100">
-                    {{ 'admin.videos.register.done' | translate }}
+                    {{ 'admin.register-video.done' | translate }}
                   </span>
                 </span>
                 <span class="speed-and-eta-text"
@@ -63,10 +63,10 @@
 
         <div class="row">
           <div class="col-md-3">
-            <button class="btn btn-primary" (click)="startUpload()">{{ 'admin.videos.register.send' | translate }}</button>
+            <button class="btn btn-primary" (click)="startUpload()">{{ 'admin.register-video.send' | translate }}</button>
             &nbsp;&nbsp;
             <button class="btn btn-danger" *ngIf="files.length > 0" (click)="removeAllFiles()">
-              {{ 'admin.videos.register.deleteAll' | translate }}
+              {{ 'admin.register-video.deleteAll' | translate }}
             </button>
           </div>
           <div class="col-md-9">

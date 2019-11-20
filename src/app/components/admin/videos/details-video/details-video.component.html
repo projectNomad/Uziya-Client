@@ -1,4 +1,4 @@
-<app-header-page titlePage="{{ 'admin.menuLeft.videos' | translate }}"
+<app-header-page titlePage="{{ 'admin.details-video.title' | translate }}"
                  [breadcrumb]="breadcrumb" [buttonsEnd]="buttonsEnd"></app-header-page>
 
 <div class="container video-details-group" *ngIf="video">
@@ -6,24 +6,24 @@
     <h1 class="video-details-group_titles_h1">{{video.title}}</h1>
     <ul class="list-inline">
       <li class="list-inline-item">
-        <a routerLink="/video/player/{{video?.id}}">{{ 'admin.videos.details.watchMovieLink' | translate }}</a>
+        <a routerLink="/video/player/{{video?.id}}">{{ 'admin.details-video.watchMovieLink' | translate }}</a>
       </li>
       <li class="list-inline-item">
         <a routerLink="/admin/videos/update/{{video.id}}" class="btn btn-link">
-          {{ 'admin.videos.details.updateLink' | translate }}
+          {{ 'admin.details-video.updateLink' | translate }}
         </a>
       </li>
       <li class="list-inline-item">
         <a *ngIf="!video.is_active" (click)="activeOrNotVideo(true)" class="btn btn-link cursor-pointer">
-          {{ 'admin.videos.details.activeLink' | translate }}
+          {{ 'admin.details-video.activeLink' | translate }}
         </a>
         <a *ngIf="video.is_active" (click)="activeOrNotVideo(false)" class="btn btn-link cursor-pointer">
-          {{ 'admin.videos.details.deactiveLink' | translate }}
+          {{ 'admin.details-video.deactiveLink' | translate }}
         </a>
       </li>
       <li class="list-inline-item">
         <a (click)="active_modal(content, video)" class="btn btn-link cursor-pointer">
-          {{ 'admin.videos.details.deleteLink' | translate }}
+          {{ 'admin.details-video.deleteLink' | translate }}
         </a>
       </li>
     </ul>
@@ -33,14 +33,14 @@
     <div class="row">
       <div class="col-md-12">
         <div class="table-responsive">
-          <table class="table table-bordered video-details-group_infos_table">
+          <table class="table table-bordered details-video-group_infos_table">
             <tr>
-              <td class="col-title">{{ 'admin.videos.tableTitle' | translate }}</td>
+              <td class="col-title">{{ 'admin.details-video.videoTitle' | translate }}</td>
               <td>{{ video.title ? video.title : 'no title' }}</td>
-              <td class="col-title">{{ 'admin.videos.tableGenres' | translate }}</td>
+              <td class="col-title">{{ 'admin.details-video.genres' | translate }}</td>
             </tr>
             <tr>
-              <td class="col-title">{{ 'admin.videos.tableDuration' | translate }}</td>
+              <td class="col-title">{{ 'admin.details-video.duration' | translate }}</td>
               <td>{{ video.durationToHMS }}</td>
               <td rowspan="5">
                 <ul class="list-inline">
@@ -51,22 +51,22 @@
               </td>
             </tr>
             <tr>
-              <td class="col-title">{{ 'admin.videos.details.tableSize' | translate }}</td>
+              <td class="col-title">{{ 'admin.details-video.tableSize' | translate }}</td>
               <td>{{ video.size }}</td>
             </tr>
             <tr>
-              <td class="col-title">{{ 'admin.videos.tableActive' | translate }}</td>
+              <td class="col-title">{{ 'admin.details-video.active' | translate }}</td>
               <td class="text-center"><input type="checkbox" [checked]="video.is_active" disabled></td>
             </tr>
             <tr>
-              <td class="col-title">{{ 'admin.videos.details.tableCreate' | translate }}</td>
+              <td class="col-title">{{ 'admin.details-video.dateCreate' | translate }}</td>
               <td>{{ video.is_created | date }}</td>
             </tr>
           </table>
         </div>
       </div>
       <div class="col-md-12">
-        <h3>{{ 'admin.videos.details.description' | translate }}</h3>
+        <h3>{{ 'admin.details-video.description' | translate }}</h3>
         <div>
           {{ video.description }}
         </div>

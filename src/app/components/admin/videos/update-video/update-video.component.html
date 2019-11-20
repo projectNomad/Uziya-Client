@@ -1,4 +1,4 @@
-<app-header-page titlePage="{{ 'admin.menuLeft.videos' | translate }}"
+<app-header-page titlePage="{{ 'admin.update-video.title' | translate }}"
                  [breadcrumb]="breadcrumb" [buttonsEnd]="buttonsEnd"></app-header-page>
 <section *ngIf="video">
   <app-update-video-form [video]="video" (formSuccess)="onSuccessForm($event)"></app-update-video-form>

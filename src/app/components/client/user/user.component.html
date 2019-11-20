@@ -8,18 +8,18 @@
 
     <div class="row">
       <ul>
-        <li>{{ 'register.auth.form.lastname.label' | translate }}: {{ this.user.first_name }}</li>
-        <li>{{ 'register.auth.form.firstname.label' | translate }}: {{ this.user.last_name }}</li>
-        <li>{{ 'register.auth.form.email.label' | translate }} : {{ this.user.email }}</li>
-        <li>{{ 'register.auth.form.gender.label' | translate }} : {{ this.user.gender }}</li>
-        <li>{{ 'register.auth.form.group.choicetitle' | translate }} : {{ this.user.groups[0]?.name }}</li>
-        <li>{{ 'admin.videos.details.tableCreate' | translate }} : {{ this.user.date_joined | date:'medium' }}</li>
+        <li>{{ 'client.user.lastname' | translate }}: {{ this.user.first_name }}</li>
+        <li>{{ 'client.user.firstname' | translate }}: {{ this.user.last_name }}</li>
+        <li>{{ 'client.user.email' | translate }} : {{ this.user.email }}</li>
+        <li>{{ 'client.user.gender' | translate }} : {{ this.user.gender }}</li>
+        <li>{{ 'client.user.choicetitle' | translate }} : {{ this.user.groups[0]?.name }}</li>
+        <li>{{ 'client.user.created' | translate }} : {{ this.user.date_joined | date:'medium' }}</li>
       </ul>
     </div>
 
     <div class="row">
       <a class="nav-link" routerLink="profile" tabindex="-1">
-        {{'client.user.profile.updateProfile' | translate}}
+        {{'client.user.btnUpdateProfile' | translate}}
       </a>
     </div>
 

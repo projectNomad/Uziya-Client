@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-md-6">
     <div class="title mb-2">
-      <h3>{{ 'admin.video.update.FormVideoInformationsTitle' | translate }}</h3>
+      <h3>{{ 'admin.update-video.titleSecond' | translate }}</h3>
     </div>
     <div>
       <form [formGroup]="formUpdateVideo" (ngSubmit)="onSubmitVideoUpdate()">
         <div>
           <div class="form-group">
-            <label for="title">{{ 'admin.videos.register.tilte' | translate }}</label>
+            <label for="title">{{ 'admin.update-video.videoTilte' | translate }}</label>
             <input type="text" id="title" class="form-control" formControlName="title">
           </div>
 
@@ -23,7 +23,7 @@
 <!--          </div>-->
 
           <div class="form-group" *ngIf="(genres$ | async) as genres">
-            <label>Genre</label>
+            <label>{{ 'admin.update-video.genre' | translate }}</label>
             <ul>
               <li *ngFor="let videoGenre of video.genres">
                 <button type="button" class="close" aria-label="Close" (click)="active_modal(content, videoGenre)">
@@ -38,12 +38,12 @@
           </div>
 
           <div class="form-group">
-            <label for="description">{{ 'admin.videos.register.description' | translate }}</label>
+            <label for="description">{{ 'admin.update-video.description' | translate }}</label>
             <textarea name="" id="description" cols="30" rows="10" formControlName="description"
                       class="form-control" id="description"></textarea>
           </div>
         </div>
-        <button class="btn btn-primary" type="submit">{{ 'admin.videos.register.save' | translate }}</button>
+        <button class="btn btn-primary" type="submit">{{ 'admin.update-video.save' | translate }}</button>
       </form>
     </div>
   </div>
@@ -56,7 +56,7 @@
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">
-      Êtes-vous sûr de vouloir supprimer le genre {{genreHasDeleted.label}}?
+      {{'admin.update-video.deleteMessageConfirm' | translate: {label:genreHasDeleted.label} }}
     </h4>
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
@@ -64,7 +64,7 @@
   </div>
 
   <div class="modal-footer">
-    <button type="button" class="btn btn-danger" (click)="delGenre()">Supprimer</button>
-    <button type="button" class="btn btn-secondary" (click)="d('Cross click')">Fermer</button>
+    <button type="button" class="btn btn-danger" (click)="delGenre()">{{'admin.update-video.deleteGender' | translate}}</button>
+    <button type="button" class="btn btn-secondary" (click)="d('Cross click')">{{'admin.update-video.closeGender' | translate}}</button>
   </div>
 </ng-template>

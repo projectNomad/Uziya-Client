@@ -8,29 +8,29 @@
       <div ngbDropdownMenu aria-labelledby="dropdownConfig">
         <button ngbDropdownItem routerLink="/user">
           <i class="fas fa-user"></i>
-          {{ 'layout.header.profileUser' | translate }}
+          {{ 'header-client-profile.profileUser' | translate }}
         </button>
         <button ngbDropdownItem routerLink="/admin/videos/upload" *ngIf="isAdmin">
           <i class="fas fa-upload"></i>
-          {{ 'layout.header.uploadVideo' | translate }}
+          {{ 'header-client-profile.uploadVideo' | translate }}
         </button>
         <button ngbDropdownItem>
           <i class="fas fa-cog"></i>
-          {{ 'layout.header.setting' | translate }}
+          {{ 'header-client-profile.setting' | translate }}
         </button>
         <div class="dropdown-divider"></div>
         <button ngbDropdownItem routerLink="/">
           <i class="fas fa-external-link-alt"></i>
-          {{ 'layout.header.returnclient' | translate }}
+          {{ 'header-client-profile.returnclient' | translate }}
         </button>
         <button ngbDropdownItem *ngIf="isAdmin" routerLink="/admin">
           <i class="fas fa-external-link-alt"></i>
-          {{ 'layout.header.returnAdmin' | translate }}
+          {{ 'header-client-profile.returnAdmin' | translate }}
         </button>
         <div class="dropdown-divider"></div>
         <button ngbDropdownItem (click)="logout()">
           <i class="fas fa-sign-out-alt"></i>
-          {{ 'layout.header.logout' | translate }}
+          {{ 'header-client-profile.logout' | translate }}
         </button>
       </div>
     </div>
