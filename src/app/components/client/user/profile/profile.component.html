@@ -87,15 +87,9 @@
           <input type="password" id="password" class="form-control" formControlName="password"
                  [ngClass]="{ 'is-invalid': submittedPwd && fP.password.errors }">
           <div *ngIf="submittedPwd && fP.password.errors" class="invalid-feedback">
-            <div *ngIf="fP.password.errors.required">{{ 'client.profile.passwordmustmatch' | translate }}</div>
+            <div *ngIf="fP.password.errors.required">{{ 'client.profile.password-errors.mustmatch' | translate }}</div>
             <div *ngIf="fP.password.errors.pattern">
-              <ul>
-                <li>{{ 'client.profile.password-errors.message1' | translate }}</li>
-                <li>{{ 'client.profile.password-errors.message2' | translate }}</li>
-                <li>{{ 'client.profile.password-errors.message3' | translate }}</li>
-                <li>{{ 'client.profile.password-errors.message4' | translate }}</li>
-                <li>{{ 'client.profile.password-errors.message5' | translate }}</li>
-              </ul>
+              <app-password-errors-list></app-password-errors-list>
             </div>
             <div *ngIf="fP.password.getError('apiError')">
               <ul class="list-inline">

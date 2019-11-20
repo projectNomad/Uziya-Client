@@ -6,6 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent} from '../../layouts/shared/footer/footer.component';
 import {HeaderClientProfileComponent} from '../../layouts/shared/header-client-profile/header-client-profile.component';
 import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import { PasswordErrorsListComponent } from './password-errors-list/password-errors-list.component';
 
 
 @NgModule({
@@ -24,11 +25,13 @@ import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
     TranslateModule,
     NgbDropdownModule,
     FooterComponent,
-    HeaderClientProfileComponent
+    HeaderClientProfileComponent,
+    PasswordErrorsListComponent
   ],
   declarations: [
     HeaderClientProfileComponent,
-    FooterComponent
+    FooterComponent,
+    PasswordErrorsListComponent
   ]
 })
 export class SharedModule {}
