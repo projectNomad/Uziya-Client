@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { NotificationsService } from 'angular2-notifications';
 
 import { AuthService } from '../../../services/auth.service';
 import { MustMatch } from '../../../_helpers/must-match.validator';
+import {MyNotificationsService} from '../../../services/core/my-notifications.service';
 
 
 @Component({
@@ -18,14 +18,13 @@ export class ResetPasswordComponent implements OnInit {
   token: string;
   submitted = false;
   resetPasswordForm: FormGroup;
-  errors: string[];
 
   success: boolean = null;
 
   constructor(private activatedRoute: ActivatedRoute,
               private authenticationService: AuthService,
               private formBuilder: FormBuilder,
-              private notificationService: NotificationsService,
+              private notificationService: MyNotificationsService,
               private router: Router) {
 
     this.resetPasswordForm = this.formBuilder.group(
@@ -65,9 +64,6 @@ export class ResetPasswordComponent implements OnInit {
           'Vous pouvez maintenant vous connecter.');
       },
       err => {
-        if (err.error.non_field_errors) {
-          this.errors = err.error.non_field_errors;
-        }
         if (err.error.new_password) {
           this.resetPasswordForm.controls.password.setErrors({
             apiError: err.error.new_password

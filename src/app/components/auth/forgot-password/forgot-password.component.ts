@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import {NotificationsService} from 'angular2-notifications';
 
 import { AuthService} from '../../../services/auth.service';
 import {_} from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+import {MyNotificationsService} from '../../../services/core/my-notifications.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -21,8 +21,7 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authenticationService: AuthService,
-    private notificationService: NotificationsService,
-    private router: Router
+    private notificationService: MyNotificationsService,
   ) { }
 
   // convenience getter for easy access to form fields
@@ -43,14 +42,8 @@ export class ForgotPasswordComponent implements OnInit {
       data => {
         this.submitted = false;
         this.notificationService.success(
-          _('forgot.success.title'),
-          _('forgot.success.message'),
-          {
-            position: ['bottom', 'right'],
-            timeOut: 5000,
-            lastOnBottom: true,
-            preventDuplicates: true,
-          }
+          _('auth.forgot-password.success.title'),
+          _('auth.forgot-password.success.message')
         );
       },
       err => {
