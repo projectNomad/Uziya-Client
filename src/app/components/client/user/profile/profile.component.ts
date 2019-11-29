@@ -69,14 +69,15 @@ export class ProfileComponent implements OnInit {
       return;
     }
 
-    const user = {
+    const values = {
       first_name: this.updateUserForm.get('firstname').value,
       last_name: this.updateUserForm.get('lastname').value,
       email: this.updateUserForm.get('email').value,
       gender: this.updateUserForm.get('gender').value,
     };
+    console.log(this.user.url)
 
-    this.userService.updateUser(user).subscribe(
+    this.userService.updateUser(this.user.url, values).subscribe(
       value => {
         this.submitted = false;
         this.notificationService.success(null, 'Modification du profile reussie');
@@ -84,6 +85,7 @@ export class ProfileComponent implements OnInit {
         this.router.navigate(['/user']);
       },
       err => {
+        console.log('error', err)
         this.submitted = true;
         if (err.error.first_name) {
           this.f.firstname.setErrors({apiError: err.error.first_name});
@@ -114,7 +116,6 @@ export class ProfileComponent implements OnInit {
     this.userService.updatePassword(apassword, password).subscribe(
       value => {
         this.submitted = false;
-        console.log(value);
         this.notificationService.success(null, 'Modification du mot de passe reussi');
         this.router.navigate(['/user']);
       },

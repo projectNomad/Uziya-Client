@@ -18,7 +18,7 @@ import { UserService } from '../../../services/user.service';
 })
 export class LoginComponent implements OnInit {
   signinForm: FormGroup;
-  errorMessage: string;
+  errorMessage: string | string[];
   submitted = false;
   images = [
     'assets/images/static/login/1.jpg',
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
 
   initForm() {
     this.signinForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+      username: ['', [Validators.required, Validators.email]],
       password: ['', [ Validators.required ]]
     });
   }
@@ -63,10 +63,10 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    const email = this.signinForm.get('email').value;
+    const username = this.signinForm.get('username').value;
     const password = this.signinForm.get('password').value;
 
-    this.authService.authenticate(email, password)
+    this.authService.authenticate(username, password)
       .subscribe(
       (value) => {
         localStorage.setItem(environment.cookiesName.token, value.token);
@@ -76,6 +76,7 @@ export class LoginComponent implements OnInit {
           .pipe(map(result => result))
           .subscribe(
             data => {
+              console.log(data);
               localStorage.setItem(environment.cookiesName.profile, JSON.stringify(data));
               this.notificationService.success(
                 null,

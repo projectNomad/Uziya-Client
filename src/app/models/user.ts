@@ -11,4 +11,5 @@ export class User extends Base {
   gender: string;
   password: string;
   date_joined: string;
+  url: string;
 }

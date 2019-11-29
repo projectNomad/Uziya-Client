@@ -48,7 +48,8 @@ export class ApiPrefixInterceptor implements HttpInterceptor {
       header = header.append('Authorization', 'token ' + token);
     }
 
-    const apiProvider = '/' + this.i18nService.language;
+    const apiProvider = '';
+    // const apiProvider = '/' + this.i18nService.language;
 
     const requestTmp = request.clone({
       headers: header,

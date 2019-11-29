@@ -18,11 +18,11 @@ export class AuthService extends ServiceCore {
     super();
   }
 
-  authenticate(email: string, password: string): Observable<AuthenticationResponse> {
+  authenticate(username: string, password: string): Observable<AuthenticationResponse> {
     return this.httpClient.post<AuthenticationResponse>(
       environment.paths_api.authentication,
       {
-        login: email,
+        username,
         password,
       }
     );

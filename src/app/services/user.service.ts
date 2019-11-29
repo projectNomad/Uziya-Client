@@ -37,10 +37,11 @@ export class UserService extends ServiceCore {
     );
   }
 
-  updateUser(user): Observable<any> {
+  updateUser(url, values): Observable<any> {
+    const urlString = url.split('//')[1].split('/');
     return this.httpClient.patch<any>(
-      environment.paths_api.profile,
-      user
+      '/' + urlString[1] + '/' + urlString[2],
+      values
     );
   }
 
